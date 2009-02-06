@@ -1,0 +1,86 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FBC86B24-DD94-4B15-AC73-F39E3ECA3734}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptoEditorHome</RootNamespace>
+    <AssemblyName>CryptoEditorHome</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoEditorHome.cs" />
+    <Compile Include="CryptoEditorHomeDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorHomeDetail.Designer.cs">
+      <DependentUpon>CryptoEditorHomeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorHomeRootNode.cs" />
+    <Compile Include="CryptoEditorHomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorHomeView.Designer.cs">
+      <DependentUpon>CryptoEditorHomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoEditorCommon\CryptoEditorCommon.csproj">
+      <Project>{162EF8BF-DF17-4681-9FB3-33693BFD9DC3}</Project>
+      <Name>CryptoEditorCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorFramework\CryptoEditorFramework.csproj">
+      <Project>{DC392461-D034-44C4-B870-064538902B1A}</Project>
+      <Name>CryptoEditorFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorHomeDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorHomeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorHomeView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorHomeView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

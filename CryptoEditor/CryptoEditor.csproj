@@ -1,0 +1,247 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C64672BD-783F-47BA-97E5-E586757B6CF8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptoEditor</RootNamespace>
+    <AssemblyName>CryptoEditor</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug No Encrypt|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug No Encrypt\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NO_ENCRYPT</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoEditorAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorAboutBox.Designer.cs">
+      <DependentUpon>CryptoEditorAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorForm.Designer.cs">
+      <DependentUpon>CryptoEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorGettingStartedHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorGettingStartedHelp.Designer.cs">
+      <DependentUpon>CryptoEditorGettingStartedHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorMessageForm.Designer.cs">
+      <DependentUpon>CryptoEditorMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPasswordForm.Designer.cs">
+      <DependentUpon>CryptoEditorPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPasswordSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPasswordSelection.Designer.cs">
+      <DependentUpon>CryptoEditorPasswordSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPasswordValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPasswordValidation.designer.cs">
+      <DependentUpon>CryptoEditorPasswordValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPreferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPreferences.Designer.cs">
+      <DependentUpon>CryptoEditorPreferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorProfileForm.Designer.cs">
+      <DependentUpon>CryptoEditorProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorProfileManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorProfileManagerForm.Designer.cs">
+      <DependentUpon>CryptoEditorProfileManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorRegistration.Designer.cs">
+      <DependentUpon>CryptoEditorRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CryptoEditorAboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPasswordForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPasswordSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPasswordSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPasswordValidation.resx">
+      <DependentUpon>CryptoEditorPasswordValidation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPreferences.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPreferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorProfileForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorProfileManagerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorProfileManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorRegistration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoEditorCommon\CryptoEditorCommon.csproj">
+      <Project>{162EF8BF-DF17-4681-9FB3-33693BFD9DC3}</Project>
+      <Name>CryptoEditorCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorHome\CryptoEditorHome.csproj">
+      <Project>{FBC86B24-DD94-4B15-AC73-F39E3ECA3734}</Project>
+      <Name>CryptoEditorHome</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorTemplate\CryptoEditorTemplate.csproj">
+      <Project>{30B158B6-83B0-4F9F-AB8F-955B87284C37}</Project>
+      <Name>CryptoEditorTemplate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorWeb\CryptoEditorWeb.csproj">
+      <Project>{04A2ACBF-0C0B-44AC-B13F-F2A5F805F8CB}</Project>
+      <Name>CryptoEditorWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoLicense\CryptoLicense.csproj">
+      <Project>{13F10403-2279-45CA-9A0A-717B4D769599}</Project>
+      <Name>CryptoLicense</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoNotes\CryptoNotes.csproj">
+      <Project>{77C09FB3-9981-4284-B634-B573A2CF85A6}</Project>
+      <Name>CryptoNotes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoPassword\CryptoPassword.csproj">
+      <Project>{0E2C2856-8F37-4904-9D60-B433AA1B8C78}</Project>
+      <Name>CryptoPassword</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorGettingStartedHelp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorGettingStartedHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorMessageForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folder.bmp" />
+    <EmbeddedResource Include="folder2.bmp" />
+    <Content Include="loader.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="loader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="loader.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="offline.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

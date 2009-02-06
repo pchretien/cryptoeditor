@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[UnitTests.csproj]
+SCC_Aux_Path = "\\Hyperion\VSS\"
+SCC_Project_Name = "$/CryptoEditor.root/CryptoEditor/UnitTests", REFAAAAA

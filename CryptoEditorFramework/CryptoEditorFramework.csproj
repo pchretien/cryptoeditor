@@ -1,0 +1,124 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC392461-D034-44C4-B870-064538902B1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptoEditor.Framework</RootNamespace>
+    <AssemblyName>CryptoEditorFramework</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug No Encrypt|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug No Encrypt\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MONO|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MONO\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MONO_MWF</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoEditorClipboard.cs" />
+    <Compile Include="CryptoEditorDoc.cs" />
+    <Compile Include="CryptoEditorPlugin.cs" />
+    <Compile Include="CryptoEditorPluginDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPluginDetail.Designer.cs">
+      <DependentUpon>CryptoEditorPluginDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPluginItem.cs" />
+    <Compile Include="CryptoEditorPluginItemAttribute.cs" />
+    <Compile Include="CryptoEditorPluginRootMenu.cs">
+    </Compile>
+    <Compile Include="CryptoEditorPluginRootNode.cs" />
+    <Compile Include="CryptoEditorPluginRootNodeNameForm.cs">
+    </Compile>
+    <Compile Include="CryptoEditorPluginRootNodeNameForm.Designer.cs">
+      <DependentUpon>CryptoEditorPluginRootNodeNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPluginSearchForm.cs">
+    </Compile>
+    <Compile Include="CryptoEditorPluginSearchForm.Designer.cs">
+      <DependentUpon>CryptoEditorPluginSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorPluginView.cs">
+    </Compile>
+    <Compile Include="CryptoEditorPluginView.Designer.cs">
+      <DependentUpon>CryptoEditorPluginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorPluginDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPluginDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPluginRootNodeNameForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPluginRootNodeNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPluginSearchForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPluginSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPluginView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorPluginView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoEditorCommon\CryptoEditorCommon.csproj">
+      <Project>{162EF8BF-DF17-4681-9FB3-33693BFD9DC3}</Project>
+      <Name>CryptoEditorCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

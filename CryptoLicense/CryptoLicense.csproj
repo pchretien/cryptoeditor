@@ -1,0 +1,84 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13F10403-2279-45CA-9A0A-717B4D769599}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptoEditor.License</RootNamespace>
+    <AssemblyName>CryptoLicense</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;MONO_MWF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoLicenseDetail.cs">
+    </Compile>
+    <Compile Include="CryptoLicenseDetail.Designer.cs">
+      <DependentUpon>CryptoLicenseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoLicense.cs" />
+    <Compile Include="CryptoLicenseEditionForm.cs">
+    </Compile>
+    <Compile Include="CryptoLicenseEditionForm.Designer.cs">
+      <DependentUpon>CryptoLicenseEditionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoLicenseItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoEditorCommon\CryptoEditorCommon.csproj">
+      <Project>{162EF8BF-DF17-4681-9FB3-33693BFD9DC3}</Project>
+      <Name>CryptoEditorCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorFramework\CryptoEditorFramework.csproj">
+      <Project>{DC392461-D034-44C4-B870-064538902B1A}</Project>
+      <Name>CryptoEditorFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CryptoLicenseDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoLicenseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoLicenseEditionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoLicenseEditionForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
