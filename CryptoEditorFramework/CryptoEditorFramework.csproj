@@ -70,19 +70,23 @@
     <Compile Include="CryptoEditorPluginItem.cs" />
     <Compile Include="CryptoEditorPluginItemAttribute.cs" />
     <Compile Include="CryptoEditorPluginRootMenu.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CryptoEditorPluginRootNode.cs" />
     <Compile Include="CryptoEditorPluginRootNodeNameForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="CryptoEditorPluginRootNodeNameForm.Designer.cs">
       <DependentUpon>CryptoEditorPluginRootNodeNameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CryptoEditorPluginSearchForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="CryptoEditorPluginSearchForm.Designer.cs">
       <DependentUpon>CryptoEditorPluginSearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CryptoEditorPluginView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CryptoEditorPluginView.Designer.cs">
       <DependentUpon>CryptoEditorPluginView.cs</DependentUpon>

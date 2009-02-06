@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CryptoEditorTemplate.cs" />
     <Compile Include="CryptoEditorTemplateDetail.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CryptoEditorTemplateDetail.Designer.cs">
       <DependentUpon>CryptoEditorTemplateDetail.cs</DependentUpon>

@@ -9,10 +9,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CryptoEditor.Notes</RootNamespace>
     <AssemblyName>CryptoNotes</AssemblyName>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +51,7 @@
       <DependentUpon>CryptoNotesDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="CryptoNotesEditionForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="CryptoNotesEditionForm.Designer.cs">
       <DependentUpon>CryptoNotesEditionForm.cs</DependentUpon>
