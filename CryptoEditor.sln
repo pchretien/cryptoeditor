@@ -140,38 +140,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoEditorFormFramework",
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 6
-		SccProjectUniqueName0 = CryptoEditor\\CryptoEditor.csproj
-		SccProjectTopLevelParentUniqueName0 = CryptoEditor.sln
-		SccProjectName0 = \u0022$/CryptoEditor.root/CryptoEditor/CryptoEditor\u0022,\u0020MXEAAAAA
-		SccLocalPath0 = CryptoEditor
-		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectUniqueName1 = CryptoEditorFramework\\CryptoEditorFramework.csproj
-		SccProjectTopLevelParentUniqueName1 = CryptoEditor.sln
-		SccProjectName1 = \u0022$/CryptoEditor.root/CryptoEditor/CryptoEditorFramework\u0022,\u0020NAFAAAAA
-		SccLocalPath1 = CryptoEditorFramework
-		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectUniqueName2 = CryptoEditorTemplate\\CryptoEditorTemplate.csproj
-		SccProjectTopLevelParentUniqueName2 = CryptoEditor.sln
-		SccProjectName2 = \u0022$/CryptoEditor.root/CryptoEditor/CryptoEditorTemplate\u0022,\u0020PCFAAAAA
-		SccLocalPath2 = CryptoEditorTemplate
-		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectUniqueName3 = CryptoPassword\\CryptoPassword.csproj
-		SccProjectTopLevelParentUniqueName3 = CryptoEditor.sln
-		SccProjectName3 = \u0022$/CryptoEditor.root/CryptoEditor/CryptoPassword\u0022,\u0020ODFAAAAA
-		SccLocalPath3 = CryptoPassword
-		SccProvider3 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectUniqueName4 = CryptoEditorService\\CryptoEditorService.csproj
-		SccProjectTopLevelParentUniqueName4 = CryptoEditor.sln
-		SccProjectName4 = \u0022$/CryptoEditor.root/CryptoEditor/CryptoEditorService\u0022,\u0020GEFAAAAA
-		SccLocalPath4 = CryptoEditorService
-		SccProvider4 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectUniqueName5 = UnitTests\\UnitTests.csproj
-		SccProjectName5 = \u0022$/CryptoEditor.root/CryptoEditor/UnitTests\u0022,\u0020REFAAAAA
-		SccLocalPath5 = UnitTests
-		SccProvider5 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug No Encrypt|Any CPU = Debug No Encrypt|Any CPU
 		Debug|Any CPU = Debug|Any CPU
