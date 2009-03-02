@@ -513,9 +513,9 @@ namespace CryptoEditor
                     this.persistor.SaveData(true);
                 }
             }
-            catch(WebException)
+            catch(WebException ex)
             {
-                MessageBox.Show("Unable to connect to the server.", 
+                MessageBox.Show(ex.Message, 
                     "Connection error", 
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
