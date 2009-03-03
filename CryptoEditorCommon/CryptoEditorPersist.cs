@@ -398,8 +398,8 @@ namespace CryptoEditor.Common
 
                 DateTime lastUpdate = DateTime.Parse(sourceNode.Attributes.GetNamedItem("lastupdate").InnerText);
                 TimeSpan interval = DateTime.Now - lastUpdate;
-                if(!toServer && interval.Days > 31)
-                    continue;
+                //if(!toServer && interval.Days > 31)
+                //    continue;
 
                 XmlAttribute newElementLastUpdateAttr = target.OwnerDocument.CreateAttribute("lastupdate");
                 newElementLastUpdateAttr.InnerText = sourceNode.Attributes.GetNamedItem("lastupdate").InnerText;
@@ -436,8 +436,8 @@ namespace CryptoEditor.Common
 
                 DateTime lastUpdate = DateTime.Parse(sourceNode.Attributes.GetNamedItem("lastupdate").InnerText);
                 TimeSpan interval = DateTime.Now - lastUpdate;
-                if (!toServer && interval.Days > 31)
-                    continue;
+                //if (!toServer && interval.Days > 31)
+                //    continue;
 
                 // The item does not exist in the target document ...
                 XmlAttribute newElementIdAttr = target.OwnerDocument.CreateAttribute("folder_id");
