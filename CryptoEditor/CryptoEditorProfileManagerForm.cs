@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Windows.Forms;
 using CryptoEditor.Common;
 
@@ -35,13 +36,36 @@ namespace CryptoEditor
             if (profilesListView.SelectedItems.Count == 0)
                 return;
 
-            if (MessageBox.Show("Are you sure you want to delete the profile [" + profilesListView.SelectedItems[0].Text + "]?", "Delete Profile", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete the profile " + profilesListView.SelectedItems[0].Text + " and all the data is contains?", "Delete Profile", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 // Delete the profile from the list ...
                 if (profilesListView.SelectedItems.Count > 0)
                 {
-                    System.IO.File.Delete(profilesListView.SelectedItems[0].Tag.ToString());
-                    LoadProfiles();
+                    CryptoEditorProfile tmpProfile = new CryptoEditorProfile();
+                    tmpProfile.Load(SelectedProfileFile);
+                    tmpProfile.PasswordValidated = false;
+
+                    CryptoEditorPasswordForm formPassword = new CryptoEditorPasswordForm();
+                    while (formPassword.ShowDialog() == DialogResult.OK)
+                    {
+                        string tmpPassword = CryptoEditorEncryption.Hash(formPassword.Password);
+                        if (tmpPassword.Equals(tmpProfile.EncryptedPassword))
+                        {
+                            string toDelete = tmpProfile.Id + "*.*";
+                            string[] filesToDelete = Directory.GetFiles(Directory.GetCurrentDirectory(), toDelete);
+                            foreach(string file in filesToDelete)
+                            {
+                                System.IO.File.Delete(file);
+                            }
+                            LoadProfiles();
+
+                            break;
+                        }
+
+                        MessageBox.Show("The password is incorrect! Please retype your password.", "Incorrect password",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        formPassword.Password = "";
+                    }
                 }
             }
 
