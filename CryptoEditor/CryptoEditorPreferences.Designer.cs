@@ -72,7 +72,6 @@ namespace CryptoEditor
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.emailAddress.Location = new System.Drawing.Point(15, 69);
             this.emailAddress.Name = "emailAddress";
-            this.emailAddress.ReadOnly = true;
             this.emailAddress.Size = new System.Drawing.Size(272, 20);
             this.emailAddress.TabIndex = 1;
             // 

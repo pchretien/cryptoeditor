@@ -28,14 +28,10 @@ namespace CryptoEditorHome
         /// </summary>
         private void InitializeComponent()
         {
-#if !MONO_MWF
+            this.components = new System.ComponentModel.Container();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
-            this.webBrowserBuffer = new System.Windows.Forms.WebBrowser();
-#endif
-            
+            this.webConnectTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-
-#if !MONO_MWF
             // 
             // webBrowser
             // 
@@ -47,27 +43,15 @@ namespace CryptoEditorHome
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 
-            // webBrowserBuffer
+            // webConnectTimer
             // 
-            this.webBrowserBuffer.Location = new System.Drawing.Point(332, 96);
-            this.webBrowserBuffer.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowserBuffer.Name = "webBrowserBuffer";
-            this.webBrowserBuffer.Size = new System.Drawing.Size(20, 20);
-            this.webBrowserBuffer.TabIndex = 2;
-            this.webBrowserBuffer.Visible = false;
-            this.webBrowserBuffer.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowserBuffer_DocumentCompleted);
-#endif
+            this.webConnectTimer.Tick += new System.EventHandler(this.webConnectTimer_Tick);
             // 
             // CryptoEditorHomeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-#if !MONO_MWF
             this.Controls.Add(this.webBrowser);
-            this.Controls.Add(this.webBrowserBuffer);
-#endif
-
             this.Name = "CryptoEditorHomeDetail";
             this.Size = new System.Drawing.Size(396, 243);
             this.ResumeLayout(false);
@@ -77,7 +61,7 @@ namespace CryptoEditorHome
         #endregion
 #if !MONO_MWF
         private System.Windows.Forms.WebBrowser webBrowser;
-        private System.Windows.Forms.WebBrowser webBrowserBuffer;
+        private System.Windows.Forms.Timer webConnectTimer;
 #endif
     }
 }

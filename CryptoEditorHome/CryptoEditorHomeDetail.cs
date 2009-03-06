@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using CryptoEditor.Common.Interfaces;
@@ -13,10 +14,11 @@ namespace CryptoEditorHome
     public partial class CryptoEditorHomeDetail : UserControl, ICryptoEditorDetail
     {
         private ICryptoEditor plugin = null;
-        private readonly string landing = "http://cryptoeditor.com.dnnmax.com/Default.aspx?tabid=131";
 
+        private bool connected = false;
         private string loading = "";
         private string offline = "";
+        private readonly string landing = "http://cryptoeditor.com.dnnmax.com/Default.aspx?tabid=131";
 
         public CryptoEditorHomeDetail(ICryptoEditor plugin)
         {
@@ -27,13 +29,41 @@ namespace CryptoEditorHome
             string location = Assembly.GetCallingAssembly().CodeBase;
             loading = location.ToLower().Replace("cryptoeditorhome.dll", "loader.htm");
             offline = location.ToLower().Replace("cryptoeditorhome.dll", "offline.htm");
-            webBrowser.Url = new Uri(loading);
-            webBrowserBuffer.Url = new Uri(landing);
-#endif
 
+            webConnectTimer.Enabled = true;
+#endif
         }
 
-        #region ICryptoEditorDetail Members
+        private void TestConnection()
+        {
+            System.Net.WebResponse ret = null;
+            string deux = "http://www.2sortes.com";
+            System.Net.WebRequest request = System.Net.WebRequest.Create(deux);
+
+            try
+            {
+                if(!connected)
+                    webBrowser.Navigate(loading);
+                
+                ret = request.GetResponse();
+                ret.Close();
+                
+                if(!connected)
+                {
+                    connected = true;
+                    webBrowser.Navigate(landing);
+                }
+
+            }
+            catch(Exception)
+            {
+                if (ret != null)
+                    ret.Close();
+
+                connected = false;
+                webBrowser.Navigate(offline);
+            }
+        }
 
         public ICryptoEditor Plugin
         {
@@ -45,16 +75,18 @@ namespace CryptoEditorHome
             BringToFront();
         }
 
-        #endregion
-
-        private void webBrowserBuffer_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void webConnectTimer_Tick(object sender, EventArgs e)
         {
-#if !MONO_MWF
-            if(webBrowserBuffer.DocumentTitle.ToLower().IndexOf("canceled") == -1)
-                webBrowser.Url = new Uri(landing);
-            else
-                webBrowser.Url = new Uri(offline);
-#endif
+            try
+            {
+                webConnectTimer.Stop();
+                TestConnection();
+            }
+            finally
+            {
+                webConnectTimer.Interval = 60000;
+                webConnectTimer.Start();
+            }
         }
     }
 }

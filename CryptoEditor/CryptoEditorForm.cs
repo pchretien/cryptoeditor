@@ -135,6 +135,7 @@ namespace CryptoEditor
                         {
                             currentProfile.PasswordValidated = true;
                             currentProfile.Password = formPassword.Password;
+                            this.Text = "CryptoEditor - " + currentProfile.Name + "/" + currentProfile.Email;
 
                             break;
                         }
@@ -675,6 +676,7 @@ namespace CryptoEditor
                 return;
 
             currentProfile.Name = form.profileName.Text;
+            currentProfile.Email = form.emailAddress.Text;
             currentProfile.IdleTimeout = Convert.ToInt32(form.idleDelay.Text);
             currentProfile.Save();
 
