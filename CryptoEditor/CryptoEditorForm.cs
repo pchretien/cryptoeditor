@@ -381,6 +381,12 @@ namespace CryptoEditor
             }
         }
 
+        public static void ShowWait()
+        {
+            CryptoEditorSyncProgress progressForm = new CryptoEditorSyncProgress();
+            progressForm.ShowDialog();
+        }
+
         private void synchronizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!currentProfile.SkipSyncWarning)
@@ -402,6 +408,9 @@ namespace CryptoEditor
                 if (ret != System.Windows.Forms.DialogResult.OK)
                     return;
             }
+
+            System.Threading.Thread newThread = new Thread(new ThreadStart(CryptoEditorForm.ShowWait));
+            newThread.Start();
 
             System.Windows.Forms.Cursor old = this.Cursor;
             Cursor = Cursors.WaitCursor;
@@ -524,6 +533,7 @@ namespace CryptoEditor
             finally
             {
                 Cursor = old;
+                newThread.Abort();
             }
         }
 

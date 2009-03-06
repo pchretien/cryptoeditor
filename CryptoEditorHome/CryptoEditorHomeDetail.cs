@@ -18,7 +18,7 @@ namespace CryptoEditorHome
         private bool connected = false;
         private string loading = "";
         private string offline = "";
-        private readonly string landing = "http://cryptoeditor.com.dnnmax.com/Default.aspx?tabid=131";
+        private readonly string landing = "http://www.cryptoeditor.com";
 
         public CryptoEditorHomeDetail(ICryptoEditor plugin)
         {
@@ -37,8 +37,8 @@ namespace CryptoEditorHome
         private void TestConnection()
         {
             System.Net.WebResponse ret = null;
-            string deux = "http://www.2sortes.com";
-            System.Net.WebRequest request = System.Net.WebRequest.Create(deux);
+            string ping = "http://www.cryptoeditor.com/ping.html";
+            System.Net.WebRequest request = System.Net.WebRequest.Create(ping);
 
             try
             {

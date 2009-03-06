@@ -124,6 +124,12 @@
     <Compile Include="CryptoEditorRegistration.Designer.cs">
       <DependentUpon>CryptoEditorRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="CryptoEditorSyncProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorSyncProgress.Designer.cs">
+      <DependentUpon>CryptoEditorSyncProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CryptoEditorAboutBox.resx">
@@ -191,10 +197,6 @@
       <Project>{FBC86B24-DD94-4B15-AC73-F39E3ECA3734}</Project>
       <Name>CryptoEditorHome</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CryptoEditorTemplate\CryptoEditorTemplate.csproj">
-      <Project>{30B158B6-83B0-4F9F-AB8F-955B87284C37}</Project>
-      <Name>CryptoEditorTemplate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CryptoEditorWeb\CryptoEditorWeb.csproj">
       <Project>{04A2ACBF-0C0B-44AC-B13F-F2A5F805F8CB}</Project>
       <Name>CryptoEditorWeb</Name>
@@ -221,8 +223,15 @@
       <SubType>Designer</SubType>
       <DependentUpon>CryptoEditorMessageForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorSyncProgress.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CryptoEditorSyncProgress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folder.bmp" />
     <EmbeddedResource Include="folder2.bmp" />
+    <Content Include="framesync.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="loader.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

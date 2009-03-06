@@ -1,0 +1,273 @@
+body
+{
+  background: url(images/bg.gif) top center repeat-x #ffffff; 
+  color: #666666;
+}
+
+body, td, th, div, p, h1, h2, h2, li
+{
+  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #666666;
+}
+
+a, a:active, a:visited
+{
+  color: #930F09;
+}
+
+a.blind, a.blind:visited
+{
+  text-decoration: none;
+}
+
+h5
+{
+  font-size: 12px;
+  color: #666666;
+  margin: 10px 0px 10px 0px;
+}
+
+h4
+{
+  font-size: 14px;
+  color: #666666;
+  margin: 10px 0px 10px 0px;
+}
+
+
+h3
+{
+  font-size: 16px;
+  color: #666666;
+  margin: 10px 0px 10px 0px;
+}
+
+h2
+{
+  font-size: 18px;
+  color: #666666;
+  margin: 10px 0px 10px 0px;
+}
+
+h1
+{
+  font-size: 20px;
+  color: #666666;
+  margin: 10px 0px 10px 0px;
+}
+
+ul
+{
+}
+
+div
+{
+  text-align:justify; 
+  overflow: auto; 
+  padding-right: 10px; 
+  scrollbar-3dlight-color:#CCCC33; 
+  scrollbar-arrow-color:#CCCC33; 
+  scrollbar-base-color:#FFFFFF; 
+  scrollbar-darkshadow-color:#CCCC33;
+  scrollbar-face-color:#FFFFFF; 
+  scrollbar-highlight-color:#FFFFFF;
+  scrollbar-shadow-color:#FFFFFF;   
+}
+
+/*
+
+#main
+{
+  position: relative;
+  width: 700px;
+  height: 95%;  
+  margin: 10px auto;
+  padding: 12px 35px 12px 35px;
+  background-color: #ffffff;
+}
+
+
+#mainnav
+{
+  width: 660px;
+  height: 23px !important;
+  height: 30px;
+  padding: 5px 0px 2px 0px;
+  margin: 0px 15px 10px 15px;
+  background: url(images/mainnav_bg.gif) top left no-repeat;
+}
+
+#mainnav table
+{
+  width: 100%;
+}
+
+#mainnav table tr td
+{
+  width: 16%;
+  color: #999999;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#mainnav table tr td a
+{
+  color: #333333;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 1px 8px 2px 8px;
+  text-decoration: none;
+}
+
+#mainnav a:hover
+{
+  background-color: #cccccc;
+  text-decoration: none;
+}
+
+#pagebody
+{
+  position: relative;
+  margin: 0px 0px 0px 20px;
+}
+
+#footer
+{
+  display: block;
+  font-size: 11px;
+  color: #666666;
+  padding-top: 4px;
+  margin: 0px 20px 0px 20px;  
+  border-top: 1px dotted #cccccc;
+}
+
+#footer a,
+#footer a:visited
+{
+  color: #666666;
+}
+
+#rightcolumn
+{
+  position: relative;
+  width: 170px;
+  padding: 0px;
+  padding-top: 20px;
+  margin-left: 483px;
+  text-align: right;
+}
+
+#badges
+{
+  display: block;
+  margin: 0px 20px 4px 20px;
+  text-align: right;
+}
+
+div.contentbox
+{
+  position: relative;
+  width: 460px;
+  float: left;
+}
+
+div.newsbox
+{
+  text-align: left;
+  border: 1px solid #838383;
+}
+
+div.newsbox h3
+{
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0;
+  padding: 2px 8px 3px 8px;
+  background: url(images/boxheader.gif) top left repeat-x #838383;
+}
+
+div.newsbox p
+{
+  font-size: 11px;
+  margin: 2px 8px 10px 8px;
+}
+
+div.newsbox p.title
+{
+  font-weight: bold;
+  margin: 8px 8px 2px 8px;
+}
+
+div.newsbox p.pubdate
+{
+  color: #999999;
+  font-size: 10px;
+  margin: 2px 8px 2px 8px;
+}
+
+div.newsbox p.indent
+{
+ padding-left: 10px;
+}
+
+p.newstitle,
+p.subtitle
+{
+  font-weight: bold;
+  margin: 12px 0px 2px 0px;  
+}
+
+span.newsdate
+{
+  color: #999999;
+  font-size: 11px;
+  padding-left: 10px;
+}
+
+p.newstext
+{
+  margin: 2px 0px 2px 0px;
+}
+
+.code
+{
+  font-family: 'coursier New', Courier, Monaco, monospace;
+  font-size: 10px;
+}
+
+#thumbstable
+{
+  width: 440px;
+}
+
+#thumbstable td.spacer
+{
+  width: 30px;
+}
+
+#thumbstable td.description
+{
+  padding: 4px;
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#thumbstable td.thumb
+{
+  width: 205px;
+  height: 154px;
+  text-align: center;
+  vertical-align: middle;
+  background: url(images/thumb_frame.gif) top left no-repeat;
+}
+
+#thumbstable td.thumb img
+{
+  border: 1px solid #d3d3d3;
+}
+
+*/

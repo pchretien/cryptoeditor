@@ -86,12 +86,10 @@ namespace CryptoEditor
             // 
             // imageList1
             // 
-#if !MONO_MWF
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "folder.bmp");
             this.imageList1.Images.SetKeyName(1, "folder2.bmp");
-#endif
             // 
             // splitContainer1
             // 
