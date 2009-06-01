@@ -481,16 +481,24 @@ namespace CryptoEditor
                 string serverPassword = this.currentProfile.Password;
                 
                 // Decrypt the encrypted_license
-
+                string decryptedKey = CryptoEditorEncryption.Decrypt(encrypted_license, currentProfile.Password);
+                
                 // Validate the result
+                if (decryptedKey.StartsWith(keyPrefix))
+                {
+                    decryptedKey = decryptedKey.Substring(keyPrefix.Length);
+                }
+                else
+                {
+                    // If decryption failed
 
-                // If decryption failed
-                    
                     // Ask for the password if decryption failed
-                    
+
                     // Save the new password
+                }
 
                 // All ok ... lets proceed.
+                
                 this.persistor.Synchronize(serverPassword);
                 this.persistor.SaveData(true);
 
@@ -850,7 +858,7 @@ namespace CryptoEditor
             {
                 this.Cursor = Cursors.WaitCursor;
 
-                bool ret = HttpServiceClient.PutLicense(currentProfile.Email, form.keyTextBox.Text, encryptedLicense, true);
+                bool ret = HttpServiceClient.PutLicense(form.emailTextBox.Text, form.keyTextBox.Text, encryptedLicense, true);
                 if (!ret)
                 {
                     return;
