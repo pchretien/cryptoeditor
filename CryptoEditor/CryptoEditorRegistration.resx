@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>You are not registered to the web synchronization service.
-
-The web synchronization allows you to synchronize the content of different installations of CryptoEditor. You can then have CryptoEditor at work working on the same set of data as your CryptoEditor at home.
-
-Register now and get three months of free service! Register now and we will add these 3 months to the service plan you chose.
-
-Please provide a valid email address so we can send you your free registration key.</value>
-  </data>
 </root>

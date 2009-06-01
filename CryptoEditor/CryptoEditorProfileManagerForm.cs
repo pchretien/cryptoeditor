@@ -22,7 +22,7 @@ namespace CryptoEditor
             {
                 CryptoEditorProfile newProfile = new CryptoEditorProfile(
                     form.ProfileName,
-                    form.EmailAddress,
+                    "",
                     form.Password );
 
                 newProfile.Save();

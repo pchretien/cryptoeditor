@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 using CryptoEditorWeb.CryptoEditorServiceBackup;
@@ -35,6 +37,8 @@ namespace CryptoEditor
         private int idleSensibility = 2;
 
         private bool isHome = true;
+
+        private static string keyPrefix = "_ce_";
         
         public CryptoEditorForm()
         {
@@ -255,62 +259,8 @@ namespace CryptoEditor
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string oldKey = currentProfile.Key;
-
             CryptoEditorAboutBox form = new CryptoEditorAboutBox();
-            if (form.ShowDialog() != DialogResult.OK)
-                return;
-            
-            if (form.keyTextBox.Text.Length == 0)
-                return;
-
-            if (form.keyTextBox.Text.Equals(oldKey))
-                return;
-
-            string encryptedLicense = CryptoEditorEncryption.Encrypt(form.keyTextBox.Text, currentProfile.Password);
-
-            try
-            {
-                this.Cursor = Cursors.WaitCursor;
-
-                BackupService client = new BackupService();
-                CryptoEditorServiceCodes registered =
-                    client.Confirm(currentProfile.Email, form.keyTextBox.Text, encryptedLicense);
-                if (registered == CryptoEditorServiceCodes.USER_DOES_NOT_EXIST)
-                {
-                    MessageBox.Show("You are not registered or your key is invalid!", "Registration Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (registered != CryptoEditorServiceCodes.SUCCESS)
-                {
-                    MessageBox.Show("Confirmation failed! Are you connected to the internet?", "Registration Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-            catch(WebException)
-            {
-                MessageBox.Show("Unable to connect to the server.",
-                    "Connection error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                return;
-            }
-            finally
-            {
-                this.Cursor = Cursors.Default;
-            }
-
-            if (form.keyTextBox.Text.Length > 0)
-            {
-                currentProfile.Key = form.keyTextBox.Text;
-                currentProfile.Save();
-            }
-
-            MessageBox.Show("Confirmation succeeded. You can now use the Synchronization service.", "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            form.ShowDialog();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -351,68 +301,19 @@ namespace CryptoEditor
             timer.Start();
         }
 
-        private void backupToTheWebToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Cursor old = this.Cursor;
-
-            try
-            {
-                this.Cursor = Cursors.WaitCursor;
-                persistor.BackupToTheWeb();
-            }
-            finally
-            {
-                this.Cursor = old;
-            }
-        }
-
-        private void restoreFromTheWebToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Cursor old = this.Cursor;
-
-            try
-            {
-                this.Cursor = Cursors.WaitCursor;
-                persistor.RestoreFromTheWeb();
-            }
-            finally
-            {
-                this.Cursor = old;
-            }
-        }
-
         public static void ShowWait()
         {
             CryptoEditorSyncProgress progressForm = new CryptoEditorSyncProgress();
             progressForm.ShowDialog();
         }
 
-        private void synchronizeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void oldSynk()
         {
-            if (!currentProfile.SkipSyncWarning)
-            {
-                CryptoEditorMessageForm messageForm = new CryptoEditorMessageForm();
-                messageForm.Text = "Internet access";
-                messageForm.Size = new Size(350, 150);
-                messageForm.messageTextBox.Text =
-                    "CryptoEditor will access the internet to backup your encrypted data. No password is transfered over the internet because your data is encrypted on your computer before to be sent to our servers. If you dont feel safe, please visit us online to read more about our technology.";
 
-                DialogResult ret = messageForm.ShowDialog();
+            //System.Threading.Thread newThread = new Thread(new ThreadStart(CryptoEditorForm.ShowWait));
+            //newThread.Start();
 
-                if (messageForm.showAgainCheckBox.Checked != currentProfile.SkipSyncWarning)
-                {
-                    currentProfile.SkipSyncWarning = messageForm.showAgainCheckBox.Checked;
-                    currentProfile.Save();
-                }
-
-                if (ret != System.Windows.Forms.DialogResult.OK)
-                    return;
-            }
-
-            System.Threading.Thread newThread = new Thread(new ThreadStart(CryptoEditorForm.ShowWait));
-            newThread.Start();
-
-            System.Windows.Forms.Cursor old = this.Cursor;
+            System.Windows.Forms.Cursor old = Cursor;
             Cursor = Cursors.WaitCursor;
             try
             {
@@ -464,19 +365,19 @@ namespace CryptoEditor
                 }
 
                 // The user has never confirmed its registration.
-                if(encryptedKey.Length == 0)
+                if (encryptedKey.Length == 0)
                 {
                     MessageBox.Show("Your accound has not been activated. Please enter the key you received by email into the About box.",
                                     "Account Not Activated", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
-                
+
                 // If the key has not been properly decrypted
                 string serverPassword = this.currentProfile.Password;
-                while(isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
+                while (isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
                 {
                     CryptoEditorPasswordSelection form = new CryptoEditorPasswordSelection();
-                    if(form.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                    if (form.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                         return;
 
                     this.Cursor = Cursors.WaitCursor;
@@ -487,10 +388,10 @@ namespace CryptoEditor
                     // Validate the decrypted key with the server
                     isValid = client.IsLicenseValid(this.currentProfile.Email, decryptedKey);
 
-                    if(isValid != CryptoEditorServiceCodes.INVALID_LICENSE && form.newRadioButton.Checked)
+                    if (isValid != CryptoEditorServiceCodes.INVALID_LICENSE && form.newRadioButton.Checked)
                         this.currentProfile.Password = form.Password.Text;
 
-                    if(isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
+                    if (isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
                         MessageBox.Show("The server password is incorrect! Please retype your password.", "Incorrect password",
                                         MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
@@ -523,18 +424,109 @@ namespace CryptoEditor
                     this.persistor.SaveData(true);
                 }
             }
-            catch(WebException ex)
+            catch (WebException ex)
             {
-                MessageBox.Show(ex.Message, 
-                    "Connection error", 
+                MessageBox.Show(ex.Message,
+                    "Connection error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
             finally
             {
                 Cursor = old;
-                newThread.Abort();
+                //newThread.Abort();
             }
+        }
+
+        private void newSync()
+        {
+            try
+            {
+                int status = 0;
+                DateTime expiration = DateTime.Now;
+                string encrypted_license = "";
+
+                bool ret = HttpServiceClient.GetProfile(currentProfile.Email,
+                                             ref status,
+                                             ref expiration,
+                                             ref encrypted_license);
+
+                // Message has already been displayed
+                if(!ret)
+                    return;
+
+                if(status == 0)
+                {
+                    // Account not activated ...
+                    MessageBox.Show("Your account is not activated. Visit our website to get your FREE registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                // Three days buffer ...
+                if(expiration.AddDays(3.0) < DateTime.Now)
+                {
+                    // Account expired ...
+                    MessageBox.Show("Your registration has expired. Visit our website to add more time to your subscription", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                if(encrypted_license.Length == 0)
+                {
+                    // Application not registered ...
+                    MessageBox.Show("Your account has never been activated. Visit our website to get your FREE registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                // Make sure we have the same password as the server
+                string serverPassword = this.currentProfile.Password;
+                
+                // Decrypt the encrypted_license
+
+                // Validate the result
+
+                // If decryption failed
+                    
+                    // Ask for the password if decryption failed
+                    
+                    // Save the new password
+
+                // All ok ... lets proceed.
+                this.persistor.Synchronize(serverPassword);
+                this.persistor.SaveData(true);
+
+                return;
+             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace, "Synchronization error", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private void synchronizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!currentProfile.SkipSyncWarning)
+            {
+                CryptoEditorMessageForm messageForm = new CryptoEditorMessageForm();
+                messageForm.Text = "Internet access";
+                messageForm.Size = new Size(350, 150);
+                messageForm.messageTextBox.Text =
+                    "CryptoEditor will access the internet to backup your encrypted data. No password is transfered over the internet because your data is encrypted on your computer before to be sent to our servers. If you dont feel safe, please visit us online to read more about our technology.";
+
+                DialogResult ret = messageForm.ShowDialog();
+
+                if (messageForm.showAgainCheckBox.Checked != currentProfile.SkipSyncWarning)
+                {
+                    currentProfile.SkipSyncWarning = messageForm.showAgainCheckBox.Checked;
+                    currentProfile.Save();
+                }
+
+                if (ret != System.Windows.Forms.DialogResult.OK)
+                    return;
+            }
+            
+            //oldSynk();
+            newSync();
         }
 
         private void treeView_DragOver(object sender, DragEventArgs e)
@@ -693,16 +685,7 @@ namespace CryptoEditor
             if(!currentProfile.Email.Equals(form.emailAddress.Text))
             {
                 // Email has changed ...
-                CryptoEditorMessageForm messageForm = new CryptoEditorMessageForm();
-                messageForm.Text = "Your email address has changed ...";
-                messageForm.Size = new Size(350, 150);
-                messageForm.showAgainCheckBox.Visible = false;
-                messageForm.messageTextBox.Text =
-                    "CryptoEditor will access the internet to backup your encrypted data. No password is transfered over the internet because your data is encrypted on your computer before to be sent to our servers. If you dont feel safe, please visit us online to read more about our technology.";
-
-                DialogResult ret = messageForm.ShowDialog();
-                if (ret != System.Windows.Forms.DialogResult.OK)
-                    return;
+                MessageBox.Show("Changing your email address ...", "NOT YET IMPLEMENTED");
             }
         }
 
@@ -844,6 +827,49 @@ namespace CryptoEditor
         {
             if (treeView.SelectedNode != null)
                 treeView.SelectedNode.BackColor = Color.Empty;
+        }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string oldKey = currentProfile.Key;
+
+            CryptoEditorRegistration form = new CryptoEditorRegistration();
+            form.emailTextBox.Text = currentProfile.Email;
+            if (form.ShowDialog() != DialogResult.OK)
+                return;
+
+            if (form.keyTextBox.Text.Length == 0)
+                return;
+
+            if (form.keyTextBox.Text.Equals(oldKey))
+                return;
+
+            string encryptedLicense = CryptoEditorEncryption.Encrypt(keyPrefix + form.keyTextBox.Text, currentProfile.Password);
+
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                bool ret = HttpServiceClient.PutLicense(currentProfile.Email, form.keyTextBox.Text, encryptedLicense, true);
+                if (!ret)
+                {
+                    return;
+                }
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+
+            if (form.keyTextBox.Text.Length > 0)
+            {
+                currentProfile.Email = form.emailTextBox.Text;
+                currentProfile.Key = form.keyTextBox.Text;
+                currentProfile.Save();
+            }
+
+            MessageBox.Show("Confirmation succeeded. You can now use the Synchronization service.",
+                "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -14,5 +14,20 @@ namespace CryptoEditor
         {
             InitializeComponent();
         }
+
+        private void linkCryptoEditor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+        }
+
+        private void CryptoEditorRegistration_Load(object sender, EventArgs e)
+        {
+#if DEBUG
+            string linkText = "http://localhost:8080";
+#else
+            string linkText = "http://cryptoeditor.appspot.com";
+#endif
+            linkCryptoEditor.Links.Add(0, linkText.Length, linkText);
+        }
     }
 }

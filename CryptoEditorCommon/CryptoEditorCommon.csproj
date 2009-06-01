@@ -57,6 +57,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -67,6 +68,7 @@
     <Compile Include="CryptoEditorPluginAttribute.cs" />
     <Compile Include="CryptoEditorProfile.cs" />
     <Compile Include="CryptoEditorUtils.cs" />
+    <Compile Include="CryptoEditorHttpPostHelper.cs" />
     <Compile Include="Interfaces\ICryptoEditor.cs" />
     <Compile Include="Interfaces\ICryptoEditorDetail.cs" />
     <Compile Include="Interfaces\ICryptoEditorPluginItem.cs" />

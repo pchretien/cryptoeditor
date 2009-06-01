@@ -76,22 +76,6 @@ namespace CryptoEditor.Common
             }
         }
 
-        public void BackupToTheWeb()
-        {
-            BackupService client = new BackupService();
-
-            foreach (ICryptoEditor plugin in plugins)
-            {
-                if (!plugin.isPersistent())
-                    continue;
-
-                CryptoXML xmlRoot = Encrypt(plugin);
-                CryptoEditorServiceCodes ret = client.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlRoot.OuterXml);
-
-            }
-            
-        }
-
         public void LoadData()
         {
             if( !CurrentProfile.PasswordValidated )
@@ -137,43 +121,6 @@ namespace CryptoEditor.Common
             }
         }
 
-        // Should restore the data from the web and then re-initiate plugins
-        public void RestoreFromTheWeb()
-        {
-            BackupService client = new BackupService();
-
-            if (!CurrentProfile.PasswordValidated)
-                return;
-
-            foreach (ICryptoEditor plugin in plugins)
-            {
-                string data = client.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString());
-                if(data == null)
-                {
-                    plugin.Load(data);
-                    continue;
-                }
-
-                CryptoXML xmlRoot = new CryptoXML();
-                xmlRoot.LoadXml(data);
-
-                if (xmlRoot.DocumentElement.Name.Equals("CryptoEditorDefault"))
-                {
-                    // This is text only data or a not well formed XML document
-                    xmlRoot.Decrypt("/*", true);
-                    plugin.Load(xmlRoot.DocumentElement.InnerText);
-                    continue;
-                }
-
-                xmlRoot.Password = CurrentProfile.Password;
-#if !NO_ENCRYPT
-                xmlRoot.Decrypt(plugin.EncryptionXPath, true);
-#endif
-
-                plugin.Load(xmlRoot.OuterXml);
-            }
-        }
-
         public void Synchronize(string serverPassword)
         {
             if(CurrentProfile.Email.Length == 0 || CurrentProfile.Name.Length == 0)
@@ -198,13 +145,22 @@ namespace CryptoEditor.Common
                         continue;
 
                     // Load the XML of that plugin from the web
-                    string webData = client.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString());
+                    //string webData = client.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString());
+                    string webData = "";
+                    bool ret = HttpServiceClient.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), ref webData);
+                    if(!ret)
+                        return;
+
                     if (webData == null || webData.Length == 0)
                     {
                         // The document does not exist on the server.
                         // This will happen only at the first synchro.
                         CryptoXML xmlEncrypted = Encrypt(plugin);
-                        client.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
+                        //client.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
+                        ret = HttpServiceClient.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
+                        if(!ret)
+                            return;
+
                         continue;
                     }
 
@@ -248,7 +204,9 @@ namespace CryptoEditor.Common
                     // Publish the resulting xml on the web ...
                     xmlWeb.Password = CurrentProfile.Password;
                     xmlWeb.Encrypt(plugin.EncryptionXPath, true);
-                    client.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlWeb.OuterXml);
+                    ret = HttpServiceClient.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlWeb.OuterXml);
+                    if(!ret)
+                        return;
                 }
                 finally
                 {

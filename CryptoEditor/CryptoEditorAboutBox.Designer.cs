@@ -34,8 +34,6 @@ namespace CryptoEditor
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.okButton = new System.Windows.Forms.Button();
             this.linkCryptoEditor = new System.Windows.Forms.LinkLabel();
-            this.keyTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
@@ -83,7 +81,7 @@ namespace CryptoEditor
             // okButton
             // 
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(157, 161);
+            this.okButton.Location = new System.Drawing.Point(157, 101);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 24;
@@ -92,34 +90,13 @@ namespace CryptoEditor
             // linkCryptoEditor
             // 
             this.linkCryptoEditor.AutoSize = true;
-            this.linkCryptoEditor.Location = new System.Drawing.Point(14, 171);
+            this.linkCryptoEditor.Location = new System.Drawing.Point(14, 111);
             this.linkCryptoEditor.Name = "linkCryptoEditor";
-            this.linkCryptoEditor.Size = new System.Drawing.Size(114, 13);
+            this.linkCryptoEditor.Size = new System.Drawing.Size(112, 13);
             this.linkCryptoEditor.TabIndex = 25;
             this.linkCryptoEditor.TabStop = true;
-            this.linkCryptoEditor.Text = "www.CryptoEditor.com";
+            this.linkCryptoEditor.Text = "www.cryptoeditor.com";
             this.linkCryptoEditor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCryptoEditor_LinkClicked);
-            // 
-            // keyTextBox
-            // 
-            this.helpProvider1.SetHelpString(this.keyTextBox, "The license key you received by email. This license will unlock the web synchroni" +
-                    "zation service.");
-            this.keyTextBox.Location = new System.Drawing.Point(17, 122);
-            this.keyTextBox.Name = "keyTextBox";
-            this.helpProvider1.SetShowHelp(this.keyTextBox, true);
-            this.keyTextBox.Size = new System.Drawing.Size(214, 20);
-            this.keyTextBox.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.keyTextBox, "The license key you received by email. \r\nThis license will unlock the web \r\nsynch" +
-                    "ronization service.");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Registration Key";
             // 
             // toolTip1
             // 
@@ -132,9 +109,7 @@ namespace CryptoEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 197);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.keyTextBox);
+            this.ClientSize = new System.Drawing.Size(245, 140);
             this.Controls.Add(this.linkCryptoEditor);
             this.Controls.Add(this.labelProductName);
             this.Controls.Add(this.labelVersion);
@@ -165,8 +140,6 @@ namespace CryptoEditor
         private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.LinkLabel linkCryptoEditor;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox keyTextBox;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
     }

@@ -18,7 +18,12 @@ namespace CryptoEditorHome
         private bool connected = false;
         private string loading = "";
         private string offline = "";
-        private readonly string landing = "http://www.cryptoeditor.com";
+
+#if DEBUG
+        private readonly string landing = "http://localhost:8080";
+#else
+        private readonly string landing = "http://cryptoeditor.appspot.com";
+#endif
 
         public CryptoEditorHomeDetail(ICryptoEditor plugin)
         {
@@ -37,7 +42,11 @@ namespace CryptoEditorHome
         private void TestConnection()
         {
             System.Net.WebResponse ret = null;
-            string ping = "http://www.cryptoeditor.com/ping.html";
+#if DEBUG
+            string ping = "http://localhost:8080/ping";
+#else
+            string ping = "http://cryptoeditor.appspot.com/ping";
+#endif
             System.Net.WebRequest request = System.Net.WebRequest.Create(ping);
 
             try

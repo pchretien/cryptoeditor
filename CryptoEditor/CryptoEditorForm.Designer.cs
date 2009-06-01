@@ -45,9 +45,6 @@ namespace CryptoEditor
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupToTheWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoreFromTheWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.synchronizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gettingStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +53,7 @@ namespace CryptoEditor
             this.lockTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -223,37 +221,13 @@ namespace CryptoEditor
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backupToTheWebToolStripMenuItem,
-            this.restoreFromTheWebToolStripMenuItem,
-            this.toolStripSeparator2,
+            this.registerToolStripMenuItem,
             this.synchronizeToolStripMenuItem});
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
             this.backupToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.backupToolStripMenuItem.Text = "&Online";
             this.backupToolStripMenuItem.MouseLeave += new System.EventHandler(this.backupToolStripMenuItem_MouseLeave);
             this.backupToolStripMenuItem.MouseEnter += new System.EventHandler(this.backupToolStripMenuItem_MouseEnter);
-            // 
-            // backupToTheWebToolStripMenuItem
-            // 
-            this.backupToTheWebToolStripMenuItem.Name = "backupToTheWebToolStripMenuItem";
-            this.backupToTheWebToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.backupToTheWebToolStripMenuItem.Text = "Backup to the web";
-            this.backupToTheWebToolStripMenuItem.Visible = false;
-            this.backupToTheWebToolStripMenuItem.Click += new System.EventHandler(this.backupToTheWebToolStripMenuItem_Click);
-            // 
-            // restoreFromTheWebToolStripMenuItem
-            // 
-            this.restoreFromTheWebToolStripMenuItem.Name = "restoreFromTheWebToolStripMenuItem";
-            this.restoreFromTheWebToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.restoreFromTheWebToolStripMenuItem.Text = "Restore from the web";
-            this.restoreFromTheWebToolStripMenuItem.Visible = false;
-            this.restoreFromTheWebToolStripMenuItem.Click += new System.EventHandler(this.restoreFromTheWebToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(187, 6);
-            this.toolStripSeparator2.Visible = false;
             // 
             // synchronizeToolStripMenuItem
             // 
@@ -280,7 +254,6 @@ namespace CryptoEditor
             this.gettingStartedToolStripMenuItem.Name = "gettingStartedToolStripMenuItem";
             this.gettingStartedToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.gettingStartedToolStripMenuItem.Text = "Getting started ...";
-            this.gettingStartedToolStripMenuItem.Visible = false;
             this.gettingStartedToolStripMenuItem.Click += new System.EventHandler(this.gettingStartedToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
@@ -317,6 +290,13 @@ namespace CryptoEditor
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // registerToolStripMenuItem
+            // 
+            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.registerToolStripMenuItem.Text = "&Register ...";
+            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
             // CryptoEditorForm
             // 
@@ -361,9 +341,6 @@ namespace CryptoEditor
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backupToTheWebToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restoreFromTheWebToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem synchronizeToolStripMenuItem;
         private System.Windows.Forms.Timer lockTimer;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -373,6 +350,7 @@ namespace CryptoEditor
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem gettingStartedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
     }
 }
 

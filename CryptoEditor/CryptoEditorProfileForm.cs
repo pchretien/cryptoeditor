@@ -16,12 +16,6 @@ namespace CryptoEditor
             set { profileName.Text = value; }
         }
 
-        public string EmailAddress
-        {
-            get { return emailAddress.Text; }
-            set { emailAddress.Text = value; }
-        }
-
         public string Password
         {
             get { return password1.Text; }
