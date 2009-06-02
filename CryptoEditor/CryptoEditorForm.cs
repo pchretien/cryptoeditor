@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
-using CryptoEditorWeb.CryptoEditorServiceBackup;
+//using CryptoEditorWeb.CryptoEditorServiceBackup;
 
 namespace CryptoEditor
 {
@@ -306,137 +306,6 @@ namespace CryptoEditor
             progressForm.ShowDialog();
         }
 
-        private void oldSynk()
-        {
-
-            //System.Threading.Thread newThread = new Thread(new ThreadStart(CryptoEditorForm.ShowWait));
-            //newThread.Start();
-
-            System.Windows.Forms.Cursor old = Cursor;
-            Cursor = Cursors.WaitCursor;
-            try
-            {
-                // Get the encrypted key from the server
-                BackupService client = new BackupService();
-                string encryptedKey = client.GetEncryptedLicense(this.currentProfile.Email);
-
-                // Decrypt the key
-                string decryptedKey = CryptoEditorEncryption.Decrypt(encryptedKey, this.currentProfile.Password);
-
-                // Validate the decrypted key with the server
-                CryptoEditorServiceCodes isValid = client.IsLicenseValid(this.currentProfile.Email, decryptedKey);
-
-                // If the user has never been registered
-                if (isValid == CryptoEditorServiceCodes.USER_DOES_NOT_EXIST)
-                {
-                    CryptoEditorRegistration form = new CryptoEditorRegistration();
-                    form.emailTextBox.Text = this.currentProfile.Email;
-                    DialogResult ret = form.ShowDialog();
-                    if (ret != DialogResult.OK)
-                        return;
-
-                    this.Cursor = Cursors.WaitCursor;
-
-                    if (form.emailTextBox.Text.Length == 0 || form.emailTextBox.Text.IndexOf("@") < 0)
-                    {
-                        MessageBox.Show("Enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    this.currentProfile.Email = form.emailTextBox.Text;
-
-                    // Register
-                    CryptoEditorServiceCodes registered = client.Register(this.currentProfile.Email, this.currentProfile.Name, this.currentProfile.Name);
-                    if (registered == CryptoEditorServiceCodes.USER_EXIST)
-                    {
-                        MessageBox.Show("A user with that email and profile name already exist!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    if (registered != CryptoEditorServiceCodes.SUCCESS)
-                    {
-                        MessageBox.Show("Registration failed. Are you connected to the internet?", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    MessageBox.Show("Registration succeeded. You will receive your key by email.", "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                // The user has never confirmed its registration.
-                if (encryptedKey.Length == 0)
-                {
-                    MessageBox.Show("Your accound has not been activated. Please enter the key you received by email into the About box.",
-                                    "Account Not Activated", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-
-                // If the key has not been properly decrypted
-                string serverPassword = this.currentProfile.Password;
-                while (isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
-                {
-                    CryptoEditorPasswordSelection form = new CryptoEditorPasswordSelection();
-                    if (form.ShowDialog() != System.Windows.Forms.DialogResult.OK)
-                        return;
-
-                    this.Cursor = Cursors.WaitCursor;
-
-                    serverPassword = form.Password.Text;
-                    decryptedKey = CryptoEditorEncryption.Decrypt(encryptedKey, serverPassword);
-
-                    // Validate the decrypted key with the server
-                    isValid = client.IsLicenseValid(this.currentProfile.Email, decryptedKey);
-
-                    if (isValid != CryptoEditorServiceCodes.INVALID_LICENSE && form.newRadioButton.Checked)
-                        this.currentProfile.Password = form.Password.Text;
-
-                    if (isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
-                        MessageBox.Show("The server password is incorrect! Please retype your password.", "Incorrect password",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-
-                // At this point, the key has been properly decrypted. Update the local key and save the profile
-                this.currentProfile.Key = decryptedKey;
-                this.currentProfile.Save();
-
-                client.UpdateKey(this.currentProfile.Email, this.currentProfile.Key,
-                                 CryptoEditorEncryption.Encrypt(this.currentProfile.Key, this.currentProfile.Password));
-
-                if (isValid == CryptoEditorServiceCodes.USER_DISABLED)
-                {
-                    MessageBox.Show("Your accound has been disabled. Call the CryptoEditor support for more details.",
-                                    "Account Disabled", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-
-                if (isValid == CryptoEditorServiceCodes.USER_EXPIRED)
-                {
-                    MessageBox.Show("Your account access has expired. Please visit us to reactivate your account.",
-                                    "Account Expired", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-
-                if (isValid == CryptoEditorServiceCodes.SUCCESS)
-                {
-                    // SYNCHRONIZE
-                    this.persistor.Synchronize(serverPassword);
-                    this.persistor.SaveData(true);
-                }
-            }
-            catch (WebException ex)
-            {
-                MessageBox.Show(ex.Message,
-                    "Connection error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Cursor = old;
-                //newThread.Abort();
-            }
-        }
-
         private void newSync()
         {
             try
@@ -444,6 +313,8 @@ namespace CryptoEditor
                 int status = 0;
                 DateTime expiration = DateTime.Now;
                 string encrypted_license = "";
+
+                Cursor = Cursors.WaitCursor;
 
                 bool ret = HttpServiceClient.GetProfile(currentProfile.Email,
                                              ref status,
@@ -489,11 +360,41 @@ namespace CryptoEditor
                 }
                 else
                 {
-                    // If decryption failed
+                    while (true)
+                    {
+                        CryptoEditorPasswordSelection form = new CryptoEditorPasswordSelection();
+                        if (form.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                            return;
 
-                    // Ask for the password if decryption failed
+                        this.Cursor = Cursors.WaitCursor;
 
-                    // Save the new password
+                        serverPassword = form.Password.Text;
+                        decryptedKey = CryptoEditorEncryption.Decrypt(encrypted_license, serverPassword);
+
+                        if (decryptedKey.StartsWith(CryptoEditorProfile.keyPrefix))
+                        {
+                            // Password is valid ...
+                            decryptedKey = decryptedKey.Substring(CryptoEditorProfile.keyPrefix.Length);
+
+                            if (form.newRadioButton.Checked)
+                                currentProfile.Password = form.Password.Text;
+
+                            break;
+                        }
+
+                        this.currentProfile.Password = form.Password.Text;
+                        MessageBox.Show("The server password is incorrect! Please retype your password.", "Incorrect password",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+
+                    // At this point, the key has been properly decrypted. Update the local key and save the profile
+                    this.currentProfile.Key = decryptedKey;
+                    this.currentProfile.Save();
+
+                    HttpServiceClient.PutLicense(currentProfile.Email, currentProfile.Key,
+                                                 CryptoEditorEncryption.Encrypt(CryptoEditorProfile.keyPrefix + currentProfile.Key,
+                                                                                currentProfile.Password), false);
+                    
                 }
 
                 // All ok ... lets proceed.
@@ -507,6 +408,10 @@ namespace CryptoEditor
             {
                 MessageBox.Show(ex.Message + ex.StackTrace, "Synchronization error", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 
@@ -848,9 +753,6 @@ namespace CryptoEditor
             if (form.keyTextBox.Text.Length == 0)
                 return;
 
-            if (form.keyTextBox.Text.Equals(oldKey))
-                return;
-
             string encryptedLicense = CryptoEditorEncryption.Encrypt(CryptoEditorProfile.keyPrefix + form.keyTextBox.Text, currentProfile.Password);
 
             try
@@ -878,5 +780,136 @@ namespace CryptoEditor
             MessageBox.Show("Confirmation succeeded. You can now use the Synchronization service.",
                 "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        //private void oldSynk()
+        //{
+
+        //    //System.Threading.Thread newThread = new Thread(new ThreadStart(CryptoEditorForm.ShowWait));
+        //    //newThread.Start();
+
+        //    System.Windows.Forms.Cursor old = Cursor;
+        //    Cursor = Cursors.WaitCursor;
+        //    try
+        //    {
+        //        // Get the encrypted key from the server
+        //        BackupService client = new BackupService();
+        //        string encryptedKey = client.GetEncryptedLicense(this.currentProfile.Email);
+
+        //        // Decrypt the key
+        //        string decryptedKey = CryptoEditorEncryption.Decrypt(encryptedKey, this.currentProfile.Password);
+
+        //        // Validate the decrypted key with the server
+        //        CryptoEditorServiceCodes isValid = client.IsLicenseValid(this.currentProfile.Email, decryptedKey);
+
+        //        // If the user has never been registered
+        //        if (isValid == CryptoEditorServiceCodes.USER_DOES_NOT_EXIST)
+        //        {
+        //            CryptoEditorRegistration form = new CryptoEditorRegistration();
+        //            form.emailTextBox.Text = this.currentProfile.Email;
+        //            DialogResult ret = form.ShowDialog();
+        //            if (ret != DialogResult.OK)
+        //                return;
+
+        //            this.Cursor = Cursors.WaitCursor;
+
+        //            if (form.emailTextBox.Text.Length == 0 || form.emailTextBox.Text.IndexOf("@") < 0)
+        //            {
+        //                MessageBox.Show("Enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                return;
+        //            }
+
+        //            this.currentProfile.Email = form.emailTextBox.Text;
+
+        //            // Register
+        //            CryptoEditorServiceCodes registered = client.Register(this.currentProfile.Email, this.currentProfile.Name, this.currentProfile.Name);
+        //            if (registered == CryptoEditorServiceCodes.USER_EXIST)
+        //            {
+        //                MessageBox.Show("A user with that email and profile name already exist!", "Account Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                return;
+        //            }
+
+        //            if (registered != CryptoEditorServiceCodes.SUCCESS)
+        //            {
+        //                MessageBox.Show("Registration failed. Are you connected to the internet?", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                return;
+        //            }
+
+        //            MessageBox.Show("Registration succeeded. You will receive your key by email.", "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            return;
+        //        }
+
+        //        // The user has never confirmed its registration.
+        //        if (encryptedKey.Length == 0)
+        //        {
+        //            MessageBox.Show("Your accound has not been activated. Please enter the key you received by email into the About box.",
+        //                            "Account Not Activated", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+        //            return;
+        //        }
+
+        //        // If the key has not been properly decrypted
+        //        string serverPassword = this.currentProfile.Password;
+        //        while (isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
+        //        {
+        //            CryptoEditorPasswordSelection form = new CryptoEditorPasswordSelection();
+        //            if (form.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+        //                return;
+
+        //            this.Cursor = Cursors.WaitCursor;
+
+        //            serverPassword = form.Password.Text;
+        //            decryptedKey = CryptoEditorEncryption.Decrypt(encryptedKey, serverPassword);
+
+        //            // Validate the decrypted key with the server
+        //            isValid = client.IsLicenseValid(this.currentProfile.Email, decryptedKey);
+
+        //            if (isValid != CryptoEditorServiceCodes.INVALID_LICENSE && form.newRadioButton.Checked)
+        //                this.currentProfile.Password = form.Password.Text;
+
+        //            if (isValid == CryptoEditorServiceCodes.INVALID_LICENSE)
+        //                MessageBox.Show("The server password is incorrect! Please retype your password.", "Incorrect password",
+        //                                MessageBoxButtons.OK, MessageBoxIcon.Stop);
+        //        }
+
+        //        // At this point, the key has been properly decrypted. Update the local key and save the profile
+        //        this.currentProfile.Key = decryptedKey;
+        //        this.currentProfile.Save();
+
+        //        client.UpdateKey(this.currentProfile.Email, this.currentProfile.Key,
+        //                         CryptoEditorEncryption.Encrypt(this.currentProfile.Key, this.currentProfile.Password));
+
+        //        if (isValid == CryptoEditorServiceCodes.USER_DISABLED)
+        //        {
+        //            MessageBox.Show("Your accound has been disabled. Call the CryptoEditor support for more details.",
+        //                            "Account Disabled", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+        //            return;
+        //        }
+
+        //        if (isValid == CryptoEditorServiceCodes.USER_EXPIRED)
+        //        {
+        //            MessageBox.Show("Your account access has expired. Please visit us to reactivate your account.",
+        //                            "Account Expired", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+        //            return;
+        //        }
+
+        //        if (isValid == CryptoEditorServiceCodes.SUCCESS)
+        //        {
+        //            // SYNCHRONIZE
+        //            this.persistor.Synchronize(serverPassword);
+        //            this.persistor.SaveData(true);
+        //        }
+        //    }
+        //    catch (WebException ex)
+        //    {
+        //        MessageBox.Show(ex.Message,
+        //            "Connection error",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error);
+        //    }
+        //    finally
+        //    {
+        //        Cursor = old;
+        //        //newThread.Abort();
+        //    }
+        //}
     }
 }

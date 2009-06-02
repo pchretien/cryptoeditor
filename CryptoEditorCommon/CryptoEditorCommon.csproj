@@ -76,12 +76,6 @@
     <Compile Include="Interfaces\ICryptoEditorView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CryptoEditorWeb\CryptoEditorWeb.csproj">
-      <Project>{04A2ACBF-0C0B-44AC-B13F-F2A5F805F8CB}</Project>
-      <Name>CryptoEditorWeb</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

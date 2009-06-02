@@ -45,7 +45,7 @@ namespace CryptoEditor
             this.cancelButton.Location = new System.Drawing.Point(171, 136);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 1;
+            this.cancelButton.TabIndex = 3;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -56,7 +56,7 @@ namespace CryptoEditor
             this.okButton.Location = new System.Drawing.Point(90, 136);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 0;
+            this.okButton.TabIndex = 2;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +67,7 @@ namespace CryptoEditor
             this.emailTextBox.Location = new System.Drawing.Point(15, 71);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(231, 20);
-            this.emailTextBox.TabIndex = 2;
+            this.emailTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -85,7 +85,7 @@ namespace CryptoEditor
             this.keyTextBox.Location = new System.Drawing.Point(15, 110);
             this.keyTextBox.Name = "keyTextBox";
             this.keyTextBox.Size = new System.Drawing.Size(231, 20);
-            this.keyTextBox.TabIndex = 2;
+            this.keyTextBox.TabIndex = 1;
             // 
             // label2
             // 

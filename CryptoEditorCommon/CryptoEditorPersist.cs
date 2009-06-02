@@ -3,7 +3,7 @@ using System.Collections;
 using System.Windows.Forms;
 using System.Xml;
 using com.CryptoTools;
-using CryptoEditorWeb.CryptoEditorServiceBackup;
+//using CryptoEditorWeb.CryptoEditorServiceBackup;
 using CryptoEditor.Common.Interfaces;
 using CryptoEditor.Common;
 
@@ -132,7 +132,7 @@ namespace CryptoEditor.Common
                 return;
             }
 
-            BackupService client = new BackupService();
+//            BackupService client = new BackupService();
 
             if (!CurrentProfile.PasswordValidated)
                 return;

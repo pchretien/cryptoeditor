@@ -19,7 +19,7 @@ namespace CryptoEditor.Common
 
         private int verticalSplitter = 134;
         private int horizontalSplitter = 190;
-        private int width = 600;
+        private int width = 800;
         private int height = 450;
         private int idleTimeout = 1;
         private bool skipSyncWarning = false;

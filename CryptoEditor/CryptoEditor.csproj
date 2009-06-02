@@ -197,10 +197,6 @@
       <Project>{FBC86B24-DD94-4B15-AC73-F39E3ECA3734}</Project>
       <Name>CryptoEditorHome</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CryptoEditorWeb\CryptoEditorWeb.csproj">
-      <Project>{04A2ACBF-0C0B-44AC-B13F-F2A5F805F8CB}</Project>
-      <Name>CryptoEditorWeb</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CryptoLicense\CryptoLicense.csproj">
       <Project>{13F10403-2279-45CA-9A0A-717B4D769599}</Project>
       <Name>CryptoLicense</Name>
