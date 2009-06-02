@@ -38,8 +38,6 @@ namespace CryptoEditor
 
         private bool isHome = true;
 
-        private static string keyPrefix = "_ce_";
-        
         public CryptoEditorForm()
         {
             Application.Idle += new EventHandler(Application_Idle);
@@ -139,6 +137,7 @@ namespace CryptoEditor
                         {
                             currentProfile.PasswordValidated = true;
                             currentProfile.Password = formPassword.Password;
+                            currentProfile.DecryptLicense();
                             this.Text = "CryptoEditor - " + currentProfile.Name + "/" + currentProfile.Email;
 
                             break;
@@ -484,9 +483,9 @@ namespace CryptoEditor
                 string decryptedKey = CryptoEditorEncryption.Decrypt(encrypted_license, currentProfile.Password);
                 
                 // Validate the result
-                if (decryptedKey.StartsWith(keyPrefix))
+                if (decryptedKey.StartsWith(CryptoEditorProfile.keyPrefix))
                 {
-                    decryptedKey = decryptedKey.Substring(keyPrefix.Length);
+                    decryptedKey = decryptedKey.Substring(CryptoEditorProfile.keyPrefix.Length);
                 }
                 else
                 {
@@ -852,7 +851,7 @@ namespace CryptoEditor
             if (form.keyTextBox.Text.Equals(oldKey))
                 return;
 
-            string encryptedLicense = CryptoEditorEncryption.Encrypt(keyPrefix + form.keyTextBox.Text, currentProfile.Password);
+            string encryptedLicense = CryptoEditorEncryption.Encrypt(CryptoEditorProfile.keyPrefix + form.keyTextBox.Text, currentProfile.Password);
 
             try
             {

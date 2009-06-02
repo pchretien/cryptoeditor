@@ -24,6 +24,8 @@ namespace CryptoEditor.Common
         private int idleTimeout = 1;
         private bool skipSyncWarning = false;
 
+        public static readonly string keyPrefix = "_ce_";
+
         public CryptoEditorProfile()
         {
         }
@@ -43,7 +45,7 @@ namespace CryptoEditor.Common
                 id = Guid.NewGuid().ToString();
 
             encryptedPassword = CryptoEditorEncryption.Hash(password);
-            encryptedKey = CryptoEditorEncryption.Encrypt(key, password);
+            encryptedKey = CryptoEditorEncryption.Encrypt(keyPrefix + key, password);
 
             System.IO.FileStream stream = new System.IO.FileStream(id+".profile", System.IO.FileMode.Create);
             XmlSerializer serializer = new XmlSerializer( typeof(CryptoEditorProfile) );
@@ -63,8 +65,6 @@ namespace CryptoEditor.Common
             encryptedPassword = profile.EncryptedPassword;
             encryptedKey = profile.EncryptedKey;
 
-            key = CryptoEditorEncryption.Decrypt(encryptedKey, password);
-
             verticalSplitter = profile.VerticalSplitter;
             horizontalSplitter = profile.HorizontalSplitter;
             width = profile.Width;
@@ -73,6 +73,16 @@ namespace CryptoEditor.Common
             skipSyncWarning = profile.SkipSyncWarning;
 
             idleTimeout = profile.IdleTimeout;
+        }
+
+        public void DecryptLicense()
+        {
+            if (passwordValidated)
+            {
+                key = CryptoEditorEncryption.Decrypt(encryptedKey, password);
+                if (key.Length > keyPrefix.Length)
+                    key = key.Substring(keyPrefix.Length);
+            }
         }
 
         public string Name
