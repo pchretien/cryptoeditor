@@ -210,7 +210,7 @@ namespace CryptoEditor
             if (treeView.SelectedNode != null)
             {
                 ICryptoEditorRootNode node = (ICryptoEditorRootNode)treeView.SelectedNode;
-                if (node.GetType().ToString().IndexOf("CryptoEditorHomeRootNode")!=-1)
+                if (node.GetType().ToString().IndexOf("CryptoEditorHomeRootNode") > -1 )
                 {
                     isHome = true;
                     splitContainer2.Panel1Collapsed = true;
@@ -328,7 +328,8 @@ namespace CryptoEditor
                 if(status == 0)
                 {
                     // Account not activated ...
-                    MessageBox.Show("Your account is not activated. Visit our website to get your FREE registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                    form.ShowDialog();
                     return;
                 }
 
@@ -336,14 +337,16 @@ namespace CryptoEditor
                 if(expiration.AddDays(3.0) < DateTime.Now)
                 {
                     // Account expired ...
-                    MessageBox.Show("Your registration has expired. Visit our website to add more time to your subscription", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your registration has expired. Visit our website to add more time to your subscription", "Account expired");
+                    form.ShowDialog();
                     return;
                 }
 
                 if(encrypted_license.Length == 0)
                 {
                     // Application not registered ...
-                    MessageBox.Show("Your account has never been activated. Visit our website to get your FREE registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                    form.ShowDialog();
                     return;
                 }
 
@@ -725,8 +728,13 @@ namespace CryptoEditor
 
         private void gettingStartedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CryptoEditorGettingStartedHelp form = new CryptoEditorGettingStartedHelp();
-            form.ShowDialog();
+#if DEBUG
+            string linkText = "http://localhost:8080";
+#else
+            string linkText = "http://cryptoeditor.appspot.com";
+#endif
+
+            System.Diagnostics.Process.Start(linkText);
         }
 
         private void treeView_Leave(object sender, EventArgs e)
@@ -741,10 +749,8 @@ namespace CryptoEditor
                 treeView.SelectedNode.BackColor = Color.Empty;
         }
 
-        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            string oldKey = currentProfile.Key;
-
             CryptoEditorRegistration form = new CryptoEditorRegistration();
             form.emailTextBox.Text = currentProfile.Email;
             if (form.ShowDialog() != DialogResult.OK)
@@ -757,7 +763,7 @@ namespace CryptoEditor
 
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
 
                 bool ret = HttpServiceClient.PutLicense(form.emailTextBox.Text, form.keyTextBox.Text, encryptedLicense, true);
                 if (!ret)
@@ -767,7 +773,7 @@ namespace CryptoEditor
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
 
             if (form.keyTextBox.Text.Length > 0)
@@ -781,6 +787,7 @@ namespace CryptoEditor
                 "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        
         //private void oldSynk()
         //{
 

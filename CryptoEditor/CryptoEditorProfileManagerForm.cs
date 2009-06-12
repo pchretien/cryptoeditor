@@ -146,5 +146,11 @@ namespace CryptoEditor
                 delete.Enabled = false;
             }
         }
+
+        private void CryptoEditorProfileManagerForm_Shown(object sender, EventArgs e)
+        {
+            if (profilesListView.Items.Count == 0)
+                MessageBox.Show("The first step is to create a new user. Click the 'Add User' button.", "No users defined", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

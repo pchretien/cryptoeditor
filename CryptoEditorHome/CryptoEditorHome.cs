@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 using CryptoEditorHome;
@@ -114,6 +115,11 @@ namespace CryptoEditorHome
         public bool isPersistent()
         {
             return false;
+        }
+
+        public void GoTo(string destination)
+        {
+            MessageBox.Show("Goto ...");
         }
     }
 }

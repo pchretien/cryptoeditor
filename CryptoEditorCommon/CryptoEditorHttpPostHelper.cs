@@ -135,7 +135,10 @@ namespace CryptoEditor.Common
                     // USER_DOES_NOT_EXIST
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
-                        MessageBox.Show("Visit our website to get your FREE registration (www.cryptoeditor.com)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("This installation of CryptoEditor is not registered. Visit our website to get your FREE registration key", "Installation not registered");
+                        form.ShowDialog();
+                    }
                     else
                         MessageBox.Show("Unknown error (GetProfile)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
@@ -235,11 +238,20 @@ namespace CryptoEditor.Common
                     // USER_EXPIRED
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
-                        MessageBox.Show("Visit our website to get your FREE registration (www.cryptoeditor.com)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("This installation of CryptoEditor is not registered. Visit our website to get your FREE registration key", "Installation not registered");
+                        form.ShowDialog();
+                    }
                     if (error.Equals("USER_NOT_ACTIVATED"))
-                        MessageBox.Show("Your account is not activated. Visit our website to get your FREE registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                        form.ShowDialog();
+                    }
                     if (error.Equals("USER_EXPIRED"))
-                        MessageBox.Show("Your registration has expired. Visit our website to add more time to your subscription", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your registration has expired. Visit our website to add more time to your subscription", "Account expired");
+                        form.ShowDialog();
+                    }
                     else
                         MessageBox.Show("Unknown error (PutLicense)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
@@ -284,11 +296,20 @@ namespace CryptoEditor.Common
                     // USER_EXPIRED
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
-                        MessageBox.Show("Visit our website to get your FREE registration (www.cryptoeditor.com)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("This installation of CryptoEditor is not registered. Visit our website to get your FREE registration key", "Installation not registered");
+                        form.ShowDialog();
+                    }
                     if (error.Equals("USER_NOT_ACTIVATED"))
-                        MessageBox.Show("Your account is not activated. Visit our website to get your FREE registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                        form.ShowDialog();
+                    }
                     if (error.Equals("USER_EXPIRED"))
-                        MessageBox.Show("Your registration has expired. Visit our website to add more time to your subscription", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    {
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your registration has expired. Visit our website to add more time to your subscription", "Account expired");
+                        form.ShowDialog();
+                    }
                     else
                         MessageBox.Show("Unknown error (PutLicense)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 

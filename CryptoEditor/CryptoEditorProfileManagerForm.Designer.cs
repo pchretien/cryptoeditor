@@ -158,6 +158,7 @@ namespace CryptoEditor
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users Manager";
             this.Load += new System.EventHandler(this.CryptoEditorProfileManagerForm_Load);
+            this.Shown += new System.EventHandler(this.CryptoEditorProfileManagerForm_Shown);
             this.ResumeLayout(false);
 
         }

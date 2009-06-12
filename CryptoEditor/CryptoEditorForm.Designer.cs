@@ -221,7 +221,6 @@ namespace CryptoEditor
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registerToolStripMenuItem,
             this.synchronizeToolStripMenuItem});
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
             this.backupToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
@@ -232,7 +231,7 @@ namespace CryptoEditor
             // synchronizeToolStripMenuItem
             // 
             this.synchronizeToolStripMenuItem.Name = "synchronizeToolStripMenuItem";
-            this.synchronizeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.synchronizeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.synchronizeToolStripMenuItem.Text = "Synchronize ...";
             this.synchronizeToolStripMenuItem.MouseLeave += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseLeave);
             this.synchronizeToolStripMenuItem.MouseEnter += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseEnter);
@@ -242,6 +241,7 @@ namespace CryptoEditor
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gettingStartedToolStripMenuItem,
+            this.registerToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
@@ -294,9 +294,9 @@ namespace CryptoEditor
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.registerToolStripMenuItem.Text = "&Register ...";
-            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
+            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click_1);
             // 
             // CryptoEditorForm
             // 

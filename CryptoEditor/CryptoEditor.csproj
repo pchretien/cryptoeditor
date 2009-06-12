@@ -70,12 +70,6 @@
     <Compile Include="CryptoEditorForm.Designer.cs">
       <DependentUpon>CryptoEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CryptoEditorGettingStartedHelp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CryptoEditorGettingStartedHelp.Designer.cs">
-      <DependentUpon>CryptoEditorGettingStartedHelp.cs</DependentUpon>
-    </Compile>
     <Compile Include="CryptoEditorMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,10 +205,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CryptoEditorGettingStartedHelp.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>CryptoEditorGettingStartedHelp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CryptoEditorMessageForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CryptoEditorMessageForm.cs</DependentUpon>

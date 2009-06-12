@@ -20,9 +20,9 @@ namespace CryptoEditorHome
         private string offline = "";
 
 #if DEBUG
-        private readonly string landing = "http://localhost:8080";
+        private readonly string landing = "http://localhost:8080/news?base=2";
 #else
-        private readonly string landing = "http://cryptoeditor.appspot.com";
+        private readonly string landing = "http://cryptoeditor.appspot.com/news?base=2";
 #endif
 
         public CryptoEditorHomeDetail(ICryptoEditor plugin)

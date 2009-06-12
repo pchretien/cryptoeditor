@@ -17,10 +17,10 @@ namespace CryptoEditor.Common
         private string encryptedKey = "";
         private string id = "";
 
-        private int verticalSplitter = 134;
+        private int verticalSplitter = 180;
         private int horizontalSplitter = 190;
-        private int width = 800;
-        private int height = 450;
+        private int width = 640;
+        private int height = 480;
         private int idleTimeout = 1;
         private bool skipSyncWarning = false;
 
