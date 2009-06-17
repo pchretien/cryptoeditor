@@ -191,6 +191,8 @@ namespace CryptoEditor.Common
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
                         MessageBox.Show("Invalid email or registration key", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    else if (error.Equals("INVALID_PASSWORD"))
+                        MessageBox.Show("This account already exist and the password does not match your current password.\n\rGo to 'Users/Change Password' to set the correct password.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     else
                         MessageBox.Show("Unknown error (PutLicense)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
