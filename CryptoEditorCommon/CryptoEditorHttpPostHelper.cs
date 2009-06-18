@@ -38,7 +38,7 @@ namespace CryptoEditor.Common
     }
     public class CryptoEditorHttpPostHelper
     {
-    	private string url = "http://cryptoeditor.appspot.com";
+    	private string url = "";
         private string contentType = "";
         private ArrayList parameters = new ArrayList();
 
@@ -114,7 +114,7 @@ namespace CryptoEditor.Common
 #if DEBUG
         private static string serviceAddress = "http://localhost:8080/";
 #else
-        private static string serviceAddress = "http://cryptoeditor.appspot.com/";
+        private static string serviceAddress = "https://cryptoeditor.appspot.com/";
 #endif
 
         public static bool GetProfile(string email, ref int status, ref DateTime expiration, ref string encrypted_license)
