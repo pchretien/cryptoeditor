@@ -44,10 +44,13 @@ namespace CryptoEditor.Common
             if (id == null || id.Length == 0)
                 id = Guid.NewGuid().ToString();
 
+            CryptoEditorUtils.CheckApplicationDataFolder();
+
             encryptedPassword = CryptoEditorEncryption.Hash(password);
             encryptedKey = CryptoEditorEncryption.Encrypt(keyPrefix + key, password);
 
-            System.IO.FileStream stream = new System.IO.FileStream(id+".profile", System.IO.FileMode.Create);
+            string filename = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor\" + id + ".profile";
+            System.IO.FileStream stream = new System.IO.FileStream(filename, System.IO.FileMode.Create);
             XmlSerializer serializer = new XmlSerializer( typeof(CryptoEditorProfile) );
             serializer.Serialize( stream, this );
             stream.Close();
@@ -55,6 +58,8 @@ namespace CryptoEditor.Common
 
         public void Load( string fileName )
         {
+            CryptoEditorUtils.CheckApplicationDataFolder();
+
             System.IO.FileStream stream = new System.IO.FileStream(fileName , System.IO.FileMode.Open);
             XmlSerializer serializer = new XmlSerializer(typeof(CryptoEditorProfile));
             CryptoEditorProfile profile = (CryptoEditorProfile)serializer.Deserialize(stream);

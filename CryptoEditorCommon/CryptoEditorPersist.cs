@@ -68,8 +68,13 @@ namespace CryptoEditor.Common
                 if (!plugin.HasChanged() && !saveAll)
                     continue;
 
+                CryptoEditorUtils.CheckApplicationDataFolder();
+
                 CryptoXML xmlRoot = Encrypt(plugin);
-                xmlRoot.Save(CurrentProfile.Id + "." + plugin.ToString().ToLower() + ".data");
+                string filename = System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
+                                  @"\CryptoEditor\" + CurrentProfile.Id + "." + plugin.ToString().ToLower() + ".data";
+                
+                xmlRoot.Save(filename);
                 System.Diagnostics.Debug.WriteLine("Saving " + CurrentProfile.Name + "." + plugin.ToString().ToLower() + ".data");
 
                 plugin.ClearChanges();
@@ -84,16 +89,18 @@ namespace CryptoEditor.Common
             foreach (ICryptoEditor plugin in plugins)
             {
                 CryptoXML xmlRoot = new CryptoXML();
+                string filename = System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
+                                  @"\CryptoEditor\" + CurrentProfile.Id + "." + plugin.ToString().ToLower() + ".data";
 
                 try
                 {
-                    xmlRoot.Load(CurrentProfile.Id + "." + plugin.ToString().ToLower() + ".data");
+                    xmlRoot.Load(filename);
                 }
                 catch (System.IO.FileNotFoundException)
                 {
                     try
                     {
-                        xmlRoot.Load(CurrentProfile.Name + "." + plugin.ToString().ToLower() + ".data");
+                        xmlRoot.Load(filename);
                     }
                     catch(System.IO.FileNotFoundException)
                     {
@@ -117,7 +124,10 @@ namespace CryptoEditor.Common
                 xmlRoot.Decrypt(plugin.EncryptionXPath, true);
 #endif
                 plugin.Load(xmlRoot.OuterXml);
-                plugin.LoadProperties(CurrentProfile.Id + "." + plugin.ToString().ToLower() + ".properties");
+
+                filename = System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
+                                  @"\CryptoEditor\" + CurrentProfile.Id + "." + plugin.ToString().ToLower() + ".properties";
+                plugin.LoadProperties(filename);
             }
         }
 

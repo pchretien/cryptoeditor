@@ -44,6 +44,17 @@ namespace CryptoEditor.Common
         private static string numChars = "1234567890";
         private static string weakChars = " .,";
 
+        public static void CheckApplicationDataFolder()
+        {
+            if(System.IO.Directory.Exists(System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor"))
+                return;
+
+            DirectoryInfo ret = System.IO.Directory.CreateDirectory(
+                System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor");
+
+            ret = ret;
+        }
+
         public static int ValidatePassword(string password)
         {
             bool uppercase = false;

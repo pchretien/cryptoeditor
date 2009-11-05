@@ -93,7 +93,9 @@ namespace CryptoEditor
         {
             profilesListView.Items.Clear();
 
-            string[] files = System.IO.Directory.GetFiles(".", "*.profile");
+            CryptoEditorUtils.CheckApplicationDataFolder();
+
+            string[] files = System.IO.Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor\", "*.profile");
             foreach (string file in files)
             {
                 CryptoEditorProfile profile = new CryptoEditorProfile();
