@@ -122,5 +122,10 @@ namespace CryptoEditor
         {
             System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
         }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Salut");
+        }
     }
 }
