@@ -135,8 +135,8 @@ namespace CryptoEditor
                         string tmpPassword = CryptoEditorEncryption.Hash(formPassword.Password);
                         if (tmpPassword.Equals(currentProfile.EncryptedPassword))
                         {
-                            currentProfile.PasswordValidated = true;
                             currentProfile.Password = formPassword.Password;
+                            currentProfile.PasswordValidated = true;
                             currentProfile.DecryptLicense();
                             this.Text = "CryptoEditor - " + currentProfile.Name + "/" + currentProfile.Email;
 
@@ -181,8 +181,8 @@ namespace CryptoEditor
                 {
                     if (form.NewPassword1.Text.Equals(form.NewPassword2.Text))
                     {
-                        currentProfile.PasswordValidated = true;
                         currentProfile.Password = form.NewPassword1.Text;
+                        currentProfile.PasswordValidated = true;
                         currentProfile.Save();
                         persistor.SaveData(true);
 
@@ -785,6 +785,17 @@ namespace CryptoEditor
 
             MessageBox.Show("Confirmation succeeded. You can now use the Synchronization service.",
                 "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void connectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Start the Connection Dialog ...
+            CryptoEditorConnection form = new CryptoEditorConnection(currentProfile);
+            if( form.ShowDialog() == DialogResult.OK )
+            {
+                currentProfile.Save();
+            }
+            
         }
 
         

@@ -51,8 +51,6 @@ namespace CryptoEditor.Common
 
             DirectoryInfo ret = System.IO.Directory.CreateDirectory(
                 System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor");
-
-            ret = ret;
         }
 
         public static int ValidatePassword(string password)

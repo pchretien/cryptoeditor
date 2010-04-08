@@ -24,6 +24,15 @@ namespace CryptoEditor.Common
         private int idleTimeout = 1;
         private bool skipSyncWarning = false;
 
+        private bool useProxy = false;
+        private string proxyAddress = "";
+        private int proxyPort = 8080;
+        private bool useAuthentication = false;
+        private string proxyUser = "";
+        private string proxyPassword = "";
+        private string encryptedProxyPassword = "";
+        private string proxyDomain = "";
+
         public static readonly string keyPrefix = "_ce_";
 
         public CryptoEditorProfile()
@@ -48,7 +57,8 @@ namespace CryptoEditor.Common
 
             encryptedPassword = CryptoEditorEncryption.Hash(password);
             encryptedKey = CryptoEditorEncryption.Encrypt(keyPrefix + key, password);
-
+            encryptedProxyPassword = CryptoEditorEncryption.Encrypt(proxyPassword, password);
+            
             string filename = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor\" + id + ".profile";
             System.IO.FileStream stream = new System.IO.FileStream(filename, System.IO.FileMode.Create);
             XmlSerializer serializer = new XmlSerializer( typeof(CryptoEditorProfile) );
@@ -78,6 +88,16 @@ namespace CryptoEditor.Common
             skipSyncWarning = profile.SkipSyncWarning;
 
             idleTimeout = profile.IdleTimeout;
+
+            useProxy = profile.UseProxy;
+            proxyAddress = profile.ProxyAddress;
+            proxyPort = profile.ProxyPort;
+            
+            useAuthentication = profile.UseAuthentication;
+            proxyUser = profile.ProxyUser;
+            proxyDomain = profile.ProxyDomain;
+
+            encryptedProxyPassword = profile.EncryptedProxyPassword;
         }
 
         public void DecryptLicense()
@@ -87,6 +107,8 @@ namespace CryptoEditor.Common
                 key = CryptoEditorEncryption.Decrypt(encryptedKey, password);
                 if (key.Length > keyPrefix.Length)
                     key = key.Substring(keyPrefix.Length);
+
+                proxyPassword = CryptoEditorEncryption.Decrypt(encryptedProxyPassword, password);
             }
         }
 
@@ -182,6 +204,55 @@ namespace CryptoEditor.Common
         {
             get { return skipSyncWarning; }
             set { skipSyncWarning = value; }
+        }
+
+        public string ProxyAddress
+        {
+            get { return proxyAddress; }
+            set { proxyAddress = value; }
+        }
+
+        public int ProxyPort
+        {
+            get { return proxyPort; }
+            set { proxyPort = value; }
+        }
+
+        public string ProxyUser
+        {
+            get { return proxyUser; }
+            set { proxyUser = value; }
+        }
+
+        [XmlIgnore]
+        public string ProxyPassword
+        {
+            get { return proxyPassword; }
+            set { proxyPassword = value; }
+        }
+
+        public bool UseProxy
+        {
+            get { return useProxy; }
+            set { useProxy = value; }
+        }
+
+        public bool UseAuthentication
+        {
+            get { return useAuthentication; }
+            set { useAuthentication = value; }
+        }
+
+        public string ProxyDomain
+        {
+            get { return proxyDomain; }
+            set { proxyDomain = value; }
+        }
+
+        public string EncryptedProxyPassword
+        {
+            get { return encryptedProxyPassword; }
+            set { encryptedProxyPassword = value; }
         }
     }
 }

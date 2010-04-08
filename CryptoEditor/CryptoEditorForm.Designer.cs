@@ -48,12 +48,14 @@ namespace CryptoEditor
             this.synchronizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gettingStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lockTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -74,13 +76,13 @@ namespace CryptoEditor
             this.treeView.ShowNodeToolTips = true;
             this.treeView.Size = new System.Drawing.Size(261, 464);
             this.treeView.TabIndex = 0;
-            this.treeView.Enter += new System.EventHandler(this.treeView_Enter);
-            this.treeView.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView_DragDrop);
-            this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
-            this.treeView.Leave += new System.EventHandler(this.treeView_Leave);
-            this.treeView.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView_DragEnter);
             this.treeView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeView_ItemDrag);
+            this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
+            this.treeView.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView_DragDrop);
+            this.treeView.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView_DragEnter);
             this.treeView.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView_DragOver);
+            this.treeView.Enter += new System.EventHandler(this.treeView_Enter);
+            this.treeView.Leave += new System.EventHandler(this.treeView_Leave);
             // 
             // imageList1
             // 
@@ -146,96 +148,98 @@ namespace CryptoEditor
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.profileToolStripMenuItem.Text = "&User";
-            this.profileToolStripMenuItem.MouseLeave += new System.EventHandler(this.profileToolStripMenuItem_MouseLeave);
             this.profileToolStripMenuItem.MouseEnter += new System.EventHandler(this.profileToolStripMenuItem_MouseEnter);
+            this.profileToolStripMenuItem.MouseLeave += new System.EventHandler(this.profileToolStripMenuItem_MouseLeave);
             // 
             // profilesToolStripMenuItem
             // 
             this.profilesToolStripMenuItem.Name = "profilesToolStripMenuItem";
-            this.profilesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.profilesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.profilesToolStripMenuItem.Text = "&User Management ...";
-            this.profilesToolStripMenuItem.MouseLeave += new System.EventHandler(this.profilesToolStripMenuItem_MouseLeave);
-            this.profilesToolStripMenuItem.MouseEnter += new System.EventHandler(this.profilesToolStripMenuItem_MouseEnter);
             this.profilesToolStripMenuItem.Click += new System.EventHandler(this.profilesToolStripMenuItem_Click);
+            this.profilesToolStripMenuItem.MouseEnter += new System.EventHandler(this.profilesToolStripMenuItem_MouseEnter);
+            this.profilesToolStripMenuItem.MouseLeave += new System.EventHandler(this.profilesToolStripMenuItem_MouseLeave);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.changePasswordToolStripMenuItem.Text = "Change &Password ...";
-            this.changePasswordToolStripMenuItem.MouseLeave += new System.EventHandler(this.changePasswordToolStripMenuItem_MouseLeave);
-            this.changePasswordToolStripMenuItem.MouseEnter += new System.EventHandler(this.changePasswordToolStripMenuItem_MouseEnter);
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            this.changePasswordToolStripMenuItem.MouseEnter += new System.EventHandler(this.changePasswordToolStripMenuItem_MouseEnter);
+            this.changePasswordToolStripMenuItem.MouseLeave += new System.EventHandler(this.changePasswordToolStripMenuItem_MouseLeave);
             // 
             // preferencesToolStripMenuItem
             // 
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.preferencesToolStripMenuItem.Text = "Preferences ...";
-            this.preferencesToolStripMenuItem.MouseLeave += new System.EventHandler(this.preferencesToolStripMenuItem_MouseLeave);
-            this.preferencesToolStripMenuItem.MouseEnter += new System.EventHandler(this.preferencesToolStripMenuItem_MouseEnter);
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
+            this.preferencesToolStripMenuItem.MouseEnter += new System.EventHandler(this.preferencesToolStripMenuItem_MouseEnter);
+            this.preferencesToolStripMenuItem.MouseLeave += new System.EventHandler(this.preferencesToolStripMenuItem_MouseLeave);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(180, 6);
             // 
             // lockToolStripMenuItem
             // 
             this.lockToolStripMenuItem.Name = "lockToolStripMenuItem";
             this.lockToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.lockToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.lockToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.lockToolStripMenuItem.Text = "&Lock";
-            this.lockToolStripMenuItem.MouseLeave += new System.EventHandler(this.lockToolStripMenuItem_MouseLeave);
-            this.lockToolStripMenuItem.MouseEnter += new System.EventHandler(this.lockToolStripMenuItem_MouseEnter);
             this.lockToolStripMenuItem.Click += new System.EventHandler(this.lockToolStripMenuItem_Click);
+            this.lockToolStripMenuItem.MouseEnter += new System.EventHandler(this.lockToolStripMenuItem_MouseEnter);
+            this.lockToolStripMenuItem.MouseLeave += new System.EventHandler(this.lockToolStripMenuItem_MouseLeave);
             // 
             // unlockToolStripMenuItem
             // 
             this.unlockToolStripMenuItem.Name = "unlockToolStripMenuItem";
             this.unlockToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.unlockToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.unlockToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.unlockToolStripMenuItem.Text = "Unlock";
-            this.unlockToolStripMenuItem.MouseLeave += new System.EventHandler(this.unlockToolStripMenuItem_MouseLeave);
-            this.unlockToolStripMenuItem.MouseEnter += new System.EventHandler(this.unlockToolStripMenuItem_MouseEnter);
             this.unlockToolStripMenuItem.Click += new System.EventHandler(this.unlockToolStripMenuItem_Click);
+            this.unlockToolStripMenuItem.MouseEnter += new System.EventHandler(this.unlockToolStripMenuItem_MouseEnter);
+            this.unlockToolStripMenuItem.MouseLeave += new System.EventHandler(this.unlockToolStripMenuItem_MouseLeave);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(180, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.MouseLeave += new System.EventHandler(this.exitToolStripMenuItem_MouseLeave);
-            this.exitToolStripMenuItem.MouseEnter += new System.EventHandler(this.exitToolStripMenuItem_MouseEnter);
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.MouseEnter += new System.EventHandler(this.exitToolStripMenuItem_MouseEnter);
+            this.exitToolStripMenuItem.MouseLeave += new System.EventHandler(this.exitToolStripMenuItem_MouseLeave);
             // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.synchronizeToolStripMenuItem});
+            this.synchronizeToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.connectionToolStripMenuItem});
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.backupToolStripMenuItem.Text = "&Online";
-            this.backupToolStripMenuItem.MouseLeave += new System.EventHandler(this.backupToolStripMenuItem_MouseLeave);
             this.backupToolStripMenuItem.MouseEnter += new System.EventHandler(this.backupToolStripMenuItem_MouseEnter);
+            this.backupToolStripMenuItem.MouseLeave += new System.EventHandler(this.backupToolStripMenuItem_MouseLeave);
             // 
             // synchronizeToolStripMenuItem
             // 
             this.synchronizeToolStripMenuItem.Name = "synchronizeToolStripMenuItem";
-            this.synchronizeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.synchronizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.synchronizeToolStripMenuItem.Text = "Synchronize ...";
-            this.synchronizeToolStripMenuItem.MouseLeave += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseLeave);
-            this.synchronizeToolStripMenuItem.MouseEnter += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseEnter);
             this.synchronizeToolStripMenuItem.Click += new System.EventHandler(this.synchronizeToolStripMenuItem_Click);
+            this.synchronizeToolStripMenuItem.MouseEnter += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseEnter);
+            this.synchronizeToolStripMenuItem.MouseLeave += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseLeave);
             // 
             // helpToolStripMenuItem
             // 
@@ -244,26 +248,33 @@ namespace CryptoEditor
             this.registerToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
-            this.helpToolStripMenuItem.MouseLeave += new System.EventHandler(this.helpToolStripMenuItem_MouseLeave);
             this.helpToolStripMenuItem.MouseEnter += new System.EventHandler(this.helpToolStripMenuItem_MouseEnter);
+            this.helpToolStripMenuItem.MouseLeave += new System.EventHandler(this.helpToolStripMenuItem_MouseLeave);
             // 
             // gettingStartedToolStripMenuItem
             // 
             this.gettingStartedToolStripMenuItem.Name = "gettingStartedToolStripMenuItem";
-            this.gettingStartedToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.gettingStartedToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.gettingStartedToolStripMenuItem.Text = "Getting started ...";
             this.gettingStartedToolStripMenuItem.Click += new System.EventHandler(this.gettingStartedToolStripMenuItem_Click);
+            // 
+            // registerToolStripMenuItem
+            // 
+            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.registerToolStripMenuItem.Text = "&Register ...";
+            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click_1);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutToolStripMenuItem.Text = "&About ...";
-            this.aboutToolStripMenuItem.MouseLeave += new System.EventHandler(this.aboutToolStripMenuItem_MouseLeave);
-            this.aboutToolStripMenuItem.MouseEnter += new System.EventHandler(this.aboutToolStripMenuItem_MouseEnter);
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.MouseEnter += new System.EventHandler(this.aboutToolStripMenuItem_MouseEnter);
+            this.aboutToolStripMenuItem.MouseLeave += new System.EventHandler(this.aboutToolStripMenuItem_MouseLeave);
             // 
             // timer
             // 
@@ -291,12 +302,17 @@ namespace CryptoEditor
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // registerToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.registerToolStripMenuItem.Text = "&Register ...";
-            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click_1);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // connectionToolStripMenuItem
+            // 
+            this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connectionToolStripMenuItem.Text = "Connection ...";
+            this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 
             // CryptoEditorForm
             // 
@@ -310,8 +326,8 @@ namespace CryptoEditor
             this.Name = "CryptoEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CryptoEditor";
-            this.Load += new System.EventHandler(this.CryptoEditorForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CryptoEditorForm_FormClosing);
+            this.Load += new System.EventHandler(this.CryptoEditorForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
@@ -351,6 +367,8 @@ namespace CryptoEditor
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem gettingStartedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem connectionToolStripMenuItem;
     }
 }
 

@@ -93,6 +93,12 @@
     <Compile Include="CryptoEditorAboutBox.Designer.cs">
       <DependentUpon>CryptoEditorAboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CryptoEditorConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorConnection.Designer.cs">
+      <DependentUpon>CryptoEditorConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="CryptoEditorAboutBox.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CryptoEditorAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorConnection.resx">
+      <DependentUpon>CryptoEditorConnection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CryptoEditorForm.resx">
       <SubType>Designer</SubType>
