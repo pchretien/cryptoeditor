@@ -41,11 +41,13 @@ namespace CryptoEditor.Common
     	private string url = "";
         private string contentType = "";
         private ArrayList parameters = new ArrayList();
+        private CryptoEditorProfile profile;
 
-        public CryptoEditorHttpPostHelper(string url, string contentType)
+        public CryptoEditorHttpPostHelper(string url, string contentType, CryptoEditorProfile profile)
         {
             this.url = url;
             this.contentType = contentType;
+            this.profile = profile;
         }
         
         public void AddParameter(string name, string value)
@@ -70,6 +72,19 @@ namespace CryptoEditor.Common
             WebRequest request = WebRequest.Create(url);
             request.ContentType = contentType;
             request.Method = "POST";
+            
+            if(profile.UseProxy)
+            {
+                WebProxy proxy = new WebProxy(profile.ProxyAddress, profile.ProxyPort);
+                if(profile.UseAuthentication)
+                {
+                    proxy.Credentials = new NetworkCredential(profile.ProxyUser,
+                        (profile.ProxyPassword.Length>0)?profile.ProxyPassword:null,
+                        (profile.ProxyDomain.Length>0)?profile.ProxyDomain:null);
+                }
+
+                request.Proxy = proxy;
+            }
 
             Stream os = null;
             byte[] bytes = Encoding.ASCII.GetBytes(queryString);
@@ -119,14 +134,14 @@ namespace CryptoEditor.Common
             this.profile = profile;
         }
 
-        public bool GetProfile(string email, ref int status, ref DateTime expiration, ref string encrypted_license)
+        public bool GetProfile(ref int status, ref DateTime expiration, ref string encrypted_license)
         {
             try
             {
-                CryptoEditor.Common.CryptoEditorHttpPostHelper post =
+                CryptoEditorHttpPostHelper post =
                     new CryptoEditorHttpPostHelper(serviceAddress+"getprofile",
-                                                   "application/x-www-form-urlencoded");
-                post.AddParameter("email", email);
+                                                   "application/x-www-form-urlencoded", profile);
+                post.AddParameter("email", profile.Email);
                 string profileXml = post.Send();
                 XmlDocument xml = new XmlDocument();
                 xml.LoadXml(profileXml);
@@ -176,7 +191,7 @@ namespace CryptoEditor.Common
             {
                 CryptoEditor.Common.CryptoEditorHttpPostHelper post =
                     new CryptoEditorHttpPostHelper(serviceAddress + "putlicense",
-                                                   "application/x-www-form-urlencoded");
+                                                   "application/x-www-form-urlencoded", profile);
                 post.AddParameter("email", email);
                 post.AddParameter("license", license);
                 post.AddParameter("encrypted_license", encrypted_license);
@@ -215,16 +230,16 @@ namespace CryptoEditor.Common
             return false;
         }
 
-        public bool Load(string email, string license, string plugin, ref string webData)
+        public bool Load(string plugin, ref string webData)
         {
             try
             {
                 webData = "";
                 CryptoEditor.Common.CryptoEditorHttpPostHelper post =
                     new CryptoEditorHttpPostHelper(serviceAddress + "load",
-                                                   "application/x-www-form-urlencoded");
-                post.AddParameter("email", email);
-                post.AddParameter("license", license);
+                                                   "application/x-www-form-urlencoded", profile);
+                post.AddParameter("email", profile.Email);
+                post.AddParameter("license", profile.Key);
                 post.AddParameter("plugin", plugin);
 
                 webData = post.Send();
@@ -276,15 +291,15 @@ namespace CryptoEditor.Common
             return false;
         }
 
-        public bool Save(string email, string license, string plugin, string data)
+        public bool Save(string plugin, string data)
         {
             try
             {
                 CryptoEditor.Common.CryptoEditorHttpPostHelper post =
                     new CryptoEditorHttpPostHelper(serviceAddress + "save",
-                                                   "application/x-www-form-urlencoded");
-                post.AddParameter("email", email);
-                post.AddParameter("license", license);
+                                                   "application/x-www-form-urlencoded", profile);
+                post.AddParameter("email", profile.Email);
+                post.AddParameter("license", profile.Key);
                 post.AddParameter("plugin", plugin);
                 post.AddParameter("data", data);
 

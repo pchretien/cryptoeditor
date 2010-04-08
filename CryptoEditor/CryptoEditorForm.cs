@@ -317,8 +317,7 @@ namespace CryptoEditor
                 Cursor = Cursors.WaitCursor;
 
                 HttpServiceClient service = new HttpServiceClient(currentProfile);
-                bool ret = service.GetProfile(currentProfile.Email,
-                                             ref status,
+                bool ret = service.GetProfile(ref status,
                                              ref expiration,
                                              ref encrypted_license);
 
