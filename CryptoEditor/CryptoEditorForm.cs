@@ -316,7 +316,8 @@ namespace CryptoEditor
 
                 Cursor = Cursors.WaitCursor;
 
-                bool ret = HttpServiceClient.GetProfile(currentProfile.Email,
+                HttpServiceClient service = new HttpServiceClient(currentProfile);
+                bool ret = service.GetProfile(currentProfile.Email,
                                              ref status,
                                              ref expiration,
                                              ref encrypted_license);
@@ -394,7 +395,7 @@ namespace CryptoEditor
                     this.currentProfile.Key = decryptedKey;
                     this.currentProfile.Save();
 
-                    HttpServiceClient.PutLicense(currentProfile.Email, currentProfile.Key,
+                    service.PutLicense(currentProfile.Email, currentProfile.Key,
                                                  CryptoEditorEncryption.Encrypt(CryptoEditorProfile.keyPrefix + currentProfile.Key,
                                                                                 currentProfile.Password), false);
                     
@@ -765,7 +766,8 @@ namespace CryptoEditor
             {
                 Cursor = Cursors.WaitCursor;
 
-                bool ret = HttpServiceClient.PutLicense(form.emailTextBox.Text, form.keyTextBox.Text, encryptedLicense, true);
+                HttpServiceClient service = new HttpServiceClient(currentProfile);
+                bool ret = service.PutLicense(form.emailTextBox.Text, form.keyTextBox.Text, encryptedLicense, true);
                 if (!ret)
                 {
                     return;

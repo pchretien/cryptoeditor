@@ -80,10 +80,6 @@ namespace CryptoEditor.Common
                 os = request.GetRequestStream();
                 os.Write(bytes, 0, bytes.Length);
             }
-            catch (WebException ex)
-            {
-                throw;
-            }
             finally
             {
                 if (os != null)
@@ -102,7 +98,7 @@ namespace CryptoEditor.Common
                 string response = sr.ReadToEnd().Trim();
                 return response;
             }
-            catch (WebException ex)
+            catch (WebException)
             {
                 throw;
             }
@@ -116,8 +112,14 @@ namespace CryptoEditor.Common
 #else
         private static string serviceAddress = "https://cryptoeditor.appspot.com/";
 #endif
+        private CryptoEditorProfile profile;
 
-        public static bool GetProfile(string email, ref int status, ref DateTime expiration, ref string encrypted_license)
+        public HttpServiceClient(CryptoEditorProfile profile)
+        {
+            this.profile = profile;
+        }
+
+        public bool GetProfile(string email, ref int status, ref DateTime expiration, ref string encrypted_license)
         {
             try
             {
@@ -168,7 +170,7 @@ namespace CryptoEditor.Common
             return false;
         }
 
-        public static bool PutLicense(string email, string license, string encrypted_license, bool sendmail)
+        public bool PutLicense(string email, string license, string encrypted_license, bool sendmail)
         {
             try
             {
@@ -213,7 +215,7 @@ namespace CryptoEditor.Common
             return false;
         }
 
-        public static bool Load(string email, string license, string plugin, ref string webData)
+        public bool Load(string email, string license, string plugin, ref string webData)
         {
             try
             {
@@ -274,7 +276,7 @@ namespace CryptoEditor.Common
             return false;
         }
 
-        public static bool Save(string email, string license, string plugin, string data)
+        public bool Save(string email, string license, string plugin, string data)
         {
             try
             {

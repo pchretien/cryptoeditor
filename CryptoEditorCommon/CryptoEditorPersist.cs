@@ -157,7 +157,8 @@ namespace CryptoEditor.Common
                     // Load the XML of that plugin from the web
                     //string webData = client.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString());
                     string webData = "";
-                    bool ret = HttpServiceClient.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), ref webData);
+                    HttpServiceClient service = new HttpServiceClient(currentProfile);
+                    bool ret = service.Load(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), ref webData);
                     if(!ret)
                         return;
 
@@ -167,7 +168,7 @@ namespace CryptoEditor.Common
                         // This will happen only at the first synchro.
                         CryptoXML xmlEncrypted = Encrypt(plugin);
                         //client.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
-                        ret = HttpServiceClient.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
+                        ret = service.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
                         if(!ret)
                             return;
 
@@ -214,7 +215,7 @@ namespace CryptoEditor.Common
                     // Publish the resulting xml on the web ...
                     xmlWeb.Password = CurrentProfile.Password;
                     xmlWeb.Encrypt(plugin.EncryptionXPath, true);
-                    ret = HttpServiceClient.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlWeb.OuterXml);
+                    ret = service.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlWeb.OuterXml);
                     if(!ret)
                         return;
                 }
