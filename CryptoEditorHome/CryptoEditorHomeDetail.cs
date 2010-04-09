@@ -1,11 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 using CryptoEditor.Common.Interfaces;
 
@@ -28,6 +22,7 @@ namespace CryptoEditorHome
         public CryptoEditorHomeDetail(ICryptoEditor plugin)
         {
             this.plugin = plugin;
+
             InitializeComponent();
 
 #if !MONO_MWF
@@ -41,21 +36,10 @@ namespace CryptoEditorHome
 
         private void TestConnection()
         {
-            System.Net.WebResponse ret = null;
-#if DEBUG
-            string ping = "http://localhost:8080/ping";
-#else
-            string ping = "http://cryptoeditor.appspot.com/ping";
-#endif
-            System.Net.WebRequest request = System.Net.WebRequest.Create(ping);
-
             try
             {
                 if(!connected)
                     webBrowser.Navigate(loading);
-                
-                ret = request.GetResponse();
-                ret.Close();
                 
                 if(!connected)
                 {
@@ -66,9 +50,6 @@ namespace CryptoEditorHome
             }
             catch(Exception)
             {
-                if (ret != null)
-                    ret.Close();
-
                 connected = false;
                 webBrowser.Navigate(offline);
             }
@@ -95,6 +76,18 @@ namespace CryptoEditorHome
             {
                 webConnectTimer.Interval = 60000;
                 webConnectTimer.Start();
+            }
+        }
+
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (webBrowser.Url.Host.ToLower().Equals("cryptoeditor.appspot.com"))
+            {
+                if (!webBrowser.DocumentTitle.ToLower().Contains("cryptoeditor"))
+                {
+                    connected = false;
+                    webBrowser.Navigate(offline);
+                }
             }
         }
     }

@@ -42,6 +42,7 @@ namespace CryptoEditorHome
             this.webBrowser.Size = new System.Drawing.Size(396, 243);
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser_DocumentCompleted);
             // 
             // webConnectTimer
             // 
