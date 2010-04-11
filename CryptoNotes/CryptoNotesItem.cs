@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CryptoEditor.Common;
 using CryptoEditor.Framework;
 
 namespace CryptoEditor.Notes
 {
     [Serializable]
-    public class CryptoNotesItem : CryptoEditor.Framework.CryptoEditorPluginItem
+    public class CryptoNotesItem : CryptoEditorPluginItem
     {
         private string title = "";
         private string subject = "";

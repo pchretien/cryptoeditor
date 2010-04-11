@@ -117,6 +117,11 @@ namespace CryptoEditorHome
             return false;
         }
 
+        public ICryptoEditorDoc GetDoc()
+        {
+            throw new NotImplementedException();
+        }
+
         public void GoTo(string destination)
         {
             MessageBox.Show("Goto ...");

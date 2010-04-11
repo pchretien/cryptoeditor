@@ -95,5 +95,11 @@ namespace CryptoEditor.Common.Interfaces
         object Search(string query, bool matchCase, int searchType, bool searchSubFolders, object doc);
 
         bool isPersistent();
+
+        /// <summary>
+        /// Return the plugin root Doc
+        /// </summary>
+        /// <returns></returns>
+        ICryptoEditorDoc GetDoc();
     }
 }

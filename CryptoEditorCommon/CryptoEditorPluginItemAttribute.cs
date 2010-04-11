@@ -1,6 +1,6 @@
 using System;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.Common
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple=true, Inherited=true)]
     public class CryptoEditorPluginItemAttribute : Attribute

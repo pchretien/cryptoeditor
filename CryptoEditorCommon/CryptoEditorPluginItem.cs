@@ -2,7 +2,7 @@ using System;
 using System.Xml.Serialization;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.Common
 {
     [Serializable]
     public class CryptoEditorPluginItem : ICryptoEditorPluginItem

@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 
 namespace CryptoEditor.Framework

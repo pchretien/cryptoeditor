@@ -10,6 +10,7 @@ namespace CryptoEditorCmd
     {
         private string currentPath = "/";
         private Hashtable fs = new Hashtable();
+        private ArrayList plugins;
 
         public CryptoEditorCmdFS()
         {
@@ -18,12 +19,12 @@ namespace CryptoEditorCmd
 
         public CryptoEditorCmdFS(ArrayList plugins)
         {
+            this.plugins = plugins;
+
             for (int i = 0; i < plugins.Count; i++)
             {
                 ICryptoEditor plugin = (ICryptoEditor)plugins[i];
                 fs.Add(plugin.Text, plugin);
-
-                
             }
         }
 
@@ -74,6 +75,19 @@ namespace CryptoEditorCmd
                 pathIn += "/";
 
             currentPath = pathIn;
+
+            foreach (ICryptoEditor plugin in plugins)
+            {
+                ICryptoEditorDoc doc = plugin.GetDoc();
+                if (doc == null)
+                    continue;
+
+                ICryptoEditorPluginItem item = doc.GetItem("");
+                if (item == null)
+                    continue;
+
+                Console.WriteLine(item.Id);
+            }
         }
 
         public void pwd()

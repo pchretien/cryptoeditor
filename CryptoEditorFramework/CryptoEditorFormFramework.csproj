@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CryptoEditor.Framework</RootNamespace>
-    <AssemblyName>CryptoEditorFramework</AssemblyName>
+    <AssemblyName>CryptoEditorFormFramework</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoEditorClipboard.cs" />
-    <Compile Include="CryptoEditorDoc.cs" />
     <Compile Include="CryptoEditorPlugin.cs" />
     <Compile Include="CryptoEditorPluginDetail.cs">
       <SubType>UserControl</SubType>
@@ -98,8 +97,6 @@
     <Compile Include="CryptoEditorPluginDetail.Designer.cs">
       <DependentUpon>CryptoEditorPluginDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="CryptoEditorPluginItem.cs" />
-    <Compile Include="CryptoEditorPluginItemAttribute.cs" />
     <Compile Include="CryptoEditorPluginRootMenu.cs">
       <SubType>Component</SubType>
     </Compile>

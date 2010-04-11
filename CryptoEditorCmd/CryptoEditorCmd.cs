@@ -99,6 +99,9 @@ namespace CryptoEditorCmd
                 currentProfile.PasswordValidated = true;
                 currentProfile.Password = password;
 
+                var persistor = new CryptoEditorPersist(plugins, currentProfile);
+                persistor.LoadData();
+
                 return;
             }
 
@@ -112,7 +115,7 @@ namespace CryptoEditorCmd
 
             int index = 0;
             Hashtable profiles = new Hashtable();
-            string[] files = System.IO.Directory.GetFiles(".", "*.profile");
+            string[] files = System.IO.Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\CryptoEditor\", "*.profile");
 
             foreach (string file in files)
             {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Drawing;
 using System.Windows.Forms;
+using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 
 namespace CryptoEditor.Framework

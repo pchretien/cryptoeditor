@@ -1,16 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using CryptoEditor.Common.Interfaces;
 using System.Xml;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.Common
 {
     [Serializable]
     [XmlRoot("CryptoEditorDoc")]
-    public class CryptoEditorDoc<T> : ICloneable
+    public class CryptoEditorDoc<T> : ICryptoEditorDoc, ICloneable
         where T : ICryptoEditorPluginItem
     {
         private string name = "";
@@ -176,6 +175,19 @@ namespace CryptoEditor.Framework
                 node.InnerText = System.Guid.NewGuid().ToString();
 
             return CryptoEditorDoc<T>.LoadXml(doc.OuterXml);
+        }
+
+        public ICryptoEditorDoc GetFolder(string folderName)
+        {
+            return this;
+        }
+
+        public ICryptoEditorPluginItem GetItem(string itemName)
+        {
+            if (items.Count == 0)
+                return null;
+
+            return Items[0];
         }
     }
 }

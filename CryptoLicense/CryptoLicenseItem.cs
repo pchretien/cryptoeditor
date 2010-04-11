@@ -1,4 +1,5 @@
 using System;
+using CryptoEditor.Common;
 using CryptoEditor.Framework;
 
 namespace CryptoEditor.License

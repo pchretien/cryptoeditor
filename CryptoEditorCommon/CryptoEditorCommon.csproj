@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptoEditorDoc.cs" />
     <Compile Include="CryptoEditorEncryption.cs" />
     <Compile Include="CryptoEditorGoToWebForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +100,8 @@
     </Compile>
     <Compile Include="CryptoEditorPersist.cs" />
     <Compile Include="CryptoEditorPluginAttribute.cs" />
+    <Compile Include="CryptoEditorPluginItem.cs" />
+    <Compile Include="CryptoEditorPluginItemAttribute.cs" />
     <Compile Include="CryptoEditorProfile.cs" />
     <Compile Include="CryptoEditorUtils.cs" />
     <Compile Include="CryptoEditorHttpPostHelper.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Interfaces\ICryptoEditorPluginItem.cs" />
     <Compile Include="Interfaces\ICryptoEditorRootNode.cs" />
     <Compile Include="Interfaces\ICryptoEditorView.cs" />
+    <Compile Include="Interfaces\ICryptoEditorDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
