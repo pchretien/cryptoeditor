@@ -47,9 +47,9 @@ namespace CryptoEditor.Password
             this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.nameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(3, 21);
             this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(200, 20);
             this.nameTextBox.TabIndex = 0;
             // 
@@ -70,9 +70,9 @@ namespace CryptoEditor.Password
             this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.usernameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.usernameTextBox.Enabled = false;
             this.usernameTextBox.Location = new System.Drawing.Point(3, 61);
             this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.ReadOnly = true;
             this.usernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.usernameTextBox.Size = new System.Drawing.Size(200, 20);
             this.usernameTextBox.TabIndex = 2;
@@ -97,9 +97,9 @@ namespace CryptoEditor.Password
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.passwordTextBox.Enabled = false;
             this.passwordTextBox.Location = new System.Drawing.Point(224, 61);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.ReadOnly = true;
             this.passwordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.passwordTextBox.Size = new System.Drawing.Size(228, 20);
             this.passwordTextBox.TabIndex = 3;
@@ -124,9 +124,9 @@ namespace CryptoEditor.Password
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.emailTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.emailTextBox.Enabled = false;
             this.emailTextBox.Location = new System.Drawing.Point(224, 21);
             this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.ReadOnly = true;
             this.emailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.emailTextBox.Size = new System.Drawing.Size(228, 20);
             this.emailTextBox.TabIndex = 1;
@@ -150,9 +150,9 @@ namespace CryptoEditor.Password
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.urlTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.urlTextBox.Enabled = false;
             this.urlTextBox.Location = new System.Drawing.Point(3, 101);
             this.urlTextBox.Name = "urlTextBox";
+            this.urlTextBox.ReadOnly = true;
             this.urlTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.urlTextBox.Size = new System.Drawing.Size(449, 20);
             this.urlTextBox.TabIndex = 4;

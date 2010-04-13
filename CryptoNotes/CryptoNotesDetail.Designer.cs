@@ -145,10 +145,11 @@ namespace CryptoEditor.Notes
             this.keywordsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.keywordsTextBox.Enabled = false;
+            this.keywordsTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.keywordsTextBox.Location = new System.Drawing.Point(9, 175);
             this.keywordsTextBox.Multiline = true;
             this.keywordsTextBox.Name = "keywordsTextBox";
+            this.keywordsTextBox.ReadOnly = true;
             this.keywordsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.keywordsTextBox.Size = new System.Drawing.Size(478, 143);
             this.keywordsTextBox.TabIndex = 7;
@@ -157,9 +158,10 @@ namespace CryptoEditor.Notes
             // 
             this.commentsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.commentsTextBox.Enabled = false;
+            this.commentsTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.commentsTextBox.Location = new System.Drawing.Point(9, 136);
             this.commentsTextBox.Name = "commentsTextBox";
+            this.commentsTextBox.ReadOnly = true;
             this.commentsTextBox.Size = new System.Drawing.Size(478, 20);
             this.commentsTextBox.TabIndex = 6;
             // 
@@ -186,9 +188,9 @@ namespace CryptoEditor.Notes
             this.authorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.authorTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.authorTextBox.Enabled = false;
             this.authorTextBox.Location = new System.Drawing.Point(9, 97);
             this.authorTextBox.Name = "authorTextBox";
+            this.authorTextBox.ReadOnly = true;
             this.authorTextBox.Size = new System.Drawing.Size(478, 20);
             this.authorTextBox.TabIndex = 2;
             // 
@@ -206,9 +208,9 @@ namespace CryptoEditor.Notes
             this.subjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.subjectTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.subjectTextBox.Enabled = false;
             this.subjectTextBox.Location = new System.Drawing.Point(9, 58);
             this.subjectTextBox.Name = "subjectTextBox";
+            this.subjectTextBox.ReadOnly = true;
             this.subjectTextBox.Size = new System.Drawing.Size(478, 20);
             this.subjectTextBox.TabIndex = 1;
             // 
@@ -217,9 +219,9 @@ namespace CryptoEditor.Notes
             this.titleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.titleTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.titleTextBox.Enabled = false;
             this.titleTextBox.Location = new System.Drawing.Point(9, 19);
             this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.ReadOnly = true;
             this.titleTextBox.Size = new System.Drawing.Size(478, 20);
             this.titleTextBox.TabIndex = 0;
             // 

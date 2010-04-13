@@ -86,9 +86,9 @@ namespace CryptoEditor.License
             this.licenseKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseKey.BackColor = System.Drawing.SystemColors.Window;
-            this.licenseKey.Enabled = false;
             this.licenseKey.Location = new System.Drawing.Point(9, 133);
             this.licenseKey.Name = "licenseKey";
+            this.licenseKey.ReadOnly = true;
             this.licenseKey.Size = new System.Drawing.Size(406, 20);
             this.licenseKey.TabIndex = 22;
             // 
@@ -108,9 +108,9 @@ namespace CryptoEditor.License
             this.licenseEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.licenseEmail.Enabled = false;
             this.licenseEmail.Location = new System.Drawing.Point(215, 55);
             this.licenseEmail.Name = "licenseEmail";
+            this.licenseEmail.ReadOnly = true;
             this.licenseEmail.Size = new System.Drawing.Size(200, 20);
             this.licenseEmail.TabIndex = 21;
             // 
@@ -130,9 +130,9 @@ namespace CryptoEditor.License
             this.licenseName2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseName2.BackColor = System.Drawing.SystemColors.Window;
-            this.licenseName2.Enabled = false;
             this.licenseName2.Location = new System.Drawing.Point(215, 94);
             this.licenseName2.Name = "licenseName2";
+            this.licenseName2.ReadOnly = true;
             this.licenseName2.Size = new System.Drawing.Size(200, 20);
             this.licenseName2.TabIndex = 20;
             // 
@@ -152,9 +152,9 @@ namespace CryptoEditor.License
             this.licenseName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseName.BackColor = System.Drawing.SystemColors.Window;
-            this.licenseName.Enabled = false;
             this.licenseName.Location = new System.Drawing.Point(215, 16);
             this.licenseName.Name = "licenseName";
+            this.licenseName.ReadOnly = true;
             this.licenseName.Size = new System.Drawing.Size(200, 20);
             this.licenseName.TabIndex = 19;
             // 
@@ -179,18 +179,18 @@ namespace CryptoEditor.License
             // productWebsite
             // 
             this.productWebsite.BackColor = System.Drawing.SystemColors.Window;
-            this.productWebsite.Enabled = false;
             this.productWebsite.Location = new System.Drawing.Point(6, 94);
             this.productWebsite.Name = "productWebsite";
+            this.productWebsite.ReadOnly = true;
             this.productWebsite.Size = new System.Drawing.Size(200, 20);
             this.productWebsite.TabIndex = 18;
             // 
             // productCompany
             // 
             this.productCompany.BackColor = System.Drawing.SystemColors.Window;
-            this.productCompany.Enabled = false;
             this.productCompany.Location = new System.Drawing.Point(6, 55);
             this.productCompany.Name = "productCompany";
+            this.productCompany.ReadOnly = true;
             this.productCompany.Size = new System.Drawing.Size(200, 20);
             this.productCompany.TabIndex = 14;
             // 
@@ -206,9 +206,9 @@ namespace CryptoEditor.License
             // productName
             // 
             this.productName.BackColor = System.Drawing.SystemColors.Window;
-            this.productName.Enabled = false;
             this.productName.Location = new System.Drawing.Point(6, 16);
             this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
             this.productName.Size = new System.Drawing.Size(200, 20);
             this.productName.TabIndex = 8;
             // 
