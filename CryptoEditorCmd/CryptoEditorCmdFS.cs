@@ -45,12 +45,26 @@ namespace CryptoEditorCmd
                 return;
             }
 
-            char[] slashSeparators = {'/'};
-            string[] folders = currentPath.Split(slashSeparators);
+            ICryptoEditor plugin = (ICryptoEditor)plugins[0];
+            ICryptoEditorDoc doc = plugin.GetDoc();
+            if (doc == null)
+                return;
 
-            foreach(string folder in folders)
-                Console.Write("[" + folder + "]->");
-            Console.WriteLine("");
+            plugin.View.DisplayView(doc);
+        }
+
+        public void open(string itemName)
+        {
+            ICryptoEditor plugin = (ICryptoEditor)plugins[0];
+            ICryptoEditorDoc doc = plugin.GetDoc();
+            if (doc == null)
+                return;
+
+            ICryptoEditorPluginItem item = doc.GetItem("");
+            if (item == null)
+                return;
+
+            plugin.Detail.DisplayItem(item);
         }
 
         public void cd(string path)
@@ -75,19 +89,6 @@ namespace CryptoEditorCmd
                 pathIn += "/";
 
             currentPath = pathIn;
-
-            foreach (ICryptoEditor plugin in plugins)
-            {
-                ICryptoEditorDoc doc = plugin.GetDoc();
-                if (doc == null)
-                    continue;
-
-                ICryptoEditorPluginItem item = doc.GetItem("");
-                if (item == null)
-                    continue;
-
-                Console.WriteLine(item.Id);
-            }
         }
 
         public void pwd()

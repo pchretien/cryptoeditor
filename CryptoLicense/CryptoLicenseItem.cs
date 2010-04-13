@@ -1,6 +1,6 @@
 using System;
 using CryptoEditor.Common;
-using CryptoEditor.Framework;
+using CryptoEditor.FormFramework;
 
 namespace CryptoEditor.License
 {

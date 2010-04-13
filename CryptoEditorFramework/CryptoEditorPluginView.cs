@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     public partial class CryptoEditorPluginView<T> : UserControl, ICryptoEditorView
         where T : ICryptoEditorPluginItem

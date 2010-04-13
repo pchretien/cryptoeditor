@@ -1,7 +1,7 @@
 using System;
 using System.Xml.Serialization;
 using CryptoEditor.Common;
-using CryptoEditor.Framework;
+using CryptoEditor.FormFramework;
 
 namespace CryptoEditor.Password
 {

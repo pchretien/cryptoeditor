@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 using CryptoEditor.Common;
-using CryptoEditor.Framework;
+using CryptoEditor.FormFramework;
 
 namespace CryptoEditor.Password
 {

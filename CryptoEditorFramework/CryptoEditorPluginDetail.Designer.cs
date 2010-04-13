@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     partial class CryptoEditorPluginDetail<T>
     {

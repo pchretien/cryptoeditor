@@ -1,7 +1,5 @@
 using System;
-using System.Xml.Serialization;
 using CryptoEditor.Common;
-using CryptoEditor.Framework;
 
 namespace CryptoEditor.Template
 {

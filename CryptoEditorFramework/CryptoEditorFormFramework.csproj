@@ -8,7 +8,7 @@
     <ProjectGuid>{DC392461-D034-44C4-B870-064538902B1A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CryptoEditor.Framework</RootNamespace>
+    <RootNamespace>CryptoEditor.FormFramework</RootNamespace>
     <AssemblyName>CryptoEditorFormFramework</AssemblyName>
     <SccProjectName>
     </SccProjectName>

@@ -5,7 +5,7 @@ using System.Text;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     [Serializable]
     public class CryptoEditorClipboardItem<T>

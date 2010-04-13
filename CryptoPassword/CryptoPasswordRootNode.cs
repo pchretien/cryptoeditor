@@ -6,7 +6,7 @@ using CryptoEditor.Common.Interfaces;
 
 namespace CryptoEditor.Password
 {
-    public class CryptoPasswordRootNode : CryptoEditor.Framework.CryptoEditorPluginRootNode<CryptoPasswordItem>
+    public class CryptoPasswordRootNode : CryptoEditor.FormFramework.CryptoEditorPluginRootNode<CryptoPasswordItem>
     {
         public CryptoPasswordRootNode(ICryptoEditor plugin, string name) 
             : base(plugin, name)

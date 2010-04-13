@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     public class CryptoEditorPluginRootNode<T> : TreeNode, ICryptoEditorRootNode
         where T : ICryptoEditorPluginItem

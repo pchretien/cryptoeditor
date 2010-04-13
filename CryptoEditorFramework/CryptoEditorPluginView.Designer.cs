@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     public partial class CryptoEditorPluginView<T>
     {

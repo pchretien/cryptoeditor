@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using CryptoEditor.Framework;
+using CryptoEditor.FormFramework;
 using CryptoEditor.Common.Interfaces;
 
 namespace CryptoEditor.Password

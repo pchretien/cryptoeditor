@@ -1,4 +1,4 @@
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     partial class CryptoEditorPluginSearchForm
     {

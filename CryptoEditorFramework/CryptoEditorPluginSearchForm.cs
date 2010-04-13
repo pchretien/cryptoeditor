@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     public partial class CryptoEditorPluginSearchForm : Form
     {

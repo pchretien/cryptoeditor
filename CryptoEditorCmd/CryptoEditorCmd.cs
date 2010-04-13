@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using CryptoEditor.Common;
-using CryptoEditor.Common.Interfaces;
 
 namespace CryptoEditorCmd
 {
@@ -22,13 +19,18 @@ namespace CryptoEditorCmd
 
         public void Run()
         {
-            Console.WriteLine("CryptoEditor console application. Copyright 2Sortes Inc. (2008)\n");
-            login();
-            
+            Clear();
+
             while(!exit)
             {
                 processCommand(getCommand());
             }
+        }
+
+        private void Clear()
+        {
+            Console.Clear();
+            Console.WriteLine("CryptoEditor console application. Copyright 2Sortes Inc. (2008)");
         }
 
         public string getCommand()
@@ -41,10 +43,11 @@ namespace CryptoEditorCmd
         {
             string cmd = command.ToLower();
 
-            if(cmd.StartsWith("exit"))
+            if (cmd.StartsWith("exit") || cmd.StartsWith("quit"))
             {
                 exit = true;
                 Console.WriteLine("Bye!");
+                System.Threading.Thread.Sleep(1000);
 
                 return;
             }
@@ -66,6 +69,11 @@ namespace CryptoEditorCmd
                 ls();
             }
 
+            if (cmd.StartsWith("open"))
+            {
+                open(cmd.Substring(6));
+            }
+
             if (cmd.StartsWith("cd"))
             {
                 cd(command);
@@ -75,11 +83,22 @@ namespace CryptoEditorCmd
             {
                 pwd();
             }
+
+            if (cmd.StartsWith("cls"))
+            {
+                Clear();
+            }
         }
 
         private void displayHelp(string cmd)
         {
-            Console.WriteLine("CryptoEditor Help ...");
+            Console.WriteLine("CryptoEditor Commands:");
+            Console.WriteLine("login ...");
+            Console.WriteLine("ls");
+            Console.WriteLine("cd <folder>");
+            Console.WriteLine("pwd");
+            Console.WriteLine("exit");
+            Console.WriteLine("quit");
         }
 
         private void login()
@@ -102,6 +121,7 @@ namespace CryptoEditorCmd
                 var persistor = new CryptoEditorPersist(plugins, currentProfile);
                 persistor.LoadData();
 
+                Console.WriteLine("Login succeeded.");
                 return;
             }
 
@@ -147,11 +167,19 @@ namespace CryptoEditorCmd
             fs.ls();
         }
 
+        private void open(string itemName)
+        {
+            if (!CheckLogin())
+                return;
+
+            fs.open(itemName);
+        }
+
         private bool CheckLogin()
         {
             if(currentProfile == null || !currentProfile.PasswordValidated)
             {
-                Console.WriteLine("You m ust login first.");
+                Console.WriteLine("You must login first.");
                 return false;
             }
 

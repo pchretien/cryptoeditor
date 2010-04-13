@@ -1,20 +1,11 @@
+﻿using CryptoEditor.CmdFramework;
 using CryptoEditor.Common;
-using CryptoEditor.FormFramework;
 
 namespace CryptoEditor.Template
 {
     [CryptoEditorPlugin("Template")]
-    public class CryptoTemplate : CryptoEditorPlugin<CryptoEditorTemplateItem>
+    public class CryptoTemplate : CryptoEditorCmdPlugin<CryptoEditorTemplateItem>
     {
-        public CryptoTemplate()
-        {
-            //this.Detail = new CryptoEditorTemplateDetail(this);
-        }
-
-        /// <summary>
-        /// You must override this method to create a new item for your plugin
-        /// otherwise the base class will throw a NoImplementation exception
-        /// </summary>
         public override object CreateItem()
         {
             //
@@ -29,11 +20,16 @@ namespace CryptoEditor.Template
 
         public override object UpdateItem(object itemIn)
         {
-            CryptoEditorTemplateItem item = (CryptoEditorTemplateItem) itemIn;
+            CryptoEditorTemplateItem item = (CryptoEditorTemplateItem)itemIn;
             item.Email += "<*>";
 
             base.UpdateItem(item);
             return item;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

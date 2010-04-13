@@ -3,7 +3,7 @@ using System.Reflection;
 using CryptoEditor.Common;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Framework
+namespace CryptoEditor.FormFramework
 {
     public class CryptoEditorPlugin<T> : ICryptoEditor
         where T : ICryptoEditorPluginItem

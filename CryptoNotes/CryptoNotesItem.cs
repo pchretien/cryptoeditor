@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CryptoEditor.Common;
-using CryptoEditor.Framework;
+using CryptoEditor.FormFramework;
 
 namespace CryptoEditor.Notes
 {
