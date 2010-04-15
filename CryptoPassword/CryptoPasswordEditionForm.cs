@@ -8,5 +8,10 @@ namespace CryptoEditor.Password
         {
             InitializeComponent();
         }
+
+        private void okButton_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

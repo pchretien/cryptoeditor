@@ -82,5 +82,13 @@ namespace CryptoEditor.CreditCard
             get { return expYear; }
             set { expYear = value; }
         }
+
+        private string notes = "";
+        [CryptoEditorPluginItem(Header = "Notes", Width = 100)]
+        public string Notes
+        {
+            get { return notes; }
+            set { notes = value; }
+        }
     }
 }

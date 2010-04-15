@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using CryptoEditor.Common;
 using CryptoEditor.FormFramework;
 
@@ -22,13 +23,17 @@ namespace CryptoEditor.CreditCard
             // A new form must be implemented by the user to get item details ...
             //
             CryptoEditorCreditCardItem item = new CryptoEditorCreditCardItem(
-                "Master Card",
-                "Philippe Chretien",
-                "9151-0784 Québec Inc.",
-                "1234 5678 9012 3456",
-                new Random(DateTime.Now.Millisecond).Next(999).ToString(),
-                "01",
-                "2011");
+                "",
+                "",
+                "",
+                "",
+                "",
+                DateTime.Today.Month.ToString(),
+                DateTime.Today.AddYears(1).Year.ToString());
+
+            CryptoEditorCreditCardForm form = new CryptoEditorCreditCardForm(item);
+            if (form.ShowDialog() == DialogResult.Cancel)
+                return null;
 
             base.CreateItem();
             return item;
@@ -37,7 +42,9 @@ namespace CryptoEditor.CreditCard
         public override object UpdateItem(object itemIn)
         {
             CryptoEditorCreditCardItem item = (CryptoEditorCreditCardItem)itemIn;
-            item.Security = new Random(DateTime.Now.Millisecond).Next(999).ToString();
+            CryptoEditorCreditCardForm form = new CryptoEditorCreditCardForm(item);
+            if (form.ShowDialog() == DialogResult.Cancel)
+                return item;
 
             base.UpdateItem(item);
             return item;
