@@ -10,7 +10,7 @@ namespace CryptoEditor.CreditCard
     {
         public CreditCard()
         {
-            //this.Detail = new CryptoEditorCreditCardDetail(this);
+            this.Detail = new CryptoEditorPluginDetailList<CryptoEditorCreditCardItem>(this);
         }
 
         /// <summary>

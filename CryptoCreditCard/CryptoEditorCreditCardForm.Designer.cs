@@ -83,7 +83,7 @@
             this.name.Location = new System.Drawing.Point(12, 66);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(166, 20);
-            this.name.TabIndex = 3;
+            this.name.TabIndex = 1;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             this.company.Location = new System.Drawing.Point(12, 109);
             this.company.Name = "company";
             this.company.Size = new System.Drawing.Size(166, 20);
-            this.company.TabIndex = 5;
+            this.company.TabIndex = 2;
             // 
             // label4
             // 
@@ -118,6 +118,7 @@
             this.notes.Location = new System.Drawing.Point(12, 151);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
+            this.notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.notes.Size = new System.Drawing.Size(373, 62);
             this.notes.TabIndex = 7;
             // 
@@ -128,7 +129,7 @@
             this.cancelButton.Location = new System.Drawing.Point(310, 225);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 8;
+            this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +139,7 @@
             this.okButton.Location = new System.Drawing.Point(229, 225);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 9;
+            this.okButton.TabIndex = 8;
             this.okButton.Text = "Ok";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
@@ -171,7 +172,7 @@
             this.month.Location = new System.Drawing.Point(204, 108);
             this.month.Name = "month";
             this.month.Size = new System.Drawing.Size(82, 21);
-            this.month.TabIndex = 1;
+            this.month.TabIndex = 5;
             // 
             // label6
             // 
@@ -191,7 +192,7 @@
             this.year.Location = new System.Drawing.Point(303, 108);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(82, 21);
-            this.year.TabIndex = 3;
+            this.year.TabIndex = 6;
             // 
             // label7
             // 
@@ -209,7 +210,7 @@
             this.number.Location = new System.Drawing.Point(207, 25);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(178, 20);
-            this.number.TabIndex = 11;
+            this.number.TabIndex = 3;
             // 
             // label8
             // 
@@ -227,7 +228,7 @@
             this.verification.Location = new System.Drawing.Point(207, 66);
             this.verification.Name = "verification";
             this.verification.Size = new System.Drawing.Size(178, 20);
-            this.verification.TabIndex = 13;
+            this.verification.TabIndex = 4;
             // 
             // CryptoEditorCreditCardForm
             // 

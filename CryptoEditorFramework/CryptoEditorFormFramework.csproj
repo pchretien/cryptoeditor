@@ -97,6 +97,12 @@
     <Compile Include="CryptoEditorPluginDetail.Designer.cs">
       <DependentUpon>CryptoEditorPluginDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="CryptoEditorPluginDetailList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPluginDetailList.Designer.cs">
+      <DependentUpon>CryptoEditorPluginDetailList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoEditorPluginRootMenu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <EmbeddedResource Include="CryptoEditorPluginDetail.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CryptoEditorPluginDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPluginDetailList.resx">
+      <DependentUpon>CryptoEditorPluginDetailList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CryptoEditorPluginRootNodeNameForm.resx">
       <SubType>Designer</SubType>

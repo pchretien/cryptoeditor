@@ -15,6 +15,9 @@ namespace CryptoEditor.Common
 
         public static void LoadPlugins(ArrayList plugins)
         {
+            ICryptoEditor homePlugin = null;
+            ArrayList dataPlugins = new ArrayList();
+
             string[] files = Directory.GetFiles(pluginFolder, pluginExtension);
             foreach (string fileName in files)
             {
@@ -30,13 +33,22 @@ namespace CryptoEditor.Common
                         if (attribute is CryptoEditorPluginAttribute)
                         {
                             ICryptoEditor node = (ICryptoEditor)Activator.CreateInstance(type, null);
-                            if( ((CryptoEditorPluginAttribute) attribute).Text != null )
-                                node.Text = ((CryptoEditorPluginAttribute) attribute).Text;
-                            plugins.Add(node);
+                            if (((CryptoEditorPluginAttribute)attribute).Text != null)
+                                node.Text = ((CryptoEditorPluginAttribute)attribute).Text;
+
+                            if (type.FullName.ToLower().EndsWith("cryptoeditorhome.cryptoeditorhome"))
+                                homePlugin = node;
+                            else
+                                dataPlugins.Add(node);
                         }
                     }
                 }
             }
+
+            if (homePlugin != null)
+                plugins.Add(homePlugin);
+            foreach (ICryptoEditor node in dataPlugins)
+                plugins.Add(node);
         }
 
         private static string lowChars = "abcdefghijklmnopqrstuvwxyz";
