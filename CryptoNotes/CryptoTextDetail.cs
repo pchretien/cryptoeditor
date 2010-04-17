@@ -9,12 +9,12 @@ using CryptoEditor.Common.Interfaces;
 
 namespace CryptoEditor.Notes
 {
-    public partial class CryptoNotesDetail : UserControl, ICryptoEditorDetail
+    public partial class CryptoTextDetail : UserControl, ICryptoEditorDetail
     {
         private ICryptoEditor plugin = null;
-        private CryptoNotesItem itemIn = null;
+        private CryptoTextItem itemIn = null;
 
-        public CryptoNotesDetail(ICryptoEditor plugin)
+        public CryptoTextDetail(ICryptoEditor plugin)
         {
             this.plugin = plugin;
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace CryptoEditor.Notes
 
         public void DisplayItem(object item)
         {
-            itemIn = (CryptoNotesItem)item;
+            itemIn = (CryptoTextItem)item;
 
             if (item == null)
             {

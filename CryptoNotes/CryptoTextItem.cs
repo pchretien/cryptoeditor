@@ -7,7 +7,7 @@ using CryptoEditor.FormFramework;
 namespace CryptoEditor.Notes
 {
     [Serializable]
-    public class CryptoNotesItem : CryptoEditorPluginItem
+    public class CryptoTextItem : CryptoEditorPluginItem
     {
         private string title = "";
         private string subject = "";

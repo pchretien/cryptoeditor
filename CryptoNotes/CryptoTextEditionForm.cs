@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CryptoEditor.Notes
 {
-    public partial class CryptoNotesEditionForm : Form
+    public partial class CryptoTextEditionForm : Form
     {
-        public CryptoNotesEditionForm()
+        public CryptoTextEditionForm()
         {
             InitializeComponent();
         }

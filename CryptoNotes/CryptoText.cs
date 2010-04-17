@@ -7,21 +7,21 @@ using CryptoEditor.FormFramework;
 
 namespace CryptoEditor.Notes
 {
-    [CryptoEditorPlugin("Notes")]
-    public class CryptoNotes : CryptoEditorPlugin<CryptoNotesItem>
+    [CryptoEditorPlugin("Text Documents")]
+    public class CryptoText : CryptoEditorPlugin<CryptoTextItem>
     {
-        public CryptoNotes()
+        public CryptoText()
         {
-            detail = new CryptoNotesDetail(this);
+            detail = new CryptoTextDetail(this);
         }
 
         public override object CreateItem()
         {
-            CryptoNotesEditionForm form = new CryptoNotesEditionForm();
+            CryptoTextEditionForm form = new CryptoTextEditionForm();
             if(form.ShowDialog() != DialogResult.OK)
                 return null;
 
-            CryptoNotesItem item = new CryptoNotesItem();
+            CryptoTextItem item = new CryptoTextItem();
             item.Title = form.titleTextBox.Text;
             item.Subject = form.subjectTextBox.Text;
             item.Author = form.authorTextBox.Text;
@@ -35,8 +35,8 @@ namespace CryptoEditor.Notes
 
         public override object UpdateItem(object itemIn)
         {
-            CryptoNotesItem item = (CryptoNotesItem) itemIn;
-            CryptoNotesEditionForm form = new CryptoNotesEditionForm();
+            CryptoTextItem item = (CryptoTextItem) itemIn;
+            CryptoTextEditionForm form = new CryptoTextEditionForm();
             form.titleTextBox.Text = item.Title;
             form.subjectTextBox.Text = item.Subject;
             form.authorTextBox.Text = item.Author;

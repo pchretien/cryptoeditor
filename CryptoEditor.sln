@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoLicense", "CryptoLice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoEditorHome", "CryptoEditorHome\CryptoEditorHome.csproj", "{FBC86B24-DD94-4B15-AC73-F39E3ECA3734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoNotes", "CryptoNotes\CryptoNotes.csproj", "{77C09FB3-9981-4284-B634-B573A2CF85A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoText", "CryptoNotes\CryptoText.csproj", "{77C09FB3-9981-4284-B634-B573A2CF85A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoEditorServiceDataAccessLayer", "CryptoEditorServiceDataAccessLayer\CryptoEditorServiceDataAccessLayer.csproj", "{B5F33FBA-4837-420F-AF6C-83986AA84EB9}"
 EndProject

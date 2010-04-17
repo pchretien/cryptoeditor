@@ -66,20 +66,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CryptoNotes.cs" />
-    <Compile Include="CryptoNotesDetail.cs">
+    <Compile Include="CryptoText.cs" />
+    <Compile Include="CryptoTextDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CryptoNotesDetail.Designer.cs">
-      <DependentUpon>CryptoNotesDetail.cs</DependentUpon>
+    <Compile Include="CryptoTextDetail.Designer.cs">
+      <DependentUpon>CryptoTextDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="CryptoNotesEditionForm.cs">
+    <Compile Include="CryptoTextEditionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CryptoNotesEditionForm.Designer.cs">
-      <DependentUpon>CryptoNotesEditionForm.cs</DependentUpon>
+    <Compile Include="CryptoTextEditionForm.Designer.cs">
+      <DependentUpon>CryptoTextEditionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CryptoNotesItem.cs" />
+    <Compile Include="CryptoTextItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,13 +93,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CryptoNotesDetail.resx">
+    <EmbeddedResource Include="CryptoTextDetail.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>CryptoNotesDetail.cs</DependentUpon>
+      <DependentUpon>CryptoTextDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CryptoNotesEditionForm.resx">
+    <EmbeddedResource Include="CryptoTextEditionForm.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>CryptoNotesEditionForm.cs</DependentUpon>
+      <DependentUpon>CryptoTextEditionForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
