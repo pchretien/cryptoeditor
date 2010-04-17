@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CryptoEditor.Notes
+namespace CryptoEditor.Text
 {
     public partial class CryptoTextEditionForm : Form
     {

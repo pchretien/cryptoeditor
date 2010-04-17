@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using CryptoEditor.Common.Interfaces;
 
-namespace CryptoEditor.Notes
+namespace CryptoEditor.Text
 {
     public partial class CryptoTextDetail : UserControl, ICryptoEditorDetail
     {

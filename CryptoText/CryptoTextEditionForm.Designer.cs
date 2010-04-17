@@ -1,4 +1,4 @@
-namespace CryptoEditor.Notes
+namespace CryptoEditor.Text
 {
     partial class CryptoTextEditionForm
     {

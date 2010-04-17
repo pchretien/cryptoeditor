@@ -8,8 +8,8 @@
     <ProjectGuid>{77C09FB3-9981-4284-B634-B573A2CF85A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CryptoEditor.Notes</RootNamespace>
-    <AssemblyName>CryptoNotes</AssemblyName>
+    <RootNamespace>CryptoEditor.Text</RootNamespace>
+    <AssemblyName>CryptoText</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>

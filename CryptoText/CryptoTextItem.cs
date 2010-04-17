@@ -4,7 +4,7 @@ using System.Text;
 using CryptoEditor.Common;
 using CryptoEditor.FormFramework;
 
-namespace CryptoEditor.Notes
+namespace CryptoEditor.Text
 {
     [Serializable]
     public class CryptoTextItem : CryptoEditorPluginItem

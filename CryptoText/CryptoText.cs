@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using CryptoEditor.Common;
 using CryptoEditor.FormFramework;
 
-namespace CryptoEditor.Notes
+namespace CryptoEditor.Text
 {
     [CryptoEditorPlugin("Text Documents")]
     public class CryptoText : CryptoEditorPlugin<CryptoTextItem>
