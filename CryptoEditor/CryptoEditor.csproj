@@ -237,13 +237,17 @@
       <Project>{13F10403-2279-45CA-9A0A-717B4D769599}</Project>
       <Name>CryptoLicense</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CryptoNotes\CryptoText.csproj">
-      <Project>{77C09FB3-9981-4284-B634-B573A2CF85A6}</Project>
-      <Name>CryptoText</Name>
+    <ProjectReference Include="..\CryptoNotes\CryptoNotes.csproj">
+      <Project>{AFEF664F-331E-420F-AEA1-6A564127EB29}</Project>
+      <Name>CryptoNotes</Name>
     </ProjectReference>
     <ProjectReference Include="..\CryptoPassword\CryptoPassword.csproj">
       <Project>{0E2C2856-8F37-4904-9D60-B433AA1B8C78}</Project>
       <Name>CryptoPassword</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CryptoText\CryptoText.csproj">
+      <Project>{77C09FB3-9981-4284-B634-B573A2CF85A6}</Project>
+      <Name>CryptoText</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
