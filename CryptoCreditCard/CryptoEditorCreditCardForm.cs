@@ -24,6 +24,7 @@ namespace CryptoEditor.CreditCard
 
             creditcard.Text = item.Type;
             name.Text = item.Name;
+            name2.Text = item.Name2;
             company.Text = item.Company;
             notes.Text = item.Notes;
             number.Text = item.Number;
@@ -36,6 +37,7 @@ namespace CryptoEditor.CreditCard
         {
             item.Type = creditcard.Text;
             item.Name = name.Text;
+            item.Name2 = name2.Text;
             item.Company = company.Text;
             item.Notes = notes.Text;
             item.Number = number.Text;

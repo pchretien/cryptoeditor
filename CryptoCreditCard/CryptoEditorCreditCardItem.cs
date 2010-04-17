@@ -28,7 +28,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string type = "";
-        [CryptoEditorPluginItem(0, Width = 100, Header = "Card Type")]
+        [CryptoEditorPluginItem(0, Width = 100, Header = "Card")]
         public string Type
         {
             get { return type; }
@@ -36,15 +36,23 @@ namespace CryptoEditor.CreditCard
         }
         
         private string name = "";
-        [CryptoEditorPluginItem(1, Width = 100, Header = "Card Holder")]
+        [CryptoEditorPluginItem(2, Width = 100, Header = "Card Holder")]
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
+        private string name2 = "";
+        [CryptoEditorPluginItem(Width = 100, Header = "Second Card Holder")]
+        public string Name2
+        {
+            get { return name2; }
+            set { name2 = value; }
+        }
+
         private string company = "";
-        [CryptoEditorPluginItem(2, Width = 150, Header = "Company Name")]
+        [CryptoEditorPluginItem(1, Width = 100, Header = "Card Company")]
         public string Company
         {
             get { return company; }
@@ -52,7 +60,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string number = "";
-        [CryptoEditorPluginItem]
+        [CryptoEditorPluginItem(Header="Card Number")]
         public string Number
         {
             get { return number; }
@@ -60,7 +68,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string security = "";
-        [CryptoEditorPluginItem]
+        [CryptoEditorPluginItem(Header="Verification Number")]
         public string Security
         {
             get { return security; }
@@ -68,7 +76,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string expMonth = "";
-        [CryptoEditorPluginItem(3, Header = "MM", Width = 50)]
+        [CryptoEditorPluginItem(3, Header = "Exp. Month", Width = 75)]
         public string ExpMonth
         {
             get { return expMonth; }
@@ -76,7 +84,7 @@ namespace CryptoEditor.CreditCard
         }
         
         private string expYear = "";
-        [CryptoEditorPluginItem(4, Header = "YYYY", Width = 75)]
+        [CryptoEditorPluginItem(4, Header = "Exp. Year", Width = 75)]
         public string ExpYear
         {
             get { return expYear; }

@@ -35,7 +35,7 @@ namespace CryptoEditor.FormFramework
             if (detailListView.Columns.Count == 0)
             {
                 ColumnHeader col1 = detailListView.Columns.Add("Property");
-                col1.Width = 100;
+                col1.Width = 150;
 
                 ColumnHeader col2 = detailListView.Columns.Add("Value");
                 col2.Width = 300;
@@ -51,11 +51,14 @@ namespace CryptoEditor.FormFramework
                 {
                     if (attribute is CryptoEditorPluginItemAttribute)
                     {
+                        CryptoEditorPluginItemAttribute attr = (CryptoEditorPluginItemAttribute) attribute;
+                        string valName = (attr.Header.Length > 0) ? attr.Header : property.Name;
+
                         object val = property.GetValue(item, null);
                         if (val == null)
                             val = "";
 
-                        ListViewItem line = detailListView.Items.Add(property.Name);
+                        ListViewItem line = detailListView.Items.Add(valName);
                         line.SubItems.Add(Convert.ToString(val));
 
                         break;
