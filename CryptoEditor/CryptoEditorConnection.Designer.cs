@@ -120,7 +120,7 @@
             this.domainTextBox.Location = new System.Drawing.Point(10, 121);
             this.domainTextBox.Name = "domainTextBox";
             this.domainTextBox.Size = new System.Drawing.Size(227, 20);
-            this.domainTextBox.TabIndex = 4;
+            this.domainTextBox.TabIndex = 2;
             // 
             // domainLabel
             // 

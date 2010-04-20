@@ -32,7 +32,7 @@ namespace CryptoEditor.CreditCard
                 DateTime.Today.AddYears(1).Year.ToString());
 
             CryptoEditorCreditCardForm form = new CryptoEditorCreditCardForm(item);
-            if (form.ShowDialog() == DialogResult.Cancel)
+            if (form.ShowDialog() != DialogResult.OK)
                 return null;
 
             base.CreateItem();
