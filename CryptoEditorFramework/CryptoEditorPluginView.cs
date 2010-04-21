@@ -79,7 +79,7 @@ namespace CryptoEditor.FormFramework
                         {
                             string val = "";
                             if (itemIn != null)
-                                val = (string) property.GetValue(itemIn, null);
+                                val = Convert.ToString(property.GetValue(itemIn, null));
                             if (val == null)
                                 val = "";
                             val = val.Replace("\n", " ");

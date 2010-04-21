@@ -249,6 +249,10 @@
       <Project>{77C09FB3-9981-4284-B634-B573A2CF85A6}</Project>
       <Name>CryptoText</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CryptoTimeSheet\CryptoTimeSheet.csproj">
+      <Project>{7364FE7B-4946-4D63-83EF-4A318D70653E}</Project>
+      <Name>CryptoTimeSheet</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CryptoEditorMessageForm.resx">
