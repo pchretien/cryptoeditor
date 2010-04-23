@@ -27,7 +27,7 @@ namespace CryptoTimeSheet
         }
 
         private string name = "";
-        [CryptoEditorPluginItem(1, Header = "Task name", Width = 300)]
+        [CryptoEditorPluginItem(1, Header = "Task name", Width = 300, Searchable = true)]
         public string Name
         {
             get { return name; }
@@ -43,7 +43,7 @@ namespace CryptoTimeSheet
         }
 
         private string notes = "";
-        [CryptoEditorPluginItem(Header = "Notes", Width = 400)]
+        [CryptoEditorPluginItem(Header = "Notes", Width = 400, Searchable = true)]
         public string Notes
         {
             get { return notes; }

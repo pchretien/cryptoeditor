@@ -94,7 +94,7 @@ namespace CryptoEditorHome
         {
         }
 
-        public void UpdateProperties()
+        public void UpdateProperties(object doc)
         {
         }
 

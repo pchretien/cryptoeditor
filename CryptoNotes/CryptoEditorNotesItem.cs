@@ -17,7 +17,7 @@ namespace CryptoNotes
         }
 
         private string title = "";
-        [CryptoEditorPluginItem(0, Header = "Title", Width = 100)]
+        [CryptoEditorPluginItem(0, Header = "Title", Width = 100, Searchable = true)]
         public string Title
         {
             get { return title; }
@@ -25,7 +25,7 @@ namespace CryptoNotes
         }
 
         private string note = "";
-        [CryptoEditorPluginItem(1, Header="Note", Width=400)]
+        [CryptoEditorPluginItem(1, Header = "Note", Width = 400, Searchable = true)]
         public string Note
         {
             get { return note; }

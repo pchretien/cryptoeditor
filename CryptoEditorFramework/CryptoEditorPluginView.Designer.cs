@@ -31,9 +31,8 @@ namespace CryptoEditor.FormFramework
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.listView = new System.Windows.Forms.ListView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,15 +58,15 @@ namespace CryptoEditor.FormFramework
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
-            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
-            this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
-            this.listView.Leave += new System.EventHandler(this.listView_Leave);
-            this.listView.Enter += new System.EventHandler(this.listView_Enter);
-            this.listView.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_DragDrop);
             this.listView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_ColumnClick);
-            this.listView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listView_KeyDown);
             this.listView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listView_ItemDrag);
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
+            this.listView.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_DragDrop);
             this.listView.DragOver += new System.Windows.Forms.DragEventHandler(this.listView_DragOver);
+            this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
+            this.listView.Enter += new System.EventHandler(this.listView_Enter);
+            this.listView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listView_KeyDown);
+            this.listView.Leave += new System.EventHandler(this.listView_Leave);
             // 
             // contextMenuStrip1
             // 

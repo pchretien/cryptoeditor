@@ -76,7 +76,7 @@ namespace CryptoEditor.Password
             Properties.Load(filename);
         }
 
-        public override void UpdateProperties()
+        public override void UpdateProperties(object doc)
         {
             CryptoPasswordPropertiesForm form = new CryptoPasswordPropertiesForm(Properties);
             if(form.ShowDialog() != DialogResult.OK)

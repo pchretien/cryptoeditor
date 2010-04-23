@@ -143,7 +143,7 @@ namespace CryptoEditor.FormFramework
 
         internal virtual void propertiesFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Plugin.UpdateProperties();
+            Plugin.UpdateProperties(doc);
         }
 
         internal virtual void searchFolderToolStripMenuItem_Click(object sender, EventArgs e)

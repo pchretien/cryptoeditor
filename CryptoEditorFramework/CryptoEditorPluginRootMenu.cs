@@ -147,7 +147,7 @@ namespace CryptoEditor.FormFramework
                 separator2.Visible = false;
                 searchFolderToolStripMenuItem.Visible = false;
                 separator3.Visible = false;
-                propertiesFolderToolStripMenuItem.Visible = false;
+                propertiesFolderToolStripMenuItem.Visible = true;
 
                 return;
             }

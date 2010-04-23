@@ -36,5 +36,10 @@ namespace CryptoNotes
             base.UpdateItem(item);
             return item;
         }
+
+        public override bool IsSearchable()
+        {
+            return true;
+        }
     }
 }

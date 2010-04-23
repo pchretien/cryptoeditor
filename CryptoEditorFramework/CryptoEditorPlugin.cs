@@ -152,7 +152,7 @@ namespace CryptoEditor.FormFramework
         {
         }
 
-        public virtual void UpdateProperties()
+        public virtual void UpdateProperties(object doc)
         {
         }
 

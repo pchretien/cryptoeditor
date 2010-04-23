@@ -482,7 +482,7 @@ namespace CryptoEditor.FormFramework
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Plugin.UpdateProperties();
+            Plugin.UpdateProperties(doc);
         }
 
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)

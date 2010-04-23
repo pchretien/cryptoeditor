@@ -75,7 +75,7 @@ namespace CryptoEditor.Common.Interfaces
         /// <summary>
         /// Change the properties of the plugin. It is the responsability of the plugin to display a specific edition UI.
         /// </summary>
-        void UpdateProperties();
+        void UpdateProperties(object doc);
 
         /// <summary>
         /// Save the plugin properties to the disk.

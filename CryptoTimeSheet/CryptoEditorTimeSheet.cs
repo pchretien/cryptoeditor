@@ -38,5 +38,50 @@ namespace CryptoTimeSheet
             base.UpdateItem(item);
             return item;
         }
+
+        public override bool HasProperties()
+        {
+            return true;
+        }
+
+        public override void LoadProperties(string filename)
+        {
+        }
+
+        public override void UpdateProperties(object docIn)
+        {
+            CryptoEditorDoc<CryptoEditorTimeSheetItem> doc =
+                (CryptoEditorDoc<CryptoEditorTimeSheetItem>) docIn;
+
+            double totalHours = 0.0;
+            AddHours(doc, ref totalHours);
+
+            MessageBox.Show("Total: " + totalHours, "Total number of hours worked");
+        }
+
+        private void AddHours(CryptoEditorDoc<CryptoEditorTimeSheetItem> docIn, ref double total)
+        {
+            foreach (CryptoEditorDoc<CryptoEditorTimeSheetItem> doc in docIn.Folders)
+            {
+                if(doc.Active)
+                    AddHours(doc, ref total);
+            }
+
+            foreach (CryptoEditorTimeSheetItem item in docIn.Items)
+            {
+                if(item.Active)
+                    total += item.Hours;
+            }
+        }
+
+        public override void SaveProperties()
+        {
+            throw new NotImplementedException("CryptoEditorTimeSheet.SaveProperties not yet implemented");
+        }
+
+        public override bool IsSearchable()
+        {
+            return true;
+        }
     }
 }

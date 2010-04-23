@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace CryptoTimeSheet
 {
@@ -19,6 +20,16 @@ namespace CryptoTimeSheet
 
         private void okButton_Click(object sender, System.EventArgs e)
         {
+            try
+            {
+                double.Parse(hours.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid format for Hours!", "Invalid value", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             item.Time = time.Value;
             item.Name = name.Text;
             item.Hours = double.Parse(hours.Text);
