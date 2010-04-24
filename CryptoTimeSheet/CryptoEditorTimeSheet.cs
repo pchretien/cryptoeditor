@@ -50,13 +50,8 @@ namespace CryptoTimeSheet
 
         public override void UpdateProperties(object docIn)
         {
-            CryptoEditorDoc<CryptoEditorTimeSheetItem> doc =
-                (CryptoEditorDoc<CryptoEditorTimeSheetItem>) docIn;
-
-            double totalHours = 0.0;
-            AddHours(doc, ref totalHours);
-
-            MessageBox.Show("Total: " + totalHours, "Total number of hours worked");
+            CryptoEditorTimeSheetReportForm form = new CryptoEditorTimeSheetReportForm((CryptoEditorDoc<CryptoEditorTimeSheetItem>)docIn);
+            form.ShowDialog();
         }
 
         private void AddHours(CryptoEditorDoc<CryptoEditorTimeSheetItem> docIn, ref double total)

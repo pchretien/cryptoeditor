@@ -45,6 +45,18 @@
   <ItemGroup>
     <Compile Include="CryptoEditorTimeSheet.cs" />
     <Compile Include="CryptoEditorTimeSheetItem.cs" />
+    <Compile Include="CryptoEditorTimeSheetReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorTimeSheetReportForm.Designer.cs">
+      <DependentUpon>CryptoEditorTimeSheetReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorTimeSheetReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorTimeSheetReportView.Designer.cs">
+      <DependentUpon>CryptoEditorTimeSheetReportView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrytoEditorTimesheetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +80,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorTimeSheetReportForm.resx">
+      <DependentUpon>CryptoEditorTimeSheetReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorTimeSheetReportView.resx">
+      <DependentUpon>CryptoEditorTimeSheetReportView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrytoEditorTimesheetForm.resx">
       <DependentUpon>CrytoEditorTimesheetForm.cs</DependentUpon>
     </EmbeddedResource>
