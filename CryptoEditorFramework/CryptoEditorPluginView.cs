@@ -79,13 +79,14 @@ namespace CryptoEditor.FormFramework
                         {
                             string val = "";
                             if (itemIn != null)
-                                val = Convert.ToString(property.GetValue(itemIn, null));
+                            {
+                                object propertyVal = property.GetValue(itemIn, null);
+                                val = FormatValue(propertyVal, attr);
+                            }
+                            
                             if (val == null)
                                 val = "";
-                            val = val.Replace("\n", " ");
-                            val = val.Replace("\r", " ");
-                            while (val.IndexOf("  ") > -1)
-                                val = val.Replace("  ", " ");
+                            
                             list.Add(new ItemCollection(property.Name, attr, val));
                         }
                     }
@@ -121,11 +122,24 @@ namespace CryptoEditor.FormFramework
 
             ListViewItem listItem = listView.Items.Add(list[0].Value);
             listItem.Tag = itemIn;
-            for(int i=1; i<list.Count;i++)
+            for (int i = 1; i < list.Count; i++)
+            {
                 listItem.SubItems.Add(list[i].Value);
+            }
         }
 
-        class ItemCollection
+        protected virtual string FormatValue(object propertyVal, CryptoEditorPluginItemAttribute attr)
+        {
+            string val = Convert.ToString(propertyVal);
+            val = val.Replace("\n", " ");
+            val = val.Replace("\r", " ");
+            while (val.IndexOf("  ") > -1)
+                val = val.Replace("  ", " ");
+
+            return val;
+        }
+
+        protected class ItemCollection
         {
             public readonly string Name = null;
             public readonly string Value = null;

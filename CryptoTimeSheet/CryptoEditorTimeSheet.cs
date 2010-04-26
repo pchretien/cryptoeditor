@@ -12,6 +12,8 @@ namespace CryptoTimeSheet
         public CryptoEditorTimeSheet()
         {
             this.Detail = new CryptoEditorPluginDetailList<CryptoEditorTimeSheetItem>(this);
+            this.View = new CryptoTimeSheetView(this);
+            this.Detail = new CryptoTimeSheetDetails(this);
         }
 
         public override object CreateItem()
