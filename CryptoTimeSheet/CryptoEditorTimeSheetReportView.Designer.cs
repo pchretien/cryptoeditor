@@ -48,13 +48,14 @@
             // 
             // ok
             // 
+            this.ok.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.ok.Location = new System.Drawing.Point(419, 180);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(75, 23);
             this.ok.TabIndex = 2;
             this.ok.Text = "Exit";
             this.ok.UseVisualStyleBackColor = true;
-            this.ok.Click += new System.EventHandler(this.ok_Click);
+            this.ok.Click += new System.EventHandler(this.ok_Click_1);
             // 
             // saveButton
             // 
@@ -71,6 +72,7 @@
             this.AcceptButton = this.ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.ok;
             this.ClientSize = new System.Drawing.Size(506, 215);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ok);
@@ -81,6 +83,7 @@
             this.Name = "CryptoEditorTimeSheetReportView";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Report viewer";
             this.ResumeLayout(false);
 

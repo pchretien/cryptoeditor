@@ -19,7 +19,7 @@ namespace CryptoTimeSheet
         }
 
         private DateTime time;
-        [CryptoEditorPluginItem(0, Header = "Time", Width = 150)]
+        [CryptoEditorPluginItem(0, Header = "Date", Width = 100)]
         public DateTime Time
         {
             get { return time; }
@@ -27,7 +27,7 @@ namespace CryptoTimeSheet
         }
 
         private string name = "";
-        [CryptoEditorPluginItem(1, Header = "Task name", Width = 300, Searchable = true)]
+        [CryptoEditorPluginItem(1, Header = "Task name", Width = 250, Searchable = true)]
         public string Name
         {
             get { return name; }

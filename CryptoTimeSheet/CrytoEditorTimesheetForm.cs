@@ -14,7 +14,7 @@ namespace CryptoTimeSheet
 
             time.Value = item.Time;
             name.Text = item.Name;
-            hours.Text = item.Hours.ToString();
+            hours.Text = string.Format("{0:00.00}", item.Hours);
             notes.Text = item.Notes;
         }
 
@@ -37,6 +37,24 @@ namespace CryptoTimeSheet
 
             this.DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void hours_Validated(object sender, EventArgs e)
+        {
+            double hoursIn;
+
+            try
+            {
+                hoursIn = double.Parse(hours.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid Hours format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                hours.Text = string.Format("{0:00.00}", item.Hours);
+                return;
+            }
+
+            hours.Text = string.Format("{0:00.00}", hoursIn);
         }
     }
 }

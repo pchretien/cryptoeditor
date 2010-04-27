@@ -34,8 +34,8 @@ namespace CryptoEditor
             this.open = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.profilesListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
@@ -71,7 +71,7 @@ namespace CryptoEditor
             // 
             // open
             // 
-            this.open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.open.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.open.Enabled = false;
             this.helpProvider.SetHelpString(this.open, "Open CryptoEditor with the selected profile.");

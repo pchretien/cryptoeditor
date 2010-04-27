@@ -33,5 +33,10 @@ namespace CryptoTimeSheet
                 outFile.Close();
             }
         }
+
+        private void ok_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

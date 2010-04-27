@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptoEditorNotesDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorNotesDetails.Designer.cs">
+      <DependentUpon>CryptoEditorNotesDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoEditorNotesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorNotesDetails.resx">
+      <DependentUpon>CryptoEditorNotesDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CryptoEditorNotesForm.resx">
       <DependentUpon>CryptoEditorNotesForm.cs</DependentUpon>
     </EmbeddedResource>

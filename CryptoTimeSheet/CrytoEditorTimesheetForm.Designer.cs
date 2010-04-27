@@ -59,6 +59,7 @@
             this.hours.Name = "hours";
             this.hours.Size = new System.Drawing.Size(100, 20);
             this.hours.TabIndex = 2;
+            this.hours.Validated += new System.EventHandler(this.hours_Validated);
             // 
             // notes
             // 
@@ -115,14 +116,16 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Date / Time";
+            this.label3.Text = "Date";
             // 
             // CrytoEditorTimesheetForm
             // 
+            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(227, 341);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -139,6 +142,7 @@
             this.Name = "CrytoEditorTimesheetForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Timesheet edition";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,6 +12,8 @@ namespace CryptoTimeSheet
     public partial class CryptoTimeSheetDetails : UserControl, ICryptoEditorDetail
     {
         private ICryptoEditor plugin = null;
+        private CryptoEditorTimeSheetItem item = null;
+
         public CryptoTimeSheetDetails(ICryptoEditor plugin)
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace CryptoTimeSheet
 
         public virtual void DisplayItem(object itemIn)
         {
-            CryptoEditorTimeSheetItem item = (CryptoEditorTimeSheetItem)itemIn;
+            item = (CryptoEditorTimeSheetItem)itemIn;
 
             // Clear fields
             time.Clear();
@@ -52,6 +54,41 @@ namespace CryptoTimeSheet
 
             name.Text = item.Name;
             notes.Text = item.Notes;
+        }
+
+        private void notes_Validated(object sender, EventArgs e)
+        {
+            if (!item.Notes.Equals(notes.Text))
+            {
+                item.Notes = notes.Text;
+                item.Update();
+                plugin.SetChanged();
+            }
+        }
+
+        private void hours_Validated(object sender, EventArgs e)
+        {
+            double hoursIn = item.Hours;
+
+            try
+            {
+                hoursIn = double.Parse(hours.Text);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Invalid Hours format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                hours.Text = string.Format("{0:00.00}", item.Hours);
+                return;
+            }
+
+            if (item.Hours != hoursIn)
+            {
+                item.Hours = hoursIn;
+                hours.Text = string.Format("{0:00.00}", item.Hours);
+
+                item.Update();
+                plugin.SetChanged();
+            }
         }
     }
 }

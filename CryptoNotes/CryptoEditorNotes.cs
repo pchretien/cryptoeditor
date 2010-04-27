@@ -9,7 +9,8 @@ namespace CryptoNotes
     {
         public CryptoEditorNotes()
         {
-            this.Detail = new CryptoEditorPluginDetailList<CryptoEditorNotesItem>(this);
+            //this.Detail = new CryptoEditorPluginDetailList<CryptoEditorNotesItem>(this);
+            this.Detail = new CryptoEditorNotesDetails(this);
         }
 
         public override object CreateItem()
