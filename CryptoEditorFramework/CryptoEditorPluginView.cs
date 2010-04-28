@@ -19,11 +19,14 @@ namespace CryptoEditor.FormFramework
 
         private CryptoEditorDoc<T> originalDoc = null;
         private ArrayList originalItems = null;
+
+        private bool groupBy = false;
         
-        public CryptoEditorPluginView(ICryptoEditor plugin)
+        public CryptoEditorPluginView(ICryptoEditor plugin, bool GroupBy)
         {
             InitializeComponent();
             this.plugin = plugin;
+            this.groupBy = GroupBy;
         }
 
         public virtual ICryptoEditor Plugin
@@ -49,18 +52,21 @@ namespace CryptoEditor.FormFramework
                     AddItem(item);
             }
 
-            bool gray = true;
-            string lastVal = "";
-            for (int i = 0; i < listView.Items.Count; i++)
+            if (this.groupBy)
             {
-                if(!listView.Items[i].Text.Equals(lastVal))
+                bool gray = true;
+                string lastVal = "";
+                for (int i = 0; i < listView.Items.Count; i++)
                 {
-                    lastVal = listView.Items[i].Text;
-                    gray = !gray;
-                }
+                    if (!listView.Items[i].Text.Equals(lastVal))
+                    {
+                        lastVal = listView.Items[i].Text;
+                        gray = !gray;
+                    }
 
-                if (gray)
-                    listView.Items[i].BackColor = Color.LightGray;
+                    if (gray)
+                        listView.Items[i].BackColor = Color.LightGray;
+                }
             }
 
             Plugin.Detail.DisplayItem(null);

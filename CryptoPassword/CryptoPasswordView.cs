@@ -10,7 +10,7 @@ namespace CryptoEditor.Password
     public class CryptoPasswordView : CryptoEditorPluginView<CryptoPasswordItem>
     {
         public CryptoPasswordView(ICryptoEditor plugin)
-            : base(plugin)
+            : base(plugin, false)
         {
         }
 
