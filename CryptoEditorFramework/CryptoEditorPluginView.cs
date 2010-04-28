@@ -19,7 +19,7 @@ namespace CryptoEditor.FormFramework
 
         private CryptoEditorDoc<T> originalDoc = null;
         private ArrayList originalItems = null;
-
+        
         public CryptoEditorPluginView(ICryptoEditor plugin)
         {
             InitializeComponent();
@@ -49,8 +49,21 @@ namespace CryptoEditor.FormFramework
                     AddItem(item);
             }
 
-            Plugin.Detail.DisplayItem(null);
+            bool gray = true;
+            string lastVal = "";
+            for (int i = 0; i < listView.Items.Count; i++)
+            {
+                if(!listView.Items[i].Text.Equals(lastVal))
+                {
+                    lastVal = listView.Items[i].Text;
+                    gray = !gray;
+                }
 
+                if (gray)
+                    listView.Items[i].BackColor = Color.LightGray;
+            }
+
+            Plugin.Detail.DisplayItem(null);
             BringToFront();
         }
 
@@ -122,6 +135,7 @@ namespace CryptoEditor.FormFramework
 
             ListViewItem listItem = listView.Items.Add(list[0].Value);
             listItem.Tag = itemIn;
+
             for (int i = 1; i < list.Count; i++)
             {
                 listItem.SubItems.Add(list[i].Value);
