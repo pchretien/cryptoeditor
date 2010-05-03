@@ -55,7 +55,7 @@
             this.cancel.Location = new System.Drawing.Point(197, 347);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
-            this.cancel.TabIndex = 2;
+            this.cancel.TabIndex = 3;
             this.cancel.Text = "&Cancel";
             this.cancel.UseVisualStyleBackColor = true;
             // 
@@ -66,7 +66,7 @@
             this.ok.Location = new System.Drawing.Point(116, 346);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(75, 23);
-            this.ok.TabIndex = 1;
+            this.ok.TabIndex = 2;
             this.ok.Text = "&Ok";
             this.ok.UseVisualStyleBackColor = true;
             this.ok.Click += new System.EventHandler(this.Ok_Click);
@@ -96,7 +96,7 @@
             this.groupBox1.Location = new System.Drawing.Point(13, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 303);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proxy settings";
             // 
@@ -111,7 +111,7 @@
             this.groupBox2.Location = new System.Drawing.Point(10, 132);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(243, 158);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Authentication";
             // 
@@ -188,7 +188,7 @@
             this.proxyPortLabel.Location = new System.Drawing.Point(7, 64);
             this.proxyPortLabel.Name = "proxyPortLabel";
             this.proxyPortLabel.Size = new System.Drawing.Size(55, 13);
-            this.proxyPortLabel.TabIndex = 2;
+            this.proxyPortLabel.TabIndex = 1;
             this.proxyPortLabel.Text = "Proxy Port";
             // 
             // proxyAddressTextBox

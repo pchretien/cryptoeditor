@@ -27,7 +27,6 @@ namespace CryptoEditor
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelCopyright = new System.Windows.Forms.Label();
@@ -35,7 +34,7 @@ namespace CryptoEditor
             this.okButton = new System.Windows.Forms.Button();
             this.linkCryptoEditor = new System.Windows.Forms.LinkLabel();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.SuspendLayout();
             // 
             // labelProductName
@@ -85,8 +84,7 @@ namespace CryptoEditor
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 24;
-            this.okButton.Text = "&OK ok";
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            this.okButton.Text = "&OK";
             // 
             // linkCryptoEditor
             // 
@@ -108,8 +106,10 @@ namespace CryptoEditor
             // 
             // CryptoEditorAboutBox
             // 
+            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.okButton;
             this.ClientSize = new System.Drawing.Size(245, 140);
             this.Controls.Add(this.linkCryptoEditor);
             this.Controls.Add(this.labelProductName);
