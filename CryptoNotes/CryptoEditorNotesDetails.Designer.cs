@@ -47,12 +47,11 @@
             // 
             this.title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.title.BackColor = System.Drawing.SystemColors.Window;
             this.title.Location = new System.Drawing.Point(7, 21);
             this.title.Name = "title";
             this.title.ReadOnly = true;
             this.title.Size = new System.Drawing.Size(439, 20);
-            this.title.TabIndex = 1;
+            this.title.TabIndex = 0;
             // 
             // label2
             // 
@@ -65,14 +64,18 @@
             // 
             // note
             // 
+            this.note.AcceptsReturn = true;
+            this.note.AllowDrop = true;
             this.note.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.note.Location = new System.Drawing.Point(7, 65);
             this.note.Multiline = true;
             this.note.Name = "note";
+            this.note.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.note.Size = new System.Drawing.Size(439, 189);
-            this.note.TabIndex = 3;
+            this.note.TabIndex = 1;
+            this.note.WordWrap = false;
             this.note.Validated += new System.EventHandler(this.note_Validated);
             // 
             // CryptoEditorNotesDetails

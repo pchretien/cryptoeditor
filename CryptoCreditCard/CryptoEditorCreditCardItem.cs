@@ -16,7 +16,8 @@ namespace CryptoEditor.CreditCard
             string number,
             string security,
             string expMonth,
-            string expYear)
+            string expYear,
+            string notes)
         {
             Type = type;
             Name = name;
@@ -25,6 +26,7 @@ namespace CryptoEditor.CreditCard
             Security = security;
             ExpMonth = expMonth;
             ExpYear = expYear;
+            Notes = notes;
         }
 
         private string type = "";
@@ -95,8 +97,31 @@ namespace CryptoEditor.CreditCard
         [CryptoEditorPluginItem(Header = "Notes", Width = 100)]
         public string Notes
         {
-            get { return notes; }
-            set { notes = value; }
+            get
+            {
+                if (!Serializing)
+                    return notes;
+
+                // Note: This could be a function in the framework
+                string ret = notes.Replace("\n", "{{N}}");
+                ret = ret.Replace("\r", "{{R}}");
+
+                return ret;
+            }
+            set
+            {
+                if (!Serializing)
+                {
+                    notes = value;
+                    return;
+                }
+
+                // Note: This could be a function in the framework
+                string input = value.Replace("{{N}}", "\n");
+                input = input.Replace("{{R}}", "\r");
+
+                notes = input;
+            }
         }
     }
 }

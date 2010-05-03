@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoEditorCreditCard.cs" />
+    <Compile Include="CryptoEditorCreditCardDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorCreditCardDetails.Designer.cs">
+      <DependentUpon>CryptoEditorCreditCardDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoEditorCreditCardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorCreditCardDetails.resx">
+      <DependentUpon>CryptoEditorCreditCardDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CryptoEditorCreditCardForm.resx">
       <DependentUpon>CryptoEditorCreditCardForm.cs</DependentUpon>
     </EmbeddedResource>

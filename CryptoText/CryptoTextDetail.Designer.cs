@@ -90,7 +90,6 @@ namespace CryptoEditor.Text
             this.notesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.notesTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.notesTextBox.Location = new System.Drawing.Point(3, 3);
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
@@ -145,7 +144,6 @@ namespace CryptoEditor.Text
             this.keywordsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.keywordsTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.keywordsTextBox.Location = new System.Drawing.Point(9, 175);
             this.keywordsTextBox.Multiline = true;
             this.keywordsTextBox.Name = "keywordsTextBox";
@@ -158,7 +156,6 @@ namespace CryptoEditor.Text
             // 
             this.commentsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.commentsTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.commentsTextBox.Location = new System.Drawing.Point(9, 136);
             this.commentsTextBox.Name = "commentsTextBox";
             this.commentsTextBox.ReadOnly = true;
@@ -187,7 +184,6 @@ namespace CryptoEditor.Text
             // 
             this.authorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.authorTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.authorTextBox.Location = new System.Drawing.Point(9, 97);
             this.authorTextBox.Name = "authorTextBox";
             this.authorTextBox.ReadOnly = true;
@@ -207,7 +203,6 @@ namespace CryptoEditor.Text
             // 
             this.subjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.subjectTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.subjectTextBox.Location = new System.Drawing.Point(9, 58);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.ReadOnly = true;
@@ -218,7 +213,6 @@ namespace CryptoEditor.Text
             // 
             this.titleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.titleTextBox.Location = new System.Drawing.Point(9, 19);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.ReadOnly = true;

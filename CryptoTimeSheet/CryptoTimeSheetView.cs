@@ -20,7 +20,7 @@ namespace CryptoTimeSheet
             string val = "";
 
             if (propertyVal is DateTime)
-            {
+            { 
                 DateTime dateTime = (DateTime) propertyVal;
 
                 val += string.Format("{0:0000}/", dateTime.Year);

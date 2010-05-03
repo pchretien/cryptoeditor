@@ -21,6 +21,8 @@ namespace CryptoEditor.FormFramework
         private ArrayList originalItems = null;
 
         private bool groupBy = false;
+        private int lastColumnClicked = 0;
+        private Color lastSelectedColor = Color.Empty;
         
         public CryptoEditorPluginView(ICryptoEditor plugin, bool GroupBy)
         {
@@ -65,7 +67,7 @@ namespace CryptoEditor.FormFramework
                     }
 
                     if (gray)
-                        listView.Items[i].BackColor = Color.LightGray;
+                        listView.Items[i].BackColor = Color.Cyan;
                 }
             }
 
@@ -495,13 +497,21 @@ namespace CryptoEditor.FormFramework
 
         private void listView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            listView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            if (e.Column != lastColumnClicked)
+            {
+                listView.Sorting = SortOrder.Ascending;
+                listView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+                return;
+            }
+
+            listView.Sorting = listView.Sorting == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
         }
 
         private void listView_Leave(object sender, EventArgs e)
         {
             if(listView.SelectedItems.Count > 0)
             {
+                lastSelectedColor = listView.SelectedItems[0].BackColor;
                 listView.SelectedItems[0].BackColor = Color.LightGray;
             }
         }
@@ -510,7 +520,7 @@ namespace CryptoEditor.FormFramework
         {
             if (listView.SelectedItems.Count > 0)
             {
-                listView.SelectedItems[0].BackColor = Color.Empty;
+                listView.SelectedItems[0].BackColor = lastSelectedColor;
             }
         }
 

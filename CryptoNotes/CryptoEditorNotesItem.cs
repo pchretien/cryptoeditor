@@ -28,8 +28,31 @@ namespace CryptoNotes
         [CryptoEditorPluginItem(1, Header = "Note", Width = 400, Searchable = true)]
         public string Note
         {
-            get { return note; }
-            set { note = value; }
+            get
+            {
+                if(!Serializing)
+                    return note;
+
+                // Note: This could be a function in the framework
+                string ret = note.Replace("\n", "{{N}}");
+                ret = ret.Replace("\r", "{{R}}");
+
+                return ret;
+            }
+            set
+            {
+                if (!Serializing)
+                {
+                    note = value;
+                    return;
+                }
+
+                // Note: This could be a function in the framework
+                string input = value.Replace("{{N}}", "\n");
+                input = input.Replace("{{R}}", "\r");
+
+                note = input;
+            }
         }
     }
 }

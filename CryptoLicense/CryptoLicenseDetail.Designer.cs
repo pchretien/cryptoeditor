@@ -62,7 +62,6 @@ namespace CryptoEditor.License
             this.licenseNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseNotes.BackColor = System.Drawing.SystemColors.Window;
             this.licenseNotes.Location = new System.Drawing.Point(9, 172);
             this.licenseNotes.Multiline = true;
             this.licenseNotes.Name = "licenseNotes";
@@ -85,7 +84,6 @@ namespace CryptoEditor.License
             // 
             this.licenseKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseKey.BackColor = System.Drawing.SystemColors.Window;
             this.licenseKey.Location = new System.Drawing.Point(9, 133);
             this.licenseKey.Name = "licenseKey";
             this.licenseKey.ReadOnly = true;
@@ -107,7 +105,6 @@ namespace CryptoEditor.License
             // 
             this.licenseEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseEmail.BackColor = System.Drawing.SystemColors.Window;
             this.licenseEmail.Location = new System.Drawing.Point(215, 55);
             this.licenseEmail.Name = "licenseEmail";
             this.licenseEmail.ReadOnly = true;
@@ -129,7 +126,6 @@ namespace CryptoEditor.License
             // 
             this.licenseName2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseName2.BackColor = System.Drawing.SystemColors.Window;
             this.licenseName2.Location = new System.Drawing.Point(215, 94);
             this.licenseName2.Name = "licenseName2";
             this.licenseName2.ReadOnly = true;
@@ -151,7 +147,6 @@ namespace CryptoEditor.License
             // 
             this.licenseName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseName.BackColor = System.Drawing.SystemColors.Window;
             this.licenseName.Location = new System.Drawing.Point(215, 16);
             this.licenseName.Name = "licenseName";
             this.licenseName.ReadOnly = true;
@@ -178,7 +173,6 @@ namespace CryptoEditor.License
             // 
             // productWebsite
             // 
-            this.productWebsite.BackColor = System.Drawing.SystemColors.Window;
             this.productWebsite.Location = new System.Drawing.Point(6, 94);
             this.productWebsite.Name = "productWebsite";
             this.productWebsite.ReadOnly = true;
@@ -187,7 +181,6 @@ namespace CryptoEditor.License
             // 
             // productCompany
             // 
-            this.productCompany.BackColor = System.Drawing.SystemColors.Window;
             this.productCompany.Location = new System.Drawing.Point(6, 55);
             this.productCompany.Name = "productCompany";
             this.productCompany.ReadOnly = true;
@@ -205,7 +198,6 @@ namespace CryptoEditor.License
             // 
             // productName
             // 
-            this.productName.BackColor = System.Drawing.SystemColors.Window;
             this.productName.Location = new System.Drawing.Point(6, 16);
             this.productName.Name = "productName";
             this.productName.ReadOnly = true;

@@ -115,7 +115,8 @@
             // notes
             // 
             this.notes.AcceptsReturn = true;
-            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.notes.Location = new System.Drawing.Point(12, 195);
             this.notes.Multiline = true;
@@ -157,8 +158,6 @@
             // 
             // number
             // 
-            this.number.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.number.Location = new System.Drawing.Point(207, 25);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(178, 20);
@@ -175,8 +174,6 @@
             // 
             // verification
             // 
-            this.verification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.verification.Location = new System.Drawing.Point(207, 66);
             this.verification.Name = "verification";
             this.verification.Size = new System.Drawing.Size(178, 20);
@@ -200,7 +197,6 @@
             // 
             // year
             // 
-            this.year.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.year.FormattingEnabled = true;
             this.year.IntegralHeight = false;
             this.year.Location = new System.Drawing.Point(296, 109);
@@ -210,7 +206,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(293, 93);
             this.label6.Name = "label6";

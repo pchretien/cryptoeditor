@@ -70,7 +70,7 @@ namespace CryptoEditor.License
         {
             get
             {
-                if (!Sarializing)
+                if (!Serializing)
                     return notes;
 
                 // Note: This could be a function in the framework
@@ -81,7 +81,7 @@ namespace CryptoEditor.License
             }
             set
             {
-                if (!Sarializing)
+                if (!Serializing)
                 {
                     notes = value;
                     return;

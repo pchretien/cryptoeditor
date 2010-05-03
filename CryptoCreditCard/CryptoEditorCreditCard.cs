@@ -10,7 +10,8 @@ namespace CryptoEditor.CreditCard
     {
         public CreditCard()
         {
-            this.Detail = new CryptoEditorPluginDetailList<CryptoEditorCreditCardItem>(this);
+            //this.Detail = new CryptoEditorPluginDetailList<CryptoEditorCreditCardItem>(this);
+            this.Detail = new CryptoEditorCreditCardDetails(this);
         }
 
         /// <summary>
@@ -29,7 +30,8 @@ namespace CryptoEditor.CreditCard
                 "",
                 "",
                 DateTime.Today.Month.ToString(),
-                DateTime.Today.AddYears(1).Year.ToString());
+                DateTime.Today.AddYears(1).Year.ToString(),
+                "");
 
             CryptoEditorCreditCardForm form = new CryptoEditorCreditCardForm(item);
             if (form.ShowDialog() != DialogResult.OK)

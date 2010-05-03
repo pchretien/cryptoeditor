@@ -44,7 +44,7 @@ namespace CryptoEditor.FormFramework
         {
             try
             {
-                CryptoEditorPluginItem.Sarializing = true;
+                CryptoEditorPluginItem.Serializing = true;
                 
                 // Clear existing nodes ...
                 rootNode.Nodes.Clear();
@@ -71,7 +71,7 @@ namespace CryptoEditor.FormFramework
             }
             finally
             {
-                CryptoEditorPluginItem.Sarializing = false;
+                CryptoEditorPluginItem.Serializing = false;
             }
         }
 
@@ -80,12 +80,12 @@ namespace CryptoEditor.FormFramework
             string ret = "";
             try
             {
-                CryptoEditorPluginItem.Sarializing = true;
+                CryptoEditorPluginItem.Serializing = true;
                 ret = Doc.GetXml();
             }
             finally
             {
-                CryptoEditorPluginItem.Sarializing = false;
+                CryptoEditorPluginItem.Serializing = false;
             }
 
             return ret;

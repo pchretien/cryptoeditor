@@ -21,7 +21,7 @@ namespace CryptoEditor.Text
         {
             get
             {
-                if (!Sarializing)
+                if (!Serializing)
                     return notes;
 
                 // Note: This could be a function in the framework
@@ -32,7 +32,7 @@ namespace CryptoEditor.Text
             }
             set
             {
-                if (!Sarializing)
+                if (!Serializing)
                 {
                     notes = value;
                     return;
@@ -72,7 +72,7 @@ namespace CryptoEditor.Text
         {
             get
             {
-                if (!Sarializing)
+                if (!Serializing)
                     return keywords;
 
                 // Note: This could be a function in the framework
@@ -83,7 +83,7 @@ namespace CryptoEditor.Text
             }
             set
             {
-                if (!Sarializing)
+                if (!Serializing)
                 {
                     keywords = value;
                     return;

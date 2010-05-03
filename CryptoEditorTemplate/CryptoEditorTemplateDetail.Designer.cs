@@ -37,6 +37,7 @@ namespace CryptoEditor.Template
             // 
             this.nameTextBox.Location = new System.Drawing.Point(14, 14);
             this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(382, 20);
             this.nameTextBox.TabIndex = 0;
             // 
@@ -44,6 +45,7 @@ namespace CryptoEditor.Template
             // 
             this.emailTextBox.Location = new System.Drawing.Point(14, 68);
             this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(382, 20);
             this.emailTextBox.TabIndex = 0;
             // 

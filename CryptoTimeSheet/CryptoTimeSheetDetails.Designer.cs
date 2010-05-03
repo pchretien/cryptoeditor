@@ -67,10 +67,10 @@
             // 
             // notes
             // 
+            this.notes.AcceptsReturn = true;
             this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.notes.BackColor = System.Drawing.SystemColors.Window;
             this.notes.Location = new System.Drawing.Point(2, 103);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
@@ -82,7 +82,6 @@
             // 
             // hours
             // 
-            this.hours.BackColor = System.Drawing.SystemColors.Window;
             this.hours.Location = new System.Drawing.Point(142, 16);
             this.hours.Name = "hours";
             this.hours.Size = new System.Drawing.Size(100, 20);
@@ -93,7 +92,6 @@
             // 
             this.name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.name.BackColor = System.Drawing.SystemColors.Window;
             this.name.Location = new System.Drawing.Point(2, 61);
             this.name.Name = "name";
             this.name.ReadOnly = true;
@@ -102,7 +100,6 @@
             // 
             // time
             // 
-            this.time.BackColor = System.Drawing.SystemColors.Window;
             this.time.Location = new System.Drawing.Point(2, 16);
             this.time.Name = "time";
             this.time.ReadOnly = true;

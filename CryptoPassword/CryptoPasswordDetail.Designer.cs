@@ -46,7 +46,6 @@ namespace CryptoEditor.Password
             // 
             this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
-            this.nameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.nameTextBox.Location = new System.Drawing.Point(3, 21);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
@@ -69,7 +68,6 @@ namespace CryptoEditor.Password
             // 
             this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
-            this.usernameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.usernameTextBox.Location = new System.Drawing.Point(3, 61);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.ReadOnly = true;
@@ -96,7 +94,6 @@ namespace CryptoEditor.Password
             this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.passwordTextBox.Location = new System.Drawing.Point(224, 61);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.ReadOnly = true;
@@ -123,7 +120,6 @@ namespace CryptoEditor.Password
             this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.emailTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.emailTextBox.Location = new System.Drawing.Point(224, 21);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.ReadOnly = true;
@@ -149,7 +145,6 @@ namespace CryptoEditor.Password
             this.urlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.urlTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.urlTextBox.Location = new System.Drawing.Point(3, 101);
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.ReadOnly = true;
@@ -176,7 +171,6 @@ namespace CryptoEditor.Password
             this.notesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.notesTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.notesTextBox.Location = new System.Drawing.Point(3, 141);
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";

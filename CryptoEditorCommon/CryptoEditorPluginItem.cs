@@ -11,7 +11,7 @@ namespace CryptoEditor.Common
         private Guid id;
         private bool active;
 
-        public static bool Sarializing = false;
+        public static bool Serializing = false;
 
         public CryptoEditorPluginItem()
         {
