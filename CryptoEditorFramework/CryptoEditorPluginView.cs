@@ -21,14 +21,19 @@ namespace CryptoEditor.FormFramework
         private ArrayList originalItems = null;
 
         private bool groupBy = false;
-        private int lastColumnClicked = 0;
+        private int lastColumnClicked = -1;
         private Color lastSelectedColor = Color.Empty;
         
-        public CryptoEditorPluginView(ICryptoEditor plugin, bool GroupBy)
+        private bool descending = false;
+        private bool defaultDescending = false;
+        
+        public CryptoEditorPluginView(ICryptoEditor plugin, bool GroupBy, bool @descending)
         {
             InitializeComponent();
             this.plugin = plugin;
             this.groupBy = GroupBy;
+            this.descending = @descending;
+            this.defaultDescending = @descending;
         }
 
         public virtual ICryptoEditor Plugin
@@ -73,6 +78,8 @@ namespace CryptoEditor.FormFramework
 
             Plugin.Detail.DisplayItem(null);
             BringToFront();
+
+            SortByColumn(0);
         }
 
         public void AddMenuItem(ToolStripItem item)
@@ -497,14 +504,18 @@ namespace CryptoEditor.FormFramework
 
         private void listView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            if (e.Column != lastColumnClicked)
-            {
-                listView.Sorting = SortOrder.Ascending;
-                listView.ListViewItemSorter = new ListViewItemComparer(e.Column);
-                return;
-            }
+            SortByColumn(e.Column);
+        }
 
-            listView.Sorting = listView.Sorting == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+        private void SortByColumn(int column)
+        {
+            if (column == lastColumnClicked)
+                descending = !descending;
+            else
+                descending = defaultDescending;
+
+            lastColumnClicked = column;
+            listView.ListViewItemSorter = new ListViewItemComparer(column, descending);
         }
 
         private void listView_Leave(object sender, EventArgs e)

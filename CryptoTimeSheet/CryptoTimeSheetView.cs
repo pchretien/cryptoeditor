@@ -11,7 +11,7 @@ namespace CryptoTimeSheet
     public class CryptoTimeSheetView : CryptoEditorPluginView<CryptoEditorTimeSheetItem>
     {
         public CryptoTimeSheetView(ICryptoEditor plugin)
-            : base(plugin, true)
+            : base(plugin, true, true)
         {
         }
 

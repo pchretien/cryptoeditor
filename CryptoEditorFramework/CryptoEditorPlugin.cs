@@ -21,7 +21,7 @@ namespace CryptoEditor.FormFramework
         public CryptoEditorPlugin()
         {
             rootNode = new CryptoEditorPluginRootNode<T>(this, Text);
-            view = new CryptoEditorPluginView<T>(this, false);
+            view = new CryptoEditorPluginView<T>(this, false, false);
             detail = new CryptoEditorPluginDetail<T>(this);
         }
 
