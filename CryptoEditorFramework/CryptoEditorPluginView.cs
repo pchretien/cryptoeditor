@@ -79,6 +79,7 @@ namespace CryptoEditor.FormFramework
             Plugin.Detail.DisplayItem(null);
             BringToFront();
 
+            lastColumnClicked = -1;
             SortByColumn(0);
         }
 

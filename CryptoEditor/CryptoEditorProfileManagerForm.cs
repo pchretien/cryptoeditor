@@ -36,7 +36,7 @@ namespace CryptoEditor
             if (profilesListView.SelectedItems.Count == 0)
                 return;
 
-            if (MessageBox.Show("Are you sure you want to delete the profile " + profilesListView.SelectedItems[0].Text + " and all the data is contains?", "Delete Profile", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete the profile " + profilesListView.SelectedItems[0].Text + " and all the data it contains?", "Delete Profile", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 // Delete the profile from the list ...
                 if (profilesListView.SelectedItems.Count > 0)
@@ -52,7 +52,7 @@ namespace CryptoEditor
                         if (tmpPassword.Equals(tmpProfile.EncryptedPassword))
                         {
                             string toDelete = tmpProfile.Id + "*.*";
-                            string[] filesToDelete = Directory.GetFiles(Directory.GetCurrentDirectory(), toDelete);
+                            string[] filesToDelete = Directory.GetFiles(Path.GetDirectoryName(SelectedProfileFile), toDelete);
                             foreach(string file in filesToDelete)
                             {
                                 System.IO.File.Delete(file);

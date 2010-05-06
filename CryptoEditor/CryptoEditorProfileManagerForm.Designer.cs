@@ -82,7 +82,6 @@ namespace CryptoEditor
             this.open.TabIndex = 1;
             this.open.Text = "&Open";
             this.toolTip.SetToolTip(this.open, "Open CryptoEditor with the selected profile.");
-            this.open.Click += new System.EventHandler(this.open_Click);
             // 
             // cancel
             // 
