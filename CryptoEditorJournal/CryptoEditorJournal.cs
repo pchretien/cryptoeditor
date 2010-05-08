@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using CryptoEditor.Common;
 using CryptoEditor.FormFramework;
 
@@ -9,16 +10,16 @@ namespace CryptoEditor.Journal
     {
         public CryptoEditorJournal()
         {
-            this.Detail = new CryptoEditorPluginDetailList<CryptoEditorJournalItem>(this);
+            //this.Detail = new CryptoEditorPluginDetailList<CryptoEditorJournalItem>(this);
+            this.Detail = new CryptoEditorJournalDetails(this);
         }
 
         public override object CreateItem()
         {
-            //
-            // A new form must be implemented by the user to get item details ...
-            //
-            CryptoEditorJournalItem item = new CryptoEditorJournalItem(DateTime.Now, "Title " + System.Guid.NewGuid(),
-                "Text " + System.Guid.NewGuid());
+            CryptoEditorJournalItem item = new CryptoEditorJournalItem(DateTime.Now, "", "");
+            CryptoEditorJournalForm form = new CryptoEditorJournalForm(item);
+            if (form.ShowDialog() != DialogResult.OK)
+                return null;
 
             base.CreateItem();
             return item;
@@ -27,7 +28,9 @@ namespace CryptoEditor.Journal
         public override object UpdateItem(object itemIn)
         {
             CryptoEditorJournalItem item = (CryptoEditorJournalItem)itemIn;
-            item.Title += "<*>";
+            CryptoEditorJournalForm form = new CryptoEditorJournalForm(item);
+            if (form.ShowDialog() != DialogResult.OK)
+                return item;
 
             base.UpdateItem(item);
             return item;

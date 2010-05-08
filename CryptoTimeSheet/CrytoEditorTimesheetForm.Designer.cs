@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // time
@@ -48,35 +49,38 @@
             // 
             // name
             // 
+            this.name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.name.Location = new System.Drawing.Point(12, 67);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(200, 20);
+            this.name.Size = new System.Drawing.Size(410, 20);
             this.name.TabIndex = 1;
             // 
             // hours
             // 
-            this.hours.Location = new System.Drawing.Point(12, 109);
+            this.hours.Location = new System.Drawing.Point(218, 25);
             this.hours.Name = "hours";
-            this.hours.Size = new System.Drawing.Size(100, 20);
+            this.hours.Size = new System.Drawing.Size(75, 20);
             this.hours.TabIndex = 2;
             this.hours.Validated += new System.EventHandler(this.hours_Validated);
             // 
             // notes
             // 
             this.notes.AcceptsReturn = true;
-            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.notes.Location = new System.Drawing.Point(12, 135);
+            this.notes.Location = new System.Drawing.Point(12, 110);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
             this.notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.notes.Size = new System.Drawing.Size(203, 157);
+            this.notes.Size = new System.Drawing.Size(410, 161);
             this.notes.TabIndex = 3;
             // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(59, 306);
+            this.okButton.Location = new System.Drawing.Point(266, 277);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 4;
@@ -88,7 +92,7 @@
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(140, 306);
+            this.cancelButton.Location = new System.Drawing.Point(347, 277);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 5;
@@ -98,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 90);
+            this.label1.Location = new System.Drawing.Point(219, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
@@ -122,13 +126,23 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Date";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Notes";
+            // 
             // CrytoEditorTimesheetForm
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(227, 341);
+            this.ClientSize = new System.Drawing.Size(434, 312);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -138,14 +152,13 @@
             this.Controls.Add(this.hours);
             this.Controls.Add(this.name);
             this.Controls.Add(this.time);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CrytoEditorTimesheetForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Timesheet edition";
+            this.Text = "Timesheet Edition";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

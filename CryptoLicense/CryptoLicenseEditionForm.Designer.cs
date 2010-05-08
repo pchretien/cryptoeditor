@@ -86,7 +86,7 @@ namespace CryptoEditor.License
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseName.Location = new System.Drawing.Point(221, 28);
             this.licenseName.Name = "licenseName";
-            this.licenseName.Size = new System.Drawing.Size(200, 20);
+            this.licenseName.Size = new System.Drawing.Size(201, 20);
             this.licenseName.TabIndex = 3;
             // 
             // label3
@@ -106,7 +106,7 @@ namespace CryptoEditor.License
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseCompany.Location = new System.Drawing.Point(221, 106);
             this.licenseCompany.Name = "licenseCompany";
-            this.licenseCompany.Size = new System.Drawing.Size(200, 20);
+            this.licenseCompany.Size = new System.Drawing.Size(201, 20);
             this.licenseCompany.TabIndex = 5;
             // 
             // label4
@@ -126,7 +126,7 @@ namespace CryptoEditor.License
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseEmail.Location = new System.Drawing.Point(221, 67);
             this.licenseEmail.Name = "licenseEmail";
-            this.licenseEmail.Size = new System.Drawing.Size(200, 20);
+            this.licenseEmail.Size = new System.Drawing.Size(201, 20);
             this.licenseEmail.TabIndex = 4;
             // 
             // label5
@@ -146,7 +146,7 @@ namespace CryptoEditor.License
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.licenseKey.Location = new System.Drawing.Point(15, 145);
             this.licenseKey.Name = "licenseKey";
-            this.licenseKey.Size = new System.Drawing.Size(406, 20);
+            this.licenseKey.Size = new System.Drawing.Size(407, 20);
             this.licenseKey.TabIndex = 6;
             // 
             // label7
@@ -169,7 +169,7 @@ namespace CryptoEditor.License
             this.licenseNotes.Multiline = true;
             this.licenseNotes.Name = "licenseNotes";
             this.licenseNotes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.licenseNotes.Size = new System.Drawing.Size(406, 97);
+            this.licenseNotes.Size = new System.Drawing.Size(407, 91);
             this.licenseNotes.TabIndex = 7;
             // 
             // label8
@@ -199,8 +199,9 @@ namespace CryptoEditor.License
             // 
             // cancelButton
             // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(346, 287);
+            this.cancelButton.Location = new System.Drawing.Point(347, 281);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 9;
@@ -209,8 +210,9 @@ namespace CryptoEditor.License
             // 
             // okButton
             // 
+            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(265, 287);
+            this.okButton.Location = new System.Drawing.Point(266, 281);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 8;
@@ -224,7 +226,7 @@ namespace CryptoEditor.License
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(433, 318);
+            this.ClientSize = new System.Drawing.Size(434, 312);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label8);
@@ -243,14 +245,13 @@ namespace CryptoEditor.License
             this.Controls.Add(this.productCompany);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.productName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CryptoLicenseEditionForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CryptoLicense - Edition";
+            this.Text = "License Edition";
             this.ResumeLayout(false);
             this.PerformLayout();
 

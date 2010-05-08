@@ -48,7 +48,7 @@ namespace CryptoEditor.Password
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(335, 295);
+            this.okButton.Location = new System.Drawing.Point(267, 277);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 6;
@@ -60,7 +60,7 @@ namespace CryptoEditor.Password
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(416, 295);
+            this.cancelButton.Location = new System.Drawing.Point(348, 277);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 7;
@@ -146,7 +146,7 @@ namespace CryptoEditor.Password
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTextBox.Location = new System.Drawing.Point(233, 63);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(257, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(189, 20);
             this.passwordTextBox.TabIndex = 3;
             // 
             // usernameTextBox
@@ -165,7 +165,7 @@ namespace CryptoEditor.Password
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.emailTextBox.Location = new System.Drawing.Point(233, 23);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(257, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(189, 20);
             this.emailTextBox.TabIndex = 1;
             // 
             // notesTextBox
@@ -179,7 +179,7 @@ namespace CryptoEditor.Password
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.notesTextBox.Size = new System.Drawing.Size(478, 146);
+            this.notesTextBox.Size = new System.Drawing.Size(410, 128);
             this.notesTextBox.TabIndex = 5;
             // 
             // urlTextBox
@@ -189,7 +189,7 @@ namespace CryptoEditor.Password
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.urlTextBox.Location = new System.Drawing.Point(12, 103);
             this.urlTextBox.Name = "urlTextBox";
-            this.urlTextBox.Size = new System.Drawing.Size(478, 20);
+            this.urlTextBox.Size = new System.Drawing.Size(410, 20);
             this.urlTextBox.TabIndex = 4;
             // 
             // nameTextBox
@@ -207,7 +207,7 @@ namespace CryptoEditor.Password
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(502, 330);
+            this.ClientSize = new System.Drawing.Size(434, 312);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -222,14 +222,13 @@ namespace CryptoEditor.Password
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CryptoPasswordEditionForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edition";
+            this.Text = "Password Edition";
             this.ResumeLayout(false);
             this.PerformLayout();
 

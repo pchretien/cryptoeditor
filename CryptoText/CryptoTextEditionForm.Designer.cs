@@ -60,7 +60,7 @@ namespace CryptoEditor.Text
             this.cryptoNotesTabs.Location = new System.Drawing.Point(12, 12);
             this.cryptoNotesTabs.Name = "cryptoNotesTabs";
             this.cryptoNotesTabs.SelectedIndex = 0;
-            this.cryptoNotesTabs.Size = new System.Drawing.Size(466, 272);
+            this.cryptoNotesTabs.Size = new System.Drawing.Size(410, 260);
             this.cryptoNotesTabs.TabIndex = 0;
             this.cryptoNotesTabs.TabStop = false;
             // 
@@ -79,7 +79,7 @@ namespace CryptoEditor.Text
             this.propertiesTab.Location = new System.Drawing.Point(4, 22);
             this.propertiesTab.Name = "propertiesTab";
             this.propertiesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.propertiesTab.Size = new System.Drawing.Size(458, 246);
+            this.propertiesTab.Size = new System.Drawing.Size(402, 234);
             this.propertiesTab.TabIndex = 0;
             this.propertiesTab.Text = "Properties";
             this.propertiesTab.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@ namespace CryptoEditor.Text
             this.keywordsTextBox.Multiline = true;
             this.keywordsTextBox.Name = "keywordsTextBox";
             this.keywordsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.keywordsTextBox.Size = new System.Drawing.Size(443, 62);
+            this.keywordsTextBox.Size = new System.Drawing.Size(387, 50);
             this.keywordsTextBox.TabIndex = 5;
             this.keywordsTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -132,7 +132,7 @@ namespace CryptoEditor.Text
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.commentsTextBox.Location = new System.Drawing.Point(9, 136);
             this.commentsTextBox.Name = "commentsTextBox";
-            this.commentsTextBox.Size = new System.Drawing.Size(443, 20);
+            this.commentsTextBox.Size = new System.Drawing.Size(387, 20);
             this.commentsTextBox.TabIndex = 3;
             this.commentsTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -151,7 +151,7 @@ namespace CryptoEditor.Text
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.authorTextBox.Location = new System.Drawing.Point(9, 97);
             this.authorTextBox.Name = "authorTextBox";
-            this.authorTextBox.Size = new System.Drawing.Size(443, 20);
+            this.authorTextBox.Size = new System.Drawing.Size(387, 20);
             this.authorTextBox.TabIndex = 2;
             this.authorTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -170,7 +170,7 @@ namespace CryptoEditor.Text
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.subjectTextBox.Location = new System.Drawing.Point(9, 58);
             this.subjectTextBox.Name = "subjectTextBox";
-            this.subjectTextBox.Size = new System.Drawing.Size(443, 20);
+            this.subjectTextBox.Size = new System.Drawing.Size(387, 20);
             this.subjectTextBox.TabIndex = 1;
             this.subjectTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -180,7 +180,7 @@ namespace CryptoEditor.Text
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.titleTextBox.Location = new System.Drawing.Point(9, 19);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(443, 20);
+            this.titleTextBox.Size = new System.Drawing.Size(387, 20);
             this.titleTextBox.TabIndex = 0;
             this.titleTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -191,7 +191,7 @@ namespace CryptoEditor.Text
             this.notesTab.Location = new System.Drawing.Point(4, 22);
             this.notesTab.Name = "notesTab";
             this.notesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.notesTab.Size = new System.Drawing.Size(458, 246);
+            this.notesTab.Size = new System.Drawing.Size(434, 260);
             this.notesTab.TabIndex = 1;
             this.notesTab.Text = "Text";
             this.notesTab.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@ namespace CryptoEditor.Text
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(3, 226);
+            this.checkBox1.Location = new System.Drawing.Point(3, 240);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(76, 17);
             this.checkBox1.TabIndex = 3;
@@ -222,14 +222,14 @@ namespace CryptoEditor.Text
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.notesTextBox.Size = new System.Drawing.Size(452, 217);
+            this.notesTextBox.Size = new System.Drawing.Size(428, 231);
             this.notesTextBox.TabIndex = 0;
             // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(399, 290);
+            this.cancelButton.Location = new System.Drawing.Point(343, 278);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 2;
@@ -240,7 +240,7 @@ namespace CryptoEditor.Text
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(318, 290);
+            this.okButton.Location = new System.Drawing.Point(262, 278);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 1;
@@ -251,7 +251,7 @@ namespace CryptoEditor.Text
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 324);
+            this.ClientSize = new System.Drawing.Size(434, 312);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.cryptoNotesTabs);
@@ -261,7 +261,7 @@ namespace CryptoEditor.Text
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CryptoNotes - Edition";
+            this.Text = "Text Edition";
             this.cryptoNotesTabs.ResumeLayout(false);
             this.propertiesTab.ResumeLayout(false);
             this.propertiesTab.PerformLayout();

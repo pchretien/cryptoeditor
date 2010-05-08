@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,6 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoEditorJournal.cs" />
+    <Compile Include="CryptoEditorJournalDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorJournalDetails.Designer.cs">
+      <DependentUpon>CryptoEditorJournalDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoEditorJournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorJournalForm.Designer.cs">
+      <DependentUpon>CryptoEditorJournalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoEditorJournalItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,6 +68,14 @@
       <Project>{DC392461-D034-44C4-B870-064538902B1A}</Project>
       <Name>CryptoEditorFormFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CryptoEditorJournalDetails.resx">
+      <DependentUpon>CryptoEditorJournalDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorJournalForm.resx">
+      <DependentUpon>CryptoEditorJournalForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

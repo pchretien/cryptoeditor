@@ -122,14 +122,14 @@
             this.notes.Multiline = true;
             this.notes.Name = "notes";
             this.notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.notes.Size = new System.Drawing.Size(373, 62);
+            this.notes.Size = new System.Drawing.Size(410, 74);
             this.notes.TabIndex = 8;
             // 
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(310, 269);
+            this.cancelButton.Location = new System.Drawing.Point(347, 281);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 10;
@@ -139,7 +139,7 @@
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(229, 269);
+            this.okButton.Location = new System.Drawing.Point(266, 281);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 9;
@@ -158,9 +158,11 @@
             // 
             // number
             // 
+            this.number.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.number.Location = new System.Drawing.Point(207, 25);
             this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(178, 20);
+            this.number.Size = new System.Drawing.Size(215, 20);
             this.number.TabIndex = 4;
             // 
             // label8
@@ -174,9 +176,11 @@
             // 
             // verification
             // 
+            this.verification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.verification.Location = new System.Drawing.Point(207, 66);
             this.verification.Name = "verification";
-            this.verification.Size = new System.Drawing.Size(178, 20);
+            this.verification.Size = new System.Drawing.Size(215, 20);
             this.verification.TabIndex = 5;
             // 
             // label9
@@ -249,7 +253,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(397, 300);
+            this.ClientSize = new System.Drawing.Size(434, 312);
             this.Controls.Add(this.month);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -270,14 +274,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.creditcard);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CryptoEditorCreditCardForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Edition";
+            this.Text = "Credit Card Edition";
             this.ResumeLayout(false);
             this.PerformLayout();
 
