@@ -25,18 +25,19 @@ namespace CryptoEditor.CreditCard
             get { return plugin; }
         }
 
-        //Type = type;
-        //    Name = name;
-        //    Company = company;
-        //    Number = number;
-        //    Security = security;
-        //    ExpMonth = expMonth;
-        //    ExpYear = expYear;
-        //    Notes = notes;
-
         public virtual void DisplayItem(object itemIn)
         {
             item = (CryptoEditorCreditCardItem)itemIn;
+
+            creditcard.Text = "";
+            name.Clear();
+            name2.Clear();
+            company.Clear();
+            number.Clear();
+            verification.Clear();
+            month.Text = "";
+            year.Text = "";
+            notes.Clear();
             
             BringToFront();
 

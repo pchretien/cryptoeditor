@@ -29,6 +29,10 @@ namespace CryptoEditor.Journal
         {
             item = (CryptoEditorJournalItem)itemIn;
 
+            date.Value = DateTime.Now;
+            title.Clear();
+            text.Clear();
+
             BringToFront();
 
             if (item == null)
