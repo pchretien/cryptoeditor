@@ -181,7 +181,6 @@ namespace CryptoEditor.Password
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.notesTextBox.Size = new System.Drawing.Size(478, 146);
             this.notesTextBox.TabIndex = 5;
-            this.notesTextBox.WordWrap = false;
             // 
             // urlTextBox
             // 

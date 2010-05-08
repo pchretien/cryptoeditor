@@ -177,7 +177,6 @@ namespace CryptoEditor.Password
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.notesTextBox.Size = new System.Drawing.Size(449, 101);
             this.notesTextBox.TabIndex = 5;
-            this.notesTextBox.WordWrap = false;
             this.notesTextBox.Validated += new System.EventHandler(this.notesTextBox_Validated);
             // 
             // label6

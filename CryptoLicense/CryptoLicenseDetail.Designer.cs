@@ -68,7 +68,6 @@ namespace CryptoEditor.License
             this.licenseNotes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.licenseNotes.Size = new System.Drawing.Size(406, 97);
             this.licenseNotes.TabIndex = 23;
-            this.licenseNotes.WordWrap = false;
             this.licenseNotes.Validated += new System.EventHandler(this.licenseNotes_Validated);
             // 
             // label7

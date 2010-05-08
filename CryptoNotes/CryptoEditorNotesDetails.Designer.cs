@@ -75,7 +75,6 @@
             this.note.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.note.Size = new System.Drawing.Size(439, 189);
             this.note.TabIndex = 1;
-            this.note.WordWrap = false;
             this.note.Validated += new System.EventHandler(this.note_Validated);
             // 
             // CryptoEditorNotesDetails

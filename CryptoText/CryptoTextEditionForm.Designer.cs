@@ -200,6 +200,8 @@ namespace CryptoEditor.Text
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(3, 226);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(76, 17);
@@ -222,7 +224,6 @@ namespace CryptoEditor.Text
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.notesTextBox.Size = new System.Drawing.Size(452, 217);
             this.notesTextBox.TabIndex = 0;
-            this.notesTextBox.WordWrap = false;
             // 
             // cancelButton
             // 

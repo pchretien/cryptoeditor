@@ -233,6 +233,10 @@
       <Project>{FBC86B24-DD94-4B15-AC73-F39E3ECA3734}</Project>
       <Name>CryptoEditorHome</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorJournal\CryptoEditorJournal.csproj">
+      <Project>{9E65D8C4-590B-490D-8629-BFFA9EEB3E1F}</Project>
+      <Name>CryptoEditorJournal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CryptoLicense\CryptoLicense.csproj">
       <Project>{13F10403-2279-45CA-9A0A-717B4D769599}</Project>
       <Name>CryptoLicense</Name>

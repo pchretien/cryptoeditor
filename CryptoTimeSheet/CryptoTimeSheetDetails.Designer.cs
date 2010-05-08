@@ -77,7 +77,6 @@
             this.notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.notes.Size = new System.Drawing.Size(402, 129);
             this.notes.TabIndex = 3;
-            this.notes.WordWrap = false;
             this.notes.Validated += new System.EventHandler(this.notes_Validated);
             // 
             // hours

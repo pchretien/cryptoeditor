@@ -69,6 +69,7 @@
             this.notes.Location = new System.Drawing.Point(12, 135);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
+            this.notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.notes.Size = new System.Drawing.Size(203, 157);
             this.notes.TabIndex = 3;
             // 

@@ -40,6 +40,7 @@
             this.totalsCheck = new System.Windows.Forms.CheckBox();
             this.delimiter = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.totalByDay = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // fromDate
@@ -94,7 +95,7 @@
             // 
             this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitButton.Location = new System.Drawing.Point(174, 149);
+            this.exitButton.Location = new System.Drawing.Point(174, 183);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 3;
@@ -105,7 +106,7 @@
             // generate
             // 
             this.generate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.generate.Location = new System.Drawing.Point(93, 149);
+            this.generate.Location = new System.Drawing.Point(93, 183);
             this.generate.Name = "generate";
             this.generate.Size = new System.Drawing.Size(75, 23);
             this.generate.TabIndex = 2;
@@ -118,9 +119,9 @@
             this.folderCheck.AutoSize = true;
             this.folderCheck.Location = new System.Drawing.Point(49, 68);
             this.folderCheck.Name = "folderCheck";
-            this.folderCheck.Size = new System.Drawing.Size(112, 17);
+            this.folderCheck.Size = new System.Drawing.Size(155, 17);
             this.folderCheck.TabIndex = 4;
-            this.folderCheck.Text = "Display total hours";
+            this.folderCheck.Text = "Display total hours by folder";
             this.folderCheck.UseVisualStyleBackColor = true;
             // 
             // totalsCheck
@@ -128,9 +129,9 @@
             this.totalsCheck.AutoSize = true;
             this.totalsCheck.Location = new System.Drawing.Point(49, 91);
             this.totalsCheck.Name = "totalsCheck";
-            this.totalsCheck.Size = new System.Drawing.Size(158, 17);
+            this.totalsCheck.Size = new System.Drawing.Size(201, 17);
             this.totalsCheck.TabIndex = 4;
-            this.totalsCheck.Text = "Display recursive total hours";
+            this.totalsCheck.Text = "Display recursive total hours by folder";
             this.totalsCheck.UseVisualStyleBackColor = true;
             // 
             // delimiter
@@ -140,7 +141,7 @@
             ";",
             ",",
             "[tab]"});
-            this.delimiter.Location = new System.Drawing.Point(49, 115);
+            this.delimiter.Location = new System.Drawing.Point(49, 138);
             this.delimiter.Name = "delimiter";
             this.delimiter.Size = new System.Drawing.Size(46, 21);
             this.delimiter.TabIndex = 5;
@@ -149,11 +150,23 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(102, 122);
+            this.label4.Location = new System.Drawing.Point(102, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Delimiter character";
+            // 
+            // totalByDay
+            // 
+            this.totalByDay.AutoSize = true;
+            this.totalByDay.Checked = true;
+            this.totalByDay.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.totalByDay.Location = new System.Drawing.Point(49, 115);
+            this.totalByDay.Name = "totalByDay";
+            this.totalByDay.Size = new System.Drawing.Size(117, 17);
+            this.totalByDay.TabIndex = 7;
+            this.totalByDay.Text = "Display total by day";
+            this.totalByDay.UseVisualStyleBackColor = true;
             // 
             // CryptoEditorTimeSheetReportForm
             // 
@@ -161,7 +174,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(263, 184);
+            this.ClientSize = new System.Drawing.Size(263, 218);
+            this.Controls.Add(this.totalByDay);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.delimiter);
             this.Controls.Add(this.totalsCheck);
@@ -201,5 +215,6 @@
         private System.Windows.Forms.CheckBox totalsCheck;
         private System.Windows.Forms.ComboBox delimiter;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox totalByDay;
     }
 }
