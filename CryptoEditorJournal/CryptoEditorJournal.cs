@@ -12,6 +12,7 @@ namespace CryptoEditor.Journal
         {
             //this.Detail = new CryptoEditorPluginDetailList<CryptoEditorJournalItem>(this);
             this.Detail = new CryptoEditorJournalDetails(this);
+            this.View = new CryptoEditorJournalView(this);
         }
 
         public override object CreateItem()

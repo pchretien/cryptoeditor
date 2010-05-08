@@ -57,6 +57,9 @@
       <DependentUpon>CryptoEditorJournalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CryptoEditorJournalItem.cs" />
+    <Compile Include="CryptoEditorJournalView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
