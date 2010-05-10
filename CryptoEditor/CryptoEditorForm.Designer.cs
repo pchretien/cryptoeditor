@@ -28,9 +28,10 @@ namespace CryptoEditor
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CryptoEditorForm));
             this.treeView = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
@@ -51,8 +52,8 @@ namespace CryptoEditor
             this.gettingStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer = new System.Windows.Forms.Timer();
-            this.lockTimer = new System.Windows.Forms.Timer();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lockTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -81,6 +82,7 @@ namespace CryptoEditor
             this.treeView.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView_DragEnter);
             this.treeView.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView_DragOver);
             this.treeView.Enter += new System.EventHandler(this.treeView_Enter);
+            this.treeView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView_KeyDown);
             this.treeView.Leave += new System.EventHandler(this.treeView_Leave);
             // 
             // imageList1
@@ -234,7 +236,7 @@ namespace CryptoEditor
             // synchronizeToolStripMenuItem
             // 
             this.synchronizeToolStripMenuItem.Name = "synchronizeToolStripMenuItem";
-            this.synchronizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.synchronizeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.synchronizeToolStripMenuItem.Text = "Synchronize ...";
             this.synchronizeToolStripMenuItem.Click += new System.EventHandler(this.synchronizeToolStripMenuItem_Click);
             this.synchronizeToolStripMenuItem.MouseEnter += new System.EventHandler(this.synchronizeToolStripMenuItem_MouseEnter);
@@ -243,12 +245,12 @@ namespace CryptoEditor
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(147, 6);
             // 
             // connectionToolStripMenuItem
             // 
             this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.connectionToolStripMenuItem.Text = "Connection ...";
             this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 

@@ -796,7 +796,15 @@ namespace CryptoEditor
             {
                 currentProfile.Save();
             }
-            
+
+        }
+
+        private void treeView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete)
+            {
+                int i = 0;
+            }
         }
 
         

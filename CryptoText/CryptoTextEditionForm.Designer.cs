@@ -191,7 +191,7 @@ namespace CryptoEditor.Text
             this.notesTab.Location = new System.Drawing.Point(4, 22);
             this.notesTab.Name = "notesTab";
             this.notesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.notesTab.Size = new System.Drawing.Size(434, 260);
+            this.notesTab.Size = new System.Drawing.Size(402, 234);
             this.notesTab.TabIndex = 1;
             this.notesTab.Text = "Text";
             this.notesTab.UseVisualStyleBackColor = true;
@@ -249,8 +249,10 @@ namespace CryptoEditor.Text
             // 
             // CryptoTextEditionForm
             // 
+            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(434, 312);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
