@@ -156,6 +156,12 @@ namespace CryptoEditor.FormFramework
             {
                 listItem.SubItems.Add(list[i].Value);
             }
+
+            CustomizeItem(itemIn, listItem);
+        }
+
+        protected virtual void CustomizeItem(object item, ListViewItem listItem)
+        {
         }
 
         protected virtual string FormatValue(object propertyVal, CryptoEditorPluginItemAttribute attr)
