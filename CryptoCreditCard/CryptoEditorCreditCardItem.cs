@@ -30,7 +30,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string type = "";
-        [CryptoEditorPluginItem(0, Width = 100, Header = "Card")]
+        [CryptoEditorPluginItem(0, Width = 100, Header = "Card", Searchable = true)]
         public string Type
         {
             get { return type; }
@@ -38,7 +38,7 @@ namespace CryptoEditor.CreditCard
         }
         
         private string name = "";
-        [CryptoEditorPluginItem(2, Width = 100, Header = "Card Holder")]
+        [CryptoEditorPluginItem(2, Width = 100, Header = "Card Holder", Searchable = true)]
         public string Name
         {
             get { return name; }
@@ -46,7 +46,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string name2 = "";
-        [CryptoEditorPluginItem(Width = 100, Header = "Second Card Holder")]
+        [CryptoEditorPluginItem(Width = 100, Header = "Second Card Holder", Searchable = true)]
         public string Name2
         {
             get { return name2; }
@@ -54,7 +54,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string company = "";
-        [CryptoEditorPluginItem(1, Width = 100, Header = "Card Company")]
+        [CryptoEditorPluginItem(1, Width = 100, Header = "Card Company", Searchable = true)]
         public string Company
         {
             get { return company; }
@@ -94,7 +94,7 @@ namespace CryptoEditor.CreditCard
         }
 
         private string notes = "";
-        [CryptoEditorPluginItem(Header = "Notes", Width = 100)]
+        [CryptoEditorPluginItem(Header = "Notes", Width = 100, Searchable = true)]
         public string Notes
         {
             get

@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using CryptoEditor.Common.Interfaces;

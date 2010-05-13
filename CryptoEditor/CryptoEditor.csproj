@@ -225,6 +225,10 @@
       <Project>{CA539CC5-C03A-4F81-90D7-05E221D9C891}</Project>
       <Name>CryptoCreditCard</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorBookmark\CryptoEditorBookmark.csproj">
+      <Project>{451490CF-F5ED-4A7B-BDFC-588A79B56E8C}</Project>
+      <Name>CryptoEditorBookmark</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CryptoEditorCommon\CryptoEditorCommon.csproj">
       <Project>{162EF8BF-DF17-4681-9FB3-33693BFD9DC3}</Project>
       <Name>CryptoEditorCommon</Name>

@@ -51,5 +51,10 @@ namespace CryptoEditor.CreditCard
             base.UpdateItem(item);
             return item;
         }
+
+        public override bool IsSearchable()
+        {
+            return true;
+        }
     }
 }

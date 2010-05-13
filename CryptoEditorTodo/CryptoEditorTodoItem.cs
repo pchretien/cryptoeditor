@@ -28,7 +28,7 @@ namespace CryptoEditor.Todo
         }
 
         private int priority = 0;
-        [CryptoEditorPluginItem(2, Header = "Priority", Width = 100, Searchable = true)]
+        [CryptoEditorPluginItem(2, Header = "Priority", Width = 100)]
         public int Priority
         {
             get { return priority; }
@@ -44,7 +44,7 @@ namespace CryptoEditor.Todo
         }
 
         private int status = 0;
-        [CryptoEditorPluginItem(3, Header = "Status", Width = 100, Searchable = true)]
+        [CryptoEditorPluginItem(3, Header = "Status", Width = 100)]
         public int Status
         {
             get { return status; }
