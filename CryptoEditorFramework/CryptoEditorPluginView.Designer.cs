@@ -62,6 +62,7 @@ namespace CryptoEditor.FormFramework
             this.listView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listView_ItemDrag);
             this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
             this.listView.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_DragDrop);
+            this.listView.DragEnter += new System.Windows.Forms.DragEventHandler(this.listView_DragEnter);
             this.listView.DragOver += new System.Windows.Forms.DragEventHandler(this.listView_DragOver);
             this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
             this.listView.Enter += new System.EventHandler(this.listView_Enter);

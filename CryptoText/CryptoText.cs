@@ -33,6 +33,26 @@ namespace CryptoEditor.Text
             return item;
         }
 
+        public override object CreateItem(string dragDropText)
+        {
+            CryptoTextEditionForm form = new CryptoTextEditionForm();
+            form.notesTextBox.Text = dragDropText;
+
+            if (form.ShowDialog() != DialogResult.OK)
+                return null;
+
+            CryptoTextItem item = new CryptoTextItem();
+            item.Title = form.titleTextBox.Text;
+            item.Subject = form.subjectTextBox.Text;
+            item.Author = form.authorTextBox.Text;
+            item.Comments = form.commentsTextBox.Text;
+            item.Keywords = form.keywordsTextBox.Text;
+            item.Notes = form.notesTextBox.Text;
+
+            base.CreateItem();
+            return item;
+        }
+
         public override object UpdateItem(object itemIn)
         {
             CryptoTextItem item = (CryptoTextItem) itemIn;

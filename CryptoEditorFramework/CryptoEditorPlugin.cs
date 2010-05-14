@@ -286,5 +286,12 @@ namespace CryptoEditor.FormFramework
         {
             return doc;
         }
+
+
+        public virtual object CreateItem(string dragDropText)
+        {
+            SetChanged();
+            return null;
+        }
     }
 }

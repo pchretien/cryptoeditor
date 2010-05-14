@@ -52,6 +52,8 @@ namespace CryptoEditor.Common.Interfaces
         /// </summary>
         /// <returns>The new instance of the data item.</returns>
         object CreateItem(); // The returned object is of type T
+
+        object CreateItem(string dragDropText); // The returned object is of type T
         
         /// <summary>
         /// Modify an existing instance of data item. All Forms and logic required to update the existing data item must be located in this function.

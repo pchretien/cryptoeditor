@@ -28,6 +28,20 @@ namespace CryptoEditor.Todo
             return item;
         }
 
+        public override object CreateItem(string dragDropText)
+        {
+            //
+            // A new form must be implemented by the user to get item details ...
+            //
+            CryptoEditorTodoItem item = new CryptoEditorTodoItem("", 2, DateTime.Now, 0, dragDropText);
+            CryptoEditorTodoForm form = new CryptoEditorTodoForm(item);
+            if (form.ShowDialog() != DialogResult.OK)
+                return null;
+
+            base.CreateItem();
+            return item;
+        }
+
         public override object UpdateItem(object itemIn)
         {
             CryptoEditorTodoItem item = (CryptoEditorTodoItem)itemIn;

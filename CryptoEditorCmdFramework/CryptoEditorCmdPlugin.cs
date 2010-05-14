@@ -121,5 +121,11 @@ namespace CryptoEditor.CmdFramework
         {
             get { throw new System.NotImplementedException(); }
         }
+
+
+        public object CreateItem(string dragDropText)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

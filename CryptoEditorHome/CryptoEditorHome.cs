@@ -126,5 +126,11 @@ namespace CryptoEditorHome
         {
             MessageBox.Show("Goto ...");
         }
+
+
+        public object CreateItem(string dragDropText)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

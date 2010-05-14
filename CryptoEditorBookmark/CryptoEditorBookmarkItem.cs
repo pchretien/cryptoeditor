@@ -10,9 +10,10 @@ namespace CryptoEditorBookmark
         {
         }
 
-        public CryptoEditorBookmarkItem(string title, string note)
+        public CryptoEditorBookmarkItem(string title, string url, string note)
         {
             Title = title;
+            Url = url;
             Note = note;
         }
 

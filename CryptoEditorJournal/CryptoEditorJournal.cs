@@ -26,6 +26,17 @@ namespace CryptoEditor.Journal
             return item;
         }
 
+        public override object CreateItem(string dragDropText)
+        {
+            CryptoEditorJournalItem item = new CryptoEditorJournalItem(DateTime.Now, "", dragDropText);
+            CryptoEditorJournalForm form = new CryptoEditorJournalForm(item);
+            if (form.ShowDialog() != DialogResult.OK)
+                return null;
+
+            base.CreateItem();
+            return item;
+        }
+
         public override object UpdateItem(object itemIn)
         {
             CryptoEditorJournalItem item = (CryptoEditorJournalItem)itemIn;

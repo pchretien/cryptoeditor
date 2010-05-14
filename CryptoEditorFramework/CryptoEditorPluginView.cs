@@ -328,22 +328,37 @@ namespace CryptoEditor.FormFramework
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CryptoEditorClipboardItem<T> items = (CryptoEditorClipboardItem<T>) Clipboard.GetData(DataFormats.Serializable);
-            if( items == null )
-                return;
-
-            foreach (T newItem in items.NewItems)
+            if (items != null)
             {
-                if (newItem != null)
+                foreach (T newItem in items.NewItems)
                 {
-                    doc.AddItem(newItem);
+                    if (newItem != null)
+                    {
+                        doc.AddItem(newItem);
+                    }
+                }
+
+                ClearCut(items.IsCut);
+                Clipboard.Clear();
+
+                DisplayView(doc);
+                Plugin.SetChanged();
+            }
+            else
+            {
+                object data = Clipboard.GetData(DataFormats.Text);
+                if(data != null)
+                {
+                    object item = Plugin.CreateItem(data.ToString());
+                    if (item != null)
+                    {
+                        doc.AddItem((T)item);
+
+                        DisplayView(doc);
+                        Plugin.SetChanged();
+                    }
                 }
             }
-
-            Plugin.View.ClearCut(items.IsCut);
-            Clipboard.Clear();
-
-            DisplayView(doc);
-            Plugin.SetChanged();
         }
 
         private void listView_ItemDrag(object sender, ItemDragEventArgs e)
@@ -423,6 +438,13 @@ namespace CryptoEditor.FormFramework
                 e.Effect = DragDropEffects.Move;
 
             }
+            else if ((e.AllowedEffect & DragDropEffects.Copy) == DragDropEffects.Copy)
+            {
+
+                // By default, the drop action should be move, if allowed.
+                e.Effect = DragDropEffects.Copy;
+
+            }
             else
                 e.Effect = DragDropEffects.None;
 
@@ -453,8 +475,19 @@ namespace CryptoEditor.FormFramework
                         Plugin.View.ClearCut(true);
                     }
 
-                    Plugin.View.DisplayView(doc);
+                    DisplayView(doc);
                     Plugin.SetChanged();
+                }
+                else if (e.Data.GetDataPresent(DataFormats.Text))
+                {
+                    object item = Plugin.CreateItem(e.Data.GetData(typeof(string)).ToString());
+                    if (item != null)
+                    {
+                        doc.AddItem((T)item);
+                        DisplayView(doc);
+
+                        Plugin.SetChanged();
+                    }
                 }
             }
 
@@ -556,6 +589,12 @@ namespace CryptoEditor.FormFramework
             }
 
             propertiesToolStripMenuItem.Enabled = true;
+        }
+
+        private void listView_DragEnter(object sender, DragEventArgs e)
+        {
+            //if (e.Data.GetDataPresent(DataFormats.Text))
+            //    e.Effect = DragDropEffects.Copy;
         }
     }
 

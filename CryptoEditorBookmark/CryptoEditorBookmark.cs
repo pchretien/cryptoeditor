@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Security.Policy;
+using System.Windows.Forms;
 using CryptoEditor.Common;
 using CryptoEditor.FormFramework;
 
@@ -22,6 +24,17 @@ namespace CryptoEditorBookmark
             if (form.ShowDialog() != DialogResult.OK)
                 return null;
 
+            base.CreateItem();
+            return item;
+        }
+        
+        public override object CreateItem(string dragDropText)
+        {
+            CryptoEditorBookmarkItem item = new CryptoEditorBookmarkItem(
+                "",
+                dragDropText ?? "",
+                "");
+            
             base.CreateItem();
             return item;
         }

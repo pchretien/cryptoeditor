@@ -26,6 +26,20 @@ namespace CryptoNotes
             return item;
         }
 
+        public override object CreateItem(string dragDropText)
+        {
+            //
+            // A new form must be implemented by the user to get item details ...
+            //
+            CryptoEditorNotesItem item = new CryptoEditorNotesItem("", dragDropText);
+            CryptoEditorNotesForm form = new CryptoEditorNotesForm(item);
+            if (form.ShowDialog() != DialogResult.OK)
+                return null;
+
+            base.CreateItem();
+            return item;
+        }
+
         public override object UpdateItem(object itemIn)
         {
             CryptoEditorNotesItem item = (CryptoEditorNotesItem)itemIn;

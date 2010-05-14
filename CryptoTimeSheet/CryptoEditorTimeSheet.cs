@@ -30,6 +30,20 @@ namespace CryptoTimeSheet
             return item;
         }
 
+        public override object CreateItem(string dragDropText)
+        {
+            //
+            // A new form must be implemented by the user to get item details ...
+            //
+            CryptoEditorTimeSheetItem item = new CryptoEditorTimeSheetItem(DateTime.Now, "", 0.0, dragDropText);
+            CrytoEditorTimesheetForm form = new CrytoEditorTimesheetForm(item);
+            if (form.ShowDialog() != DialogResult.OK)
+                return null;
+
+            base.CreateItem();
+            return item;
+        }
+
         public override object UpdateItem(object itemIn)
         {
             CryptoEditorTimeSheetItem item = (CryptoEditorTimeSheetItem)itemIn;
