@@ -25,7 +25,7 @@ namespace CryptoEditorBookmark
         }
 
         private string url = "";
-        [CryptoEditorPluginItem(1, Header = "Url", Width = 100, Searchable = true)]
+        [CryptoEditorPluginItem(1, Header = "Url", Width = 400, Searchable = true)]
         public string Url
         {
             get { return url; }

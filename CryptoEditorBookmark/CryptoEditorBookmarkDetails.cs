@@ -61,5 +61,10 @@ namespace CryptoEditorBookmark
                 plugin.SetChanged();
             }
         }
+
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(url.Text);
+        }
     }
 }

@@ -222,7 +222,7 @@ namespace CryptoEditor.Text
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.notesTextBox.Size = new System.Drawing.Size(428, 231);
+            this.notesTextBox.Size = new System.Drawing.Size(393, 231);
             this.notesTextBox.TabIndex = 0;
             // 
             // cancelButton

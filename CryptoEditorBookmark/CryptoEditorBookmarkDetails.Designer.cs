@@ -35,6 +35,7 @@
             this.url = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.goButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +87,7 @@
             this.url.Location = new System.Drawing.Point(7, 60);
             this.url.Name = "url";
             this.url.ReadOnly = true;
-            this.url.Size = new System.Drawing.Size(437, 20);
+            this.url.Size = new System.Drawing.Size(396, 20);
             this.url.TabIndex = 1;
             // 
             // label3
@@ -109,10 +110,22 @@
             this.webBrowser.Size = new System.Drawing.Size(437, 185);
             this.webBrowser.TabIndex = 3;
             // 
+            // goButton
+            // 
+            this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.goButton.Location = new System.Drawing.Point(409, 59);
+            this.goButton.Name = "goButton";
+            this.goButton.Size = new System.Drawing.Size(34, 23);
+            this.goButton.TabIndex = 16;
+            this.goButton.Text = "GO";
+            this.goButton.UseVisualStyleBackColor = true;
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
+            // 
             // CryptoEditorBookmarkDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.goButton);
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.url);
             this.Controls.Add(this.label3);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.TextBox url;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.WebBrowser webBrowser;
+        private System.Windows.Forms.Button goButton;
     }
 }
