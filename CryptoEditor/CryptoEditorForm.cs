@@ -275,10 +275,13 @@ namespace CryptoEditor
             if(!currentProfile.PasswordValidated)
                 return;
 
-            currentProfile.Width = Size.Width;
-            currentProfile.Height = Size.Height;
-            currentProfile.Save();
+            if (WindowState == FormWindowState.Normal)
+            {
+                currentProfile.Width = Size.Width;
+                currentProfile.Height = Size.Height;
+            }
 
+            currentProfile.Save();
             persistor.SaveData(false);
         }
 
