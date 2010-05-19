@@ -50,7 +50,7 @@ namespace CryptoEditor.FormFramework
                 rootNode.Nodes.Clear();
 
                 // Load the XML document from disk ...
-                doc = CryptoEditorDoc<T>.LoadXml(data);
+                doc = CryptoEditorDoc<T>.LoadXml(data); 
                 doc.Name = Text;
 
                 rootNode.Name = Text;
@@ -59,7 +59,7 @@ namespace CryptoEditor.FormFramework
                 // Build the tree view
                 rootNode.LoadFolder(doc);
 
-                /// TODO: Pas tres tres elegant comme fix ...
+                // TODO: Pas tres tres elegant comme fix ...
                 if (rootNode.TreeView != null &&
                     rootNode.TreeView.SelectedNode is CryptoEditorPluginRootNode<T>)
                 {

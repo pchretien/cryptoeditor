@@ -56,6 +56,8 @@ namespace CryptoEditor
             this.lockTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.syncBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.syncProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -279,7 +281,7 @@ namespace CryptoEditor
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.registerToolStripMenuItem.Text = "&Register ...";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click_1);
             // 
@@ -306,6 +308,7 @@ namespace CryptoEditor
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.syncProgressBar,
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 491);
             this.statusStrip.Name = "statusStrip";
@@ -317,6 +320,19 @@ namespace CryptoEditor
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // syncBackgroundWorker
+            // 
+            this.syncBackgroundWorker.WorkerReportsProgress = true;
+            this.syncBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.syncBackgroundWorker_DoWork);
+            this.syncBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.syncBackgroundWorker_ProgressChanged);
+            this.syncBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.syncBackgroundWorker_RunWorkerCompleted);
+            // 
+            // syncProgressBar
+            // 
+            this.syncProgressBar.Name = "syncProgressBar";
+            this.syncProgressBar.Size = new System.Drawing.Size(100, 16);
+            this.syncProgressBar.Visible = false;
             // 
             // CryptoEditorForm
             // 
@@ -373,6 +389,8 @@ namespace CryptoEditor
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem connectionToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker syncBackgroundWorker;
+        private System.Windows.Forms.ToolStripProgressBar syncProgressBar;
     }
 }
 

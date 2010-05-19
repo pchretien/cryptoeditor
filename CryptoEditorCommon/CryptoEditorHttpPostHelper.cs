@@ -122,12 +122,12 @@ namespace CryptoEditor.Common
 
     public class HttpServiceClient
     {
-#if DEBUG
-        private static string serviceAddress = "http://localhost:8080/";
-#else
-        private static string serviceAddress = "https://cryptoeditor.appspot.com/";
-#endif
         private CryptoEditorProfile profile;
+        private static string serviceAddress = "https://cryptoeditor.appspot.com/";
+
+//#if DEBUG
+//        private static string serviceAddress = "http://localhost:8080/";
+//#endif
 
         public HttpServiceClient(CryptoEditorProfile profile)
         {

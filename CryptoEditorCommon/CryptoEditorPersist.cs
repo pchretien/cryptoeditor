@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Xml;
 using com.CryptoTools;
@@ -131,8 +132,14 @@ namespace CryptoEditor.Common
             }
         }
 
-        public void Synchronize(string serverPassword)
+        public void Synchronize(
+            string serverPassword, 
+            System.ComponentModel.BackgroundWorker backgroundWorker,
+            out Dictionary<ICryptoEditor, string> newData)
         {
+            // Create empty dict
+            newData = new Dictionary<ICryptoEditor, string>();
+
             if(CurrentProfile.Email.Length == 0 || CurrentProfile.Name.Length == 0)
             {
                 MessageBox.Show(
@@ -147,9 +154,13 @@ namespace CryptoEditor.Common
             if (!CurrentProfile.PasswordValidated)
                 return;
 
-            foreach (ICryptoEditor plugin in plugins)
+            for (int i = 0; i < plugins.Count; i++ )
             {
-                try 
+                ICryptoEditor plugin = plugins[i] as ICryptoEditor;
+                if (plugin == null)
+                    continue;
+
+                try
                 {
                     if (!plugin.isPersistent())
                         continue;
@@ -159,17 +170,17 @@ namespace CryptoEditor.Common
                     string webData = "";
                     HttpServiceClient service = new HttpServiceClient(currentProfile);
                     bool ret = service.Load(plugin.GetType().ToString(), ref webData);
-                    if(!ret)
+                    if (!ret)
                         return;
 
-                    if (webData == null || webData.Length == 0)
+                    if (string.IsNullOrEmpty(webData))
                     {
                         // The document does not exist on the server.
                         // This will happen only at the first synchro.
                         CryptoXML xmlEncrypted = Encrypt(plugin);
                         //client.Save(CurrentProfile.Email, CurrentProfile.Key, plugin.GetType().ToString(), xmlEncrypted.OuterXml);
                         ret = service.Save(plugin.GetType().ToString(), xmlEncrypted.OuterXml);
-                        if(!ret)
+                        if (!ret)
                             return;
 
                         continue;
@@ -180,17 +191,17 @@ namespace CryptoEditor.Common
 
                     string localData = plugin.Save();
                     CryptoXML xmlLocal = new CryptoXML();
-                    if(localData != null)
+                    if (localData != null)
                         xmlLocal.LoadXml(localData);
 
                     xmlWeb.Password = serverPassword;
 
-    #if !NO_ENCRYPT
+#if !NO_ENCRYPT
                     xmlWeb.Decrypt(plugin.EncryptionXPath, true);
-    #endif
+#endif
                     // At this point I have the two XML documents I want to synchronize 
                     // It is important to work on the XML document at this level because 
-                    // we dont have access to the definition of the Item involved. The 
+                    // we dont have access to the definition of the Items involved. The 
                     // plugin is not forced to inherit its item from the framework's 
                     // CryptoEditorPluginItem.
 
@@ -206,17 +217,24 @@ namespace CryptoEditor.Common
                     // Fins all items and folders that are not present in both documents
                     UpdateMissingNodes(xmlLocal.DocumentElement, xmlWeb.DocumentElement);
 
-                    // Delete all inactive nodes
+                    // Delete all inactive nodes in the local document
                     DeleteInactiveNodes(xmlLocal.DocumentElement);
 
+                    // Remove data from the inactive server document nodes
+                    DeleteInactiveNodesContent(xmlWeb.DocumentElement);
+
+                    // Remove older inactive nodes ...
+
                     // Load the resulting XML into the plugin
-                    plugin.Load(xmlLocal.OuterXml);
+                    //plugin.Load(xmlLocal.OuterXml);
+                    newData.Add(plugin, xmlLocal.OuterXml);
+                    backgroundWorker.ReportProgress((i+1)*100/plugins.Count, "Merging " + plugin.Text + " ...");
 
                     // Publish the resulting xml on the web ...
                     xmlWeb.Password = CurrentProfile.Password;
                     xmlWeb.Encrypt(plugin.EncryptionXPath, true);
                     ret = service.Save(plugin.GetType().ToString(), xmlWeb.OuterXml);
-                    if(!ret)
+                    if (!ret)
                         return;
                 }
                 finally
@@ -225,26 +243,45 @@ namespace CryptoEditor.Common
             }
         }
 
-        private void DeleteInactiveNodes(XmlNode local)
+        private void DeleteInactiveNodesContent(XmlNode nodeIn)
         {
-            XmlNode items = local.SelectNodes("Items")[0];
+            XmlNode items = nodeIn.SelectNodes("Items")[0];
+            XmlNodeList localItemList = items.SelectNodes("Item[@active='false']");
+            foreach (XmlNode node in localItemList)
+                node.InnerXml = "";
+
+            XmlNode folders = nodeIn.SelectNodes("Folders")[0];
+            XmlNodeList localFolderList = folders.SelectNodes("Folder[@active='false']");
+            foreach (XmlNode folder in localFolderList)
+                folder.InnerXml = "";
+
+            localFolderList = nodeIn.SelectNodes("Folders/Folder[@active='true']");
+            foreach (XmlNode folder in localFolderList)
+            {
+                DeleteInactiveNodesContent(folder);
+            }
+        }
+
+        private void DeleteInactiveNodes(XmlNode nodeIn)
+        {
+            XmlNode items = nodeIn.SelectNodes("Items")[0];
             XmlNodeList localItemList = items.SelectNodes("Item[@active='false']");
             foreach(XmlNode node in localItemList)
                 items.RemoveChild(node);
 
-            XmlNode folders = local.SelectNodes("Folders")[0];
+            XmlNode folders = nodeIn.SelectNodes("Folders")[0];
             XmlNodeList localFolderList = folders.SelectNodes("Folder[@active='false']");
             foreach (XmlNode folder in localFolderList)
                 folders.RemoveChild(folder);
 
-            localFolderList = local.SelectNodes("Folders/Folder[@active='true']");
+            localFolderList = nodeIn.SelectNodes("Folders/Folder[@active='true']");
             foreach (XmlNode folder in localFolderList)
             {
                 DeleteInactiveNodes(folder);
             }
         }
 
-        private void UpdateItems(CryptoXML source, CryptoXML target)
+        private void UpdateItems(CryptoXML source/*local*/, CryptoXML target/*web*/)
         {
             XmlNodeList sourceItems = source.SelectNodes("//Items/Item");
 
@@ -262,7 +299,7 @@ namespace CryptoEditor.Common
                     XmlNode targetNode = targetItems[0];
                     DateTime targetDateTime = DateTime.Parse(targetNode.Attributes.GetNamedItem("lastupdate").Value);
 
-                    // If the server version is older
+                    // If the server version is older ... update the server version
                     if(targetDateTime < sourceDateTime)
                     {
                         // This code is useless since the server version will be replaced by the client version
@@ -270,7 +307,7 @@ namespace CryptoEditor.Common
                         targetNode.Attributes.GetNamedItem("lastupdate").InnerText = sourceNode.Attributes.GetNamedItem("lastupdate").InnerText;
                         targetNode.Attributes.GetNamedItem("active").InnerText = sourceNode.Attributes.GetNamedItem("active").InnerText;
                     }
-                        // If the server version is more recent
+                        // If the server version is more recent ... update the local version
                     else if (targetDateTime > sourceDateTime)
                     {
                         sourceNode.InnerXml = targetNode.InnerXml;
@@ -285,7 +322,7 @@ namespace CryptoEditor.Common
             }
         }
 
-        private void UpdateFolders( CryptoXML source, CryptoXML target)
+        private void UpdateFolders( CryptoXML source/*local*/, CryptoXML target/*web*/)
         {
             XmlNodeList sourceItems = source.SelectNodes("//Folders/Folder");
 
@@ -325,19 +362,25 @@ namespace CryptoEditor.Common
             }
         }
         
-        private void UpdateMissingNodes(XmlNode source, XmlNode target)
+        private void UpdateMissingNodes(XmlNode source/*local*/, XmlNode target/*web*/)
         {
             // Add the missing Items in both documents ...
             XmlNodeList sourceItemList = source.SelectNodes("Items");
             XmlNodeList targetItemList = target.SelectNodes("Items");
-            UpdateMissingItemsInTarget(sourceItemList[0], targetItemList[0], true);
-            UpdateMissingItemsInTarget(targetItemList[0], sourceItemList[0], false);
+            if (sourceItemList.Count > 0 && targetItemList.Count > 0)
+            {
+                UpdateMissingItemsInTarget(sourceItemList[0], targetItemList[0], true);
+                UpdateMissingItemsInTarget(targetItemList[0], sourceItemList[0], false);
+            }
 
             // Add the missing folders
             XmlNodeList sourceFolderList = source.SelectNodes("Folders");
             XmlNodeList targetFolderList = target.SelectNodes("Folders");
-            UpdateMissingFoldersInTarget(sourceFolderList[0], targetFolderList[0], true);
-            UpdateMissingFoldersInTarget(targetFolderList[0], sourceFolderList[0], false);
+            if (sourceFolderList.Count > 0 && targetFolderList.Count > 0)
+            {
+                UpdateMissingFoldersInTarget(sourceFolderList[0], targetFolderList[0], true);
+                UpdateMissingFoldersInTarget(targetFolderList[0], sourceFolderList[0], false);
+            }
 
             XmlNodeList sourceFolders = source.SelectNodes("Folders/Folder");
             foreach (XmlNode sourceFolder in sourceFolders)
