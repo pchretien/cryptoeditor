@@ -14,17 +14,17 @@ namespace CryptoEditorHome
         private string loading = "";
         private string offline = "";
 
-#if DEBUG
-        private readonly string landing = "http://localhost:8080/news?base=2";
-#else
         private readonly string landing = "http://cryptoeditor.appspot.com/news?base=2";
-#endif
 
         public CryptoEditorHomeDetail(ICryptoEditor plugin)
         {
             this.plugin = plugin;
 
             InitializeComponent();
+
+#if DEBUG_SERVER
+            landing = "http://localhost:8080/news?base=2";
+#endif
 
 #if !MONO_MWF
             string location = Assembly.GetCallingAssembly().CodeBase;

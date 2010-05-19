@@ -125,13 +125,13 @@ namespace CryptoEditor.Common
         private CryptoEditorProfile profile;
         private static string serviceAddress = "https://cryptoeditor.appspot.com/";
 
-//#if DEBUG
-//        private static string serviceAddress = "http://localhost:8080/";
-//#endif
-
         public HttpServiceClient(CryptoEditorProfile profile)
         {
             this.profile = profile;
+
+#if DEBUG_SERVER
+            serviceAddress = "http://localhost:8080/";
+#endif
         }
 
         public bool GetProfile(ref int status, ref DateTime expiration, ref string encrypted_license)

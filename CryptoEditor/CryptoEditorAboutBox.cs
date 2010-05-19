@@ -110,7 +110,7 @@ namespace CryptoEditor
 
         private void CryptoEditorAboutBox_Load(object sender, EventArgs e)
         {
-#if DEBUG
+#if DEBUG_SERVER
             string linkText = "http://localhost:8080";
 #else
             string linkText = "http://cryptoeditor.appspot.com";
