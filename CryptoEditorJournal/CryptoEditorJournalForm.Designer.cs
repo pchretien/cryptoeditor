@@ -40,7 +40,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(12, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 17;
@@ -49,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 52);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 16;
@@ -94,17 +94,17 @@
             // 
             this.title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.title.Location = new System.Drawing.Point(11, 70);
+            this.title.Location = new System.Drawing.Point(11, 27);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(411, 20);
-            this.title.TabIndex = 1;
+            this.title.TabIndex = 0;
             // 
             // date
             // 
-            this.date.Location = new System.Drawing.Point(11, 28);
+            this.date.Location = new System.Drawing.Point(11, 69);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(200, 20);
-            this.date.TabIndex = 0;
+            this.date.TabIndex = 1;
             // 
             // CryptoEditorJournalForm
             // 

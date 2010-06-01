@@ -48,7 +48,7 @@
             this.okButton.Location = new System.Drawing.Point(266, 277);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 2;
+            this.okButton.TabIndex = 5;
             this.okButton.Text = "Ok";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
@@ -60,7 +60,7 @@
             this.cancelButton.Location = new System.Drawing.Point(347, 277);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 3;
+            this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -75,7 +75,7 @@
             this.note.Name = "note";
             this.note.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.note.Size = new System.Drawing.Size(410, 164);
-            this.note.TabIndex = 1;
+            this.note.TabIndex = 4;
             // 
             // label4
             // 
@@ -111,7 +111,7 @@
             this.date.Location = new System.Drawing.Point(15, 65);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(105, 20);
-            this.date.TabIndex = 15;
+            this.date.TabIndex = 1;
             // 
             // label1
             // 
@@ -134,7 +134,7 @@
             this.priority.Location = new System.Drawing.Point(126, 65);
             this.priority.Name = "priority";
             this.priority.Size = new System.Drawing.Size(121, 21);
-            this.priority.TabIndex = 16;
+            this.priority.TabIndex = 2;
             this.priority.Text = "2 - Normal";
             // 
             // label2
@@ -165,7 +165,7 @@
             this.status.Location = new System.Drawing.Point(253, 65);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(121, 21);
-            this.status.TabIndex = 16;
+            this.status.TabIndex = 3;
             // 
             // CryptoEditorTodoForm
             // 

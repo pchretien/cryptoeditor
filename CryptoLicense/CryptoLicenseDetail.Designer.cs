@@ -44,6 +44,7 @@ namespace CryptoEditor.License
             this.productCompany = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.productName = new System.Windows.Forms.TextBox();
+            this.goButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label8
@@ -94,7 +95,7 @@ namespace CryptoEditor.License
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(212, 39);
+            this.label5.Location = new System.Drawing.Point(237, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 15;
@@ -104,10 +105,10 @@ namespace CryptoEditor.License
             // 
             this.licenseEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseEmail.Location = new System.Drawing.Point(215, 55);
+            this.licenseEmail.Location = new System.Drawing.Point(240, 55);
             this.licenseEmail.Name = "licenseEmail";
             this.licenseEmail.ReadOnly = true;
-            this.licenseEmail.Size = new System.Drawing.Size(200, 20);
+            this.licenseEmail.Size = new System.Drawing.Size(175, 20);
             this.licenseEmail.TabIndex = 21;
             // 
             // label4
@@ -115,7 +116,7 @@ namespace CryptoEditor.License
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(212, 78);
+            this.label4.Location = new System.Drawing.Point(237, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 13);
             this.label4.TabIndex = 16;
@@ -125,10 +126,10 @@ namespace CryptoEditor.License
             // 
             this.licenseName2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseName2.Location = new System.Drawing.Point(215, 94);
+            this.licenseName2.Location = new System.Drawing.Point(240, 94);
             this.licenseName2.Name = "licenseName2";
             this.licenseName2.ReadOnly = true;
-            this.licenseName2.Size = new System.Drawing.Size(200, 20);
+            this.licenseName2.Size = new System.Drawing.Size(175, 20);
             this.licenseName2.TabIndex = 20;
             // 
             // label3
@@ -136,7 +137,7 @@ namespace CryptoEditor.License
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(212, 0);
+            this.label3.Location = new System.Drawing.Point(237, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 11;
@@ -146,10 +147,10 @@ namespace CryptoEditor.License
             // 
             this.licenseName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.licenseName.Location = new System.Drawing.Point(215, 16);
+            this.licenseName.Location = new System.Drawing.Point(240, 16);
             this.licenseName.Name = "licenseName";
             this.licenseName.ReadOnly = true;
-            this.licenseName.Size = new System.Drawing.Size(200, 20);
+            this.licenseName.Size = new System.Drawing.Size(175, 20);
             this.licenseName.TabIndex = 19;
             // 
             // label6
@@ -175,7 +176,7 @@ namespace CryptoEditor.License
             this.productWebsite.Location = new System.Drawing.Point(6, 94);
             this.productWebsite.Name = "productWebsite";
             this.productWebsite.ReadOnly = true;
-            this.productWebsite.Size = new System.Drawing.Size(200, 20);
+            this.productWebsite.Size = new System.Drawing.Size(185, 20);
             this.productWebsite.TabIndex = 18;
             // 
             // productCompany
@@ -183,7 +184,7 @@ namespace CryptoEditor.License
             this.productCompany.Location = new System.Drawing.Point(6, 55);
             this.productCompany.Name = "productCompany";
             this.productCompany.ReadOnly = true;
-            this.productCompany.Size = new System.Drawing.Size(200, 20);
+            this.productCompany.Size = new System.Drawing.Size(228, 20);
             this.productCompany.TabIndex = 14;
             // 
             // label1
@@ -200,13 +201,24 @@ namespace CryptoEditor.License
             this.productName.Location = new System.Drawing.Point(6, 16);
             this.productName.Name = "productName";
             this.productName.ReadOnly = true;
-            this.productName.Size = new System.Drawing.Size(200, 20);
+            this.productName.Size = new System.Drawing.Size(228, 20);
             this.productName.TabIndex = 8;
+            // 
+            // goButton
+            // 
+            this.goButton.Location = new System.Drawing.Point(197, 92);
+            this.goButton.Name = "goButton";
+            this.goButton.Size = new System.Drawing.Size(37, 23);
+            this.goButton.TabIndex = 24;
+            this.goButton.Text = "GO";
+            this.goButton.UseVisualStyleBackColor = true;
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
             // 
             // CryptoLicenseDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.goButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.licenseNotes);
             this.Controls.Add(this.label7);
@@ -248,5 +260,6 @@ namespace CryptoEditor.License
         public System.Windows.Forms.TextBox productCompany;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox productName;
+        private System.Windows.Forms.Button goButton;
     }
 }

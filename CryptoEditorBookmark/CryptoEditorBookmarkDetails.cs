@@ -49,7 +49,8 @@ namespace CryptoEditorBookmark
             url.Text = item.Url;
             note.Text = item.Note;
 
-            webBrowser.Navigate(item.Url);
+            loadButton.Visible = true;
+            webBrowser.Navigate("about:blank");
         }
 
         private void note_Validated(object sender, EventArgs e)
@@ -65,6 +66,12 @@ namespace CryptoEditorBookmark
         private void goButton_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(url.Text);
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            loadButton.Visible = false;
+            webBrowser.Navigate(item.Url);
         }
     }
 }

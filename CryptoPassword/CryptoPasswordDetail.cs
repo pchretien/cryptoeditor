@@ -85,5 +85,10 @@ namespace CryptoEditor.Password
             Clipboard.SetText(usernameTextBox.Text);
             usernameTextBox.SelectAll();
         }
+
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(urlTextBox.Text);
+        }
     }
 }

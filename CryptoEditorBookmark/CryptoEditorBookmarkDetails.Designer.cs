@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.goButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -121,10 +122,21 @@
             this.goButton.UseVisualStyleBackColor = true;
             this.goButton.Click += new System.EventHandler(this.goButton_Click);
             // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(7, 162);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.TabIndex = 17;
+            this.loadButton.Text = "Load";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
             // CryptoEditorBookmarkDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.loadButton);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.url);
@@ -150,5 +162,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.Button goButton;
+        private System.Windows.Forms.Button loadButton;
     }
 }

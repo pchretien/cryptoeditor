@@ -72,5 +72,10 @@ namespace CryptoEditor.License
                 plugin.SetChanged();
             }
         }
+
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(productWebsite.Text);
+        }
     }
 }

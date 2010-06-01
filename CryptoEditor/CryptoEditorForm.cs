@@ -685,7 +685,7 @@ namespace CryptoEditor
 
         private void aboutToolStripMenuItem_MouseEnter(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = "Register and check program version.";
+            toolStripStatusLabel.Text = "Program version and link to website";
         }
 
         private void aboutToolStripMenuItem_MouseLeave(object sender, EventArgs e)
@@ -829,6 +829,26 @@ namespace CryptoEditor
         private void syncBackgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             Synchronize();
+        }
+
+        private void connectionToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel.Text = @"Advanced internet connection options";
+        }
+
+        private void connectionToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel.Text = @"";
+        }
+
+        private void registerToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabel.Text = @"Enter your key for synchronization";
+        }
+
+        private void registerToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabel.Text = @"";
         }
     }
 }

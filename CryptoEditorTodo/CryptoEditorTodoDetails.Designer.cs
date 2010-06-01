@@ -80,7 +80,7 @@
             this.note.Name = "note";
             this.note.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.note.Size = new System.Drawing.Size(434, 245);
-            this.note.TabIndex = 1;
+            this.note.TabIndex = 4;
             this.note.Validated += new System.EventHandler(this.note_Validated);
             // 
             // status
@@ -94,7 +94,7 @@
             this.status.Location = new System.Drawing.Point(245, 60);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(121, 21);
-            this.status.TabIndex = 21;
+            this.status.TabIndex = 3;
             // 
             // priority
             // 
@@ -109,7 +109,7 @@
             this.priority.Location = new System.Drawing.Point(118, 60);
             this.priority.Name = "priority";
             this.priority.Size = new System.Drawing.Size(121, 21);
-            this.priority.TabIndex = 22;
+            this.priority.TabIndex = 2;
             this.priority.Text = "2 - Normal";
             // 
             // date
@@ -120,7 +120,7 @@
             this.date.Location = new System.Drawing.Point(7, 60);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(105, 20);
-            this.date.TabIndex = 20;
+            this.date.TabIndex = 1;
             // 
             // label5
             // 

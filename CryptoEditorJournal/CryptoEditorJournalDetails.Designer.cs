@@ -38,7 +38,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 24;
@@ -47,7 +47,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 43);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 23;
@@ -64,26 +64,26 @@
             this.text.Name = "text";
             this.text.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.text.Size = new System.Drawing.Size(445, 255);
-            this.text.TabIndex = 20;
+            this.text.TabIndex = 2;
             this.text.Validated += new System.EventHandler(this.text_Validated);
             // 
             // title
             // 
             this.title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.title.Location = new System.Drawing.Point(2, 61);
+            this.title.Location = new System.Drawing.Point(2, 18);
             this.title.Name = "title";
             this.title.ReadOnly = true;
             this.title.Size = new System.Drawing.Size(445, 20);
-            this.title.TabIndex = 19;
+            this.title.TabIndex = 0;
             // 
             // date
             // 
             this.date.Enabled = false;
-            this.date.Location = new System.Drawing.Point(2, 19);
+            this.date.Location = new System.Drawing.Point(2, 60);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(200, 20);
-            this.date.TabIndex = 18;
+            this.date.TabIndex = 1;
             // 
             // CryptoEditorJournalDetails
             // 

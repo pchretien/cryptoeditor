@@ -42,23 +42,23 @@
             // 
             // time
             // 
-            this.time.Location = new System.Drawing.Point(12, 25);
+            this.time.Location = new System.Drawing.Point(8, 70);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(200, 20);
-            this.time.TabIndex = 0;
+            this.time.TabIndex = 1;
             // 
             // name
             // 
             this.name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.name.Location = new System.Drawing.Point(12, 67);
+            this.name.Location = new System.Drawing.Point(8, 28);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(410, 20);
-            this.name.TabIndex = 1;
+            this.name.TabIndex = 0;
             // 
             // hours
             // 
-            this.hours.Location = new System.Drawing.Point(218, 25);
+            this.hours.Location = new System.Drawing.Point(217, 70);
             this.hours.Name = "hours";
             this.hours.Size = new System.Drawing.Size(75, 20);
             this.hours.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.notes.Location = new System.Drawing.Point(12, 110);
+            this.notes.Location = new System.Drawing.Point(8, 110);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
             this.notes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -102,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 7);
+            this.label1.Location = new System.Drawing.Point(215, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
@@ -111,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 48);
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 7;
@@ -120,7 +120,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 6);
+            this.label3.Location = new System.Drawing.Point(8, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 8;
@@ -129,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 94);
+            this.label4.Location = new System.Drawing.Point(8, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 9;

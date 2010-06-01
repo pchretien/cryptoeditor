@@ -40,6 +40,7 @@ namespace CryptoEditor.Password
             this.label5 = new System.Windows.Forms.Label();
             this.notesTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.goButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameTextBox
@@ -149,7 +150,7 @@ namespace CryptoEditor.Password
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.ReadOnly = true;
             this.urlTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.urlTextBox.Size = new System.Drawing.Size(449, 20);
+            this.urlTextBox.Size = new System.Drawing.Size(401, 20);
             this.urlTextBox.TabIndex = 4;
             this.urlTextBox.WordWrap = false;
             // 
@@ -191,12 +192,24 @@ namespace CryptoEditor.Password
             this.label6.TabIndex = 1;
             this.label6.Text = "Notes";
             // 
+            // goButton
+            // 
+            this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.goButton.Location = new System.Drawing.Point(410, 99);
+            this.goButton.Name = "goButton";
+            this.goButton.Size = new System.Drawing.Size(41, 23);
+            this.goButton.TabIndex = 6;
+            this.goButton.Text = "GO";
+            this.goButton.UseVisualStyleBackColor = true;
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
+            // 
             // CryptoPasswordDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.goButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -230,5 +243,6 @@ namespace CryptoEditor.Password
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox notesTextBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button goButton;
     }
 }

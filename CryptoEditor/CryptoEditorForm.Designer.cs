@@ -55,9 +55,9 @@ namespace CryptoEditor
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lockTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.syncProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.syncBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.syncProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -256,6 +256,8 @@ namespace CryptoEditor
             this.connectionToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.connectionToolStripMenuItem.Text = "Connection ...";
             this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
+            this.connectionToolStripMenuItem.MouseEnter += new System.EventHandler(this.connectionToolStripMenuItem_MouseEnter);
+            this.connectionToolStripMenuItem.MouseLeave += new System.EventHandler(this.connectionToolStripMenuItem_MouseLeave);
             // 
             // helpToolStripMenuItem
             // 
@@ -284,6 +286,8 @@ namespace CryptoEditor
             this.registerToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.registerToolStripMenuItem.Text = "&Register ...";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click_1);
+            this.registerToolStripMenuItem.MouseEnter += new System.EventHandler(this.registerToolStripMenuItem_MouseEnter);
+            this.registerToolStripMenuItem.MouseLeave += new System.EventHandler(this.registerToolStripMenuItem_MouseLeave);
             // 
             // aboutToolStripMenuItem
             // 
@@ -316,6 +320,12 @@ namespace CryptoEditor
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 3;
             // 
+            // syncProgressBar
+            // 
+            this.syncProgressBar.Name = "syncProgressBar";
+            this.syncProgressBar.Size = new System.Drawing.Size(100, 16);
+            this.syncProgressBar.Visible = false;
+            // 
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
@@ -327,12 +337,6 @@ namespace CryptoEditor
             this.syncBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.syncBackgroundWorker_DoWork);
             this.syncBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.syncBackgroundWorker_ProgressChanged);
             this.syncBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.syncBackgroundWorker_RunWorkerCompleted);
-            // 
-            // syncProgressBar
-            // 
-            this.syncProgressBar.Name = "syncProgressBar";
-            this.syncProgressBar.Size = new System.Drawing.Size(100, 16);
-            this.syncProgressBar.Visible = false;
             // 
             // CryptoEditorForm
             // 
