@@ -31,6 +31,11 @@ namespace CryptoTimeSheet
             form.ShowDialog();
         }
 
+        public static int CompareCryptoEditorTimeSheetItem(CryptoEditorTimeSheetItem i1, CryptoEditorTimeSheetItem i2)
+        {
+            return i1.Time.CompareTo(i2.Time);
+        }
+
         private void AddHours(CryptoEditorDoc<CryptoEditorTimeSheetItem> docIn, 
             string breadCrumbs,
             ref double total, 
@@ -48,6 +53,8 @@ namespace CryptoTimeSheet
                         sbHours.AppendLine(newBreadCrumbs + delimiterChar + " " + delimiterChar + string.Format("{0:00.00}", total - oldTotal));
                 }
             }
+
+            docIn.Items.Sort(CompareCryptoEditorTimeSheetItem);
 
             double oldTotal2 = total;
             double dayTotal = 0.0;
