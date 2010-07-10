@@ -850,5 +850,10 @@ namespace CryptoEditor
         {
             toolStripStatusLabel.Text = @"";
         }
+
+        private void addPluginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
