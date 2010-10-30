@@ -51,6 +51,8 @@ namespace CryptoEditor
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gettingStartedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPluginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lockTimer = new System.Windows.Forms.Timer(this.components);
@@ -58,8 +60,6 @@ namespace CryptoEditor
             this.syncProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.syncBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.addPluginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -293,6 +293,19 @@ namespace CryptoEditor
             this.registerToolStripMenuItem.MouseEnter += new System.EventHandler(this.registerToolStripMenuItem_MouseEnter);
             this.registerToolStripMenuItem.MouseLeave += new System.EventHandler(this.registerToolStripMenuItem_MouseLeave);
             // 
+            // addPluginToolStripMenuItem
+            // 
+            this.addPluginToolStripMenuItem.Name = "addPluginToolStripMenuItem";
+            this.addPluginToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.addPluginToolStripMenuItem.Text = "Plugins ...";
+            this.addPluginToolStripMenuItem.Visible = false;
+            this.addPluginToolStripMenuItem.Click += new System.EventHandler(this.addPluginToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(180, 6);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -341,18 +354,6 @@ namespace CryptoEditor
             this.syncBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.syncBackgroundWorker_DoWork);
             this.syncBackgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.syncBackgroundWorker_ProgressChanged);
             this.syncBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.syncBackgroundWorker_RunWorkerCompleted);
-            // 
-            // addPluginToolStripMenuItem
-            // 
-            this.addPluginToolStripMenuItem.Name = "addPluginToolStripMenuItem";
-            this.addPluginToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.addPluginToolStripMenuItem.Text = "Plugins ...";
-            this.addPluginToolStripMenuItem.Click += new System.EventHandler(this.addPluginToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(180, 6);
             // 
             // CryptoEditorForm
             // 

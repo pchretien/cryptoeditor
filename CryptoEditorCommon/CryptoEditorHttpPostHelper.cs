@@ -185,7 +185,12 @@ namespace CryptoEditor.Common
             return false;
         }
 
-        public bool PutLicense(string email, string license, string encrypted_license, bool sendmail)
+        public bool PutLicense(
+            string email, 
+            string license, 
+            string encrypted_license, 
+            string encrypted_license_old,
+            bool sendmail)
         {
             try
             {
@@ -195,6 +200,7 @@ namespace CryptoEditor.Common
                 post.AddParameter("email", email);
                 post.AddParameter("license", license);
                 post.AddParameter("encrypted_license", encrypted_license);
+                post.AddParameter("encrypted_license_old", (encrypted_license_old!=null)?encrypted_license_old:"");
                 post.AddParameter("sendmail", (sendmail)?"yes":"no");
 
                 string profileXml = post.Send();

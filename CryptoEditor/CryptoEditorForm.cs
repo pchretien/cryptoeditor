@@ -424,9 +424,16 @@ namespace CryptoEditor
                     currentProfile.Key = decryptedKey;
                     currentProfile.Save();
 
-                    service.PutLicense(currentProfile.Email, currentProfile.Key,
-                                                 CryptoEditorEncryption.Encrypt(CryptoEditorProfile.keyPrefix + currentProfile.Key,
-                                                                                currentProfile.Password), false);
+                    service.PutLicense(
+                        currentProfile.Email, 
+                        currentProfile.Key,
+                        CryptoEditorEncryption.Encrypt(
+                            CryptoEditorProfile.keyPrefix + currentProfile.Key, 
+                            currentProfile.Password),
+                        CryptoEditorEncryption.Encrypt(
+                            CryptoEditorProfile.keyPrefix + currentProfile.Key,
+                            serverPassword)
+                        , false);
 
                 }
 
@@ -758,7 +765,12 @@ namespace CryptoEditor
                 Cursor = Cursors.WaitCursor;
 
                 HttpServiceClient service = new HttpServiceClient(currentProfile);
-                bool ret = service.PutLicense(form.emailTextBox.Text, form.keyTextBox.Text, encryptedLicense, true);
+                bool ret = service.PutLicense(
+                    form.emailTextBox.Text, 
+                    form.keyTextBox.Text, 
+                    encryptedLicense, 
+                    null,
+                    true);
                 if (!ret)
                 {
                     return;
@@ -853,7 +865,8 @@ namespace CryptoEditor
 
         private void addPluginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CryptoEditorPluginManager form = new CryptoEditorPluginManager();
+            form.ShowDialog();
         }
     }
 }

@@ -20,7 +20,8 @@
     </SccProvider>
     <ApplicationIcon>logo.ico</ApplicationIcon>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>cryptoeditor.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -142,6 +143,12 @@
     <Compile Include="CryptoEditorPasswordValidation.designer.cs">
       <DependentUpon>CryptoEditorPasswordValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="CryptoEditorPluginManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CryptoEditorPluginManager.Designer.cs">
+      <DependentUpon>CryptoEditorPluginManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="CryptoEditorPreferences.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +204,9 @@
       <DependentUpon>CryptoEditorPasswordValidation.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="CryptoEditorPluginManager.resx">
+      <DependentUpon>CryptoEditorPluginManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CryptoEditorPreferences.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CryptoEditorPreferences.cs</DependentUpon>
@@ -223,7 +233,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="cryptoeditor.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

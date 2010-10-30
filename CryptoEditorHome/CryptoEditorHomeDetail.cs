@@ -14,7 +14,7 @@ namespace CryptoEditorHome
         private string loading = "";
         private string offline = "";
 
-        private readonly string landing = "http://cryptoeditor.appspot.com/news?base=2";
+        private readonly string landing = "http://sites.google.com/a/cryptoeditor.com/news/";
 
         public CryptoEditorHomeDetail(ICryptoEditor plugin)
         {
