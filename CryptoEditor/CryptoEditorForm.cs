@@ -580,6 +580,7 @@ namespace CryptoEditor
         private void lockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lock();
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
         }
 
         private void unlockToolStripMenuItem_Click(object sender, EventArgs e)
