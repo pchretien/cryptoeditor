@@ -807,7 +807,6 @@ namespace CryptoEditor
         {
             if(e.KeyCode == Keys.Delete)
             {
-                int i = 0;
             }
         }
 

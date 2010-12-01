@@ -47,10 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -62,10 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CryptoEditorCmdFramework\CryptoEditorCmdFramework.csproj">
-      <Project>{02E7A58F-6C5E-48C3-8F75-2035064EDD29}</Project>
-      <Name>CryptoEditorCmdFramework</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CryptoEditorCommon\CryptoEditorCommon.csproj">
       <Project>{162EF8BF-DF17-4681-9FB3-33693BFD9DC3}</Project>
       <Name>CryptoEditorCommon</Name>

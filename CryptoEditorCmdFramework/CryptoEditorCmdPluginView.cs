@@ -14,9 +14,6 @@ namespace CryptoEditor.CmdFramework
         private CryptoEditorDoc<T> doc = null;
         private ICryptoEditor plugin = null;
 
-        private CryptoEditorDoc<T> originalDoc = null;
-        private ArrayList originalItems = null;
-
         public CryptoEditorCmdPluginView(ICryptoEditor plugin)
         {
             this.plugin = plugin;
