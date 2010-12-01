@@ -30,7 +30,7 @@ namespace CryptoEditor
         private int timeIdle = 0;
         private int idlesSinceCheckpoint = 0;
         private int lastIdleSinceTimer = 0;
-        private const int idleSensibility = 2;
+        private const int idleSensibility = 5;
 
         private bool isHome = true;
 
@@ -503,10 +503,12 @@ namespace CryptoEditor
 
         private void lockTimer_Tick(object sender, EventArgs e)
         {
-            //System.Diagnostics.Debug.WriteLine( idlesSinceCheckpoint.ToString() + " " + lastIdleSinceTimer + " " + timeIdle.ToString() );
+            //System.Diagnostics.Debug.WriteLine(idlesSinceCheckpoint.ToString() + " " + lastIdleSinceTimer + " " + timeIdle.ToString() + " " + (lastIdleSinceTimer - idlesSinceCheckpoint));
 
             if (lastIdleSinceTimer >= idlesSinceCheckpoint - idleSensibility)
+            {
                 timeIdle++;
+            }
             else
             {
                 timeIdle = 0;
