@@ -65,7 +65,7 @@ namespace CryptoEditor.License
 
         private void licenseNotes_Validated(object sender, EventArgs e)
         {
-            if (!item.Notes.Equals(licenseNotes.Text))
+            if (item != null && !item.Notes.Equals(licenseNotes.Text))
             {
                 item.Notes = licenseNotes.Text;
                 item.Update();

@@ -58,7 +58,7 @@ namespace CryptoTimeSheet
 
         private void notes_Validated(object sender, EventArgs e)
         {
-            if (!item.Notes.Equals(notes.Text))
+            if (item != null && !item.Notes.Equals(notes.Text))
             {
                 item.Notes = notes.Text;
                 item.Update();
@@ -68,6 +68,9 @@ namespace CryptoTimeSheet
 
         private void hours_Validated(object sender, EventArgs e)
         {
+            if(item == null)
+                return;
+
             double hoursIn = item.Hours;
 
             try

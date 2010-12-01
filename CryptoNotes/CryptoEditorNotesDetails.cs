@@ -50,7 +50,7 @@ namespace CryptoNotes
 
         private void note_Validated(object sender, EventArgs e)
         {
-            if (!item.Note.Equals(note.Text))
+            if (item != null && !item.Note.Equals(note.Text))
             {
                 item.Note = note.Text;
                 item.Update();

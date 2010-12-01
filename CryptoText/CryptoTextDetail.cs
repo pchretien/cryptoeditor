@@ -66,7 +66,7 @@ namespace CryptoEditor.Text
 
         private void notesTextBox_Validated(object sender, EventArgs e)
         {
-            if (!itemIn.Notes.Equals(notesTextBox.Text))
+            if (itemIn != null && !itemIn.Notes.Equals(notesTextBox.Text))
             {
                 itemIn.Notes = notesTextBox.Text;
                 itemIn.Update();
