@@ -20,10 +20,19 @@ namespace CryptoEditor.Common
 
         private void haveAccountLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void haveAccountButton_Click(object sender, EventArgs e)
+        {
 #if DEBUG_SERVER
             string linkText = "http://localhost:8080/login";
 #else
-            string linkText = "http://cryptoeditor.appspot.com/login";
+            string linkText = "https://cryptoeditor.appspot.com/login";
 #endif
 
             System.Diagnostics.Process.Start(linkText);
@@ -31,12 +40,12 @@ namespace CryptoEditor.Common
             Close();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void dontHaveAccountButton_Click(object sender, EventArgs e)
         {
 #if DEBUG_SERVER
             string linkText = "http://localhost:8080/register";
 #else
-            string linkText = "http://cryptoeditor.appspot.com/register";
+            string linkText = "https://cryptoeditor.appspot.com/register";
 #endif
 
             System.Diagnostics.Process.Start(linkText);

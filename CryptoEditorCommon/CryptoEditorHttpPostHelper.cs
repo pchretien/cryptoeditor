@@ -153,7 +153,7 @@ namespace CryptoEditor.Common
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
                     {
-                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("This installation of CryptoEditor is not registered. Visit our website to get your FREE registration key", "Installation not registered");
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("We are unable to locate your account. Visit our website to get your FREE registration key", "Account not activated");
                         form.ShowDialog();
                     }
                     else
@@ -264,12 +264,12 @@ namespace CryptoEditor.Common
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
                     {
-                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("This installation of CryptoEditor is not registered. Visit our website to get your FREE registration key", "Installation not registered");
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("We are unable to locate your account. Visit our website to get your FREE registration key", "Account not activated");
                         form.ShowDialog();
                     }
                     if (error.Equals("USER_NOT_ACTIVATED"))
                     {
-                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to activate your account and get your FREE registration key", "Account not activated");
                         form.ShowDialog();
                     }
                     if (error.Equals("USER_EXPIRED"))
@@ -322,12 +322,12 @@ namespace CryptoEditor.Common
                     string error = nodes[0].InnerText;
                     if (error.Equals("USER_DOES_NOT_EXIST"))
                     {
-                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("This installation of CryptoEditor is not registered. Visit our website to get your FREE registration key", "Installation not registered");
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("We are unable to locate your account. Visit our website to get your FREE registration key", "Account not activated");
                         form.ShowDialog();
                     }
                     if (error.Equals("USER_NOT_ACTIVATED"))
                     {
-                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                        CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to activate your account and get your FREE registration key", "Account not activated");
                         form.ShowDialog();
                     }
                     if (error.Equals("USER_EXPIRED"))

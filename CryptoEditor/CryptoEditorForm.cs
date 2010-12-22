@@ -364,7 +364,7 @@ namespace CryptoEditor
                 if (status == 0)
                 {
                     // Account not activated ...
-                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("We are unable to locate your account. Visit our website to get your FREE registration key", "Account not activated");
                     form.ShowDialog();
                     return;
                 }
@@ -381,7 +381,7 @@ namespace CryptoEditor
                 if (encrypted_license.Length == 0)
                 {
                     // Application not registered ...
-                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to get your FREE registration key", "Account not activated");
+                    CryptoEditorGoToWebForm form = new CryptoEditorGoToWebForm("Your account is not activated. Visit our website to activate your account and get your FREE registration key", "Account not activated");
                     form.ShowDialog();
                     return;
                 }
