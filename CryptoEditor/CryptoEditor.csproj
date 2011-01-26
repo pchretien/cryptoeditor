@@ -264,6 +264,10 @@
       <Project>{9E65D8C4-590B-490D-8629-BFFA9EEB3E1F}</Project>
       <Name>CryptoEditorJournal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CryptoEditorReminder\CryptoEditorReminder.csproj">
+      <Project>{9A23B38D-7B88-4E9D-9045-AC0106085E98}</Project>
+      <Name>CryptoEditorReminder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CryptoEditorTodo\CryptoEditorTodo.csproj">
       <Project>{84BDEF69-32BD-4051-87B1-93B0C68462F2}</Project>
       <Name>CryptoEditorTodo</Name>
